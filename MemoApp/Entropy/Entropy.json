@@ -1345,7 +1345,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "03/17/2023 09:30:29",
+  "HeaderLastSavedDateTimeUTC": "03/17/2023 09:32:06",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "4ba4b5b7-1c5b-4332-a621-4a7484b0e4e8": "\"/providers/microsoft.powerapps/apis/shared_office365/connections/1626e75569344ea3af0449a94bdfa725\"",
@@ -1373,6 +1373,7 @@
     "icons8-square-spinner": "https://docserverpwaprodeas.blob.core.windows.net/b9e10db3-4c20-43fe-a6bd-6a31397c19fa-1/resource/Assets0Images0bac6e3a5-aec4-4d70-8f51-a4db4b7b45ca.gif?sv=2018-03-28&sr=b&sig=GzqpJbaxqKmzqxO1q3pL5CukmXcgvubsRWUtE75AzpM%3D&spr=https&se=2023-03-18T09%3A26%3A16Z&sp=r",
     "user": "https://docserverpwaprodeas.blob.core.windows.net/b9e10db3-4c20-43fe-a6bd-6a31397c19fa-1/resource/Assets0Images039ad2f18-84fa-4e3e-b4d9-8871b73ce852.png?sv=2018-03-28&sr=b&sig=WjjkJfQuofkZh%2F4Dqo60pJLlnOLJjSEWTzyjuwyXhXk%3D&spr=https&se=2023-03-18T09%3A26%3A16Z&sp=r"
   },
+  "OldLogoFileName": "r3pneqq3.jpg",
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
