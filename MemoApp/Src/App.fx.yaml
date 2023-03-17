@@ -1,0 +1,15 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(_requestTypeFilter,"All");
+        
+        Set(loginUser,User());
+        Set(varLoggedInUser,Office365Users.MyProfileV2({'$select':""}).displayName & User().Image & User().Email);
+        With(
+            {wUserRecord: LookUp(RoleController, Email=loginUser.Email)},
+            Set(role, wUserRecord.Role.Value)
+        );
+        
+        If(role="Recommender",Set(galData,true));
+    StartScreen: =SplashScreen
+

@@ -1,0 +1,55 @@
+Actions As screen:
+    BackgroundImage: =
+    Fill: =RGBA(214, 154, 154, 1)
+
+    btnPurchaseRequisition As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 87, 51, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =112
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        OnSelect: |-
+            =Clear(PurchaseReq);
+            Navigate(CreateNewMemo)
+        Size: =15
+        Text: ="Memo"
+        Width: =262
+        X: =213
+        Y: =188
+        ZIndex: =1
+
+    btnQuotationUpload As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 87, 51, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =112
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        OnSelect: =Navigate(UploadQuotation)
+        Size: =15
+        Text: |-
+            ="Upload Document
+            "
+        Width: =262
+        X: =213
+        Y: =352
+        ZIndex: =2
+
+    Icon5 As icon.BackArrow:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(144, 12, 63, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =50
+        Y: =50
+        ZIndex: =5
+

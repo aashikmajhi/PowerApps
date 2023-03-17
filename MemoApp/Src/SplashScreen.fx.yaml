@@ -1,0 +1,82 @@
+SplashScreen As screen:
+    BackgroundImage: =
+    Fill: =RGBA(214, 154, 154, 1)
+
+    Label11_11 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(39, 113, 194, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =82
+        Size: =30
+        Text: ="Astral Computers Nepal Pvt. Ltd."
+        Width: =657
+        X: =411
+        Y: =622
+        ZIndex: =4
+
+    Image9 As image:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Image: ='icons8-dot-bricks'
+        Transparency: =0.69
+        X: =597
+        Y: =488
+        ZIndex: =7
+
+    Timer1 As timer:
+        AutoPause: =false
+        AutoStart: =true
+        Duration: =4000
+        Fill: =RGBA(0, 51, 102, 1)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        OnTimerEnd: |-
+            =//If(varLoggedInUser=Gallery3_1.Selected.'Prepared By',Navigate(UserDashboard);,Navigate(ApproverDashboard));
+            //Navigate(VerifierDashboard);
+            //If(User().Email<>preparedby.Text,Navigate(UserDashboard),If(User().Email<>verifiedby.Selected.Value,Navigate(VerifierDashboard),If(User().Email<>recommendedby.Selected.Value,Navigate(RecommenderDashboard),false),false),false);
+            //If(loginUser.Email="sumit.manandhar@astral.com.np" || loginUser.Email="application@astral.com.np",Navigate(VerifierDashboard),If(loginUser.Email="sumit.manandhar@thakralone.com",Navigate(RecommenderDashboard),If(loginUser.Email="naresh.dhami@astral.com.np",Navigate(UserDashboard),false),false),false);
+            //If(role.Role.Value="Recommender",Navigate(RecommenderDashboard),Navigate(UserDashboard));
+            Navigate(UserDashboard)
+        Visible: =false
+        X: =567
+        Y: =622
+        ZIndex: =8
+
+    Label8 As label:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =20
+        Text: ="Powered By"
+        Width: =190
+        X: =231
+        Y: =642
+        ZIndex: =9
+
+    Container3 As groupContainer.manualLayoutContainer:
+        Height: =308
+        X: =397
+        Y: =144
+        ZIndex: =10
+
+        Label1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Bold
+            Height: =232
+            Size: =45
+            Text: ="Memo Application"
+            Width: =422
+            X: =40
+            Y: =40
+            ZIndex: =1
+

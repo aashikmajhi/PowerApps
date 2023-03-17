@@ -1,0 +1,795 @@
+UserDashboard As screen:
+    BackgroundImage: =
+    Fill: =
+
+    Button7_8 As button:
+        Color: =RGBA(0, 89, 178, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(214, 154, 154, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =552
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =Self.Fill
+        PressedFill: =Self.Fill
+        Size: =15
+        Text: =""
+        Width: =1322
+        X: =24
+        Y: =156
+        ZIndex: =1
+
+    Gallery2_7 As gallery.galleryVertical:
+        BorderColor: =RGBA(235, 245, 255, 1)
+        BorderThickness: =1
+        Fill: |
+            =RGBA(0, 0, 0, 0)
+        Height: =79
+        Items: |-
+            =
+            //If(loginUser.Email=recommendedby1.Text,Table({fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}),Table({fil: "My Memo"},{fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}))
+            //If(role="Recommender",Table({fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}),Table({fil: "My Memo"},{fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}))
+            Table({fil: "My Memo"},{fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"})
+        Layout: =Layout.Vertical
+        TemplateFill: =
+        TemplateSize: =67
+        Visible: =If(galData,false,true)
+        Width: =1280
+        WrapCount: =5
+        X: =38
+        Y: =165
+        ZIndex: =2
+
+        Filter_7 As button:
+            BorderColor: =RGBA(153, 189, 224, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: |+
+                =//RGBA(65, 145, 224, 0.86)
+                
+                //Switch(ThisItem.fil=pressedButton,pressedButton="My Memo",RGBA(65, 145, 224, 0.86),pressedButton="All",Color.DarkSalmon,pressedButton="Pending",Color.OrangeRed,pressedButton="Approved",Color.LimeGreen,pressedButton="Declined",Color.Red,Color.LightPink)
+                If(ThisItem.fil = pressedButton, Color.LimeGreen, Switch(ThisItem.fil, "All", Color.IndianRed, "Pending", Color.OrangeRed, "Approved", Color.Green, "Declined", Color.Red, "My Memo",Color.Chocolate))
+                
+            FontWeight: =FontWeight.Semibold
+            HoverColor: |
+                =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(246, 88, 16, 0.25)
+            OnSelect: |
+                =Set(_requestTypeFilter, ThisItem.fil);
+                UpdateContext({pressedButton:ThisItem.fil});
+            PressedBorderColor: =
+            PressedColor: =Self.Color
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Size: =15
+            Text: =ThisItem.fil
+            X: =50
+            Y: =13
+            ZIndex: =1
+
+    Button6_7 As button:
+        Align: =Align.Left
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Semibold
+        Height: =142
+        HoverFill: =Self.Fill
+        PressedColor: =Self.Color
+        PressedFill: =
+        Size: =23
+        Text: |-
+            ="Hey! " & Office365Users.MyProfile().DisplayName & Char(13) & If(Hour(Now())<12, "Good morning, ", Hour(Now())<17, "Good afternoon, ", "Good evening, ") & " Welcome Back " & loginUser.Email & Char(13) 
+            //&" Role: " & LookUp(RoleController,Email=loginUser.Email,Role.Value)
+        Width: =628
+        X: =26
+        Y: =14
+        ZIndex: =3
+
+    Button2_16 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(11, 129, 118, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =48
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        OnSelect: |-
+            =Reset(ComboBox1_2);
+            Reset(ComboBox1_3);
+            Reset(TextInput7_2);
+            Navigate(CreateNewMemo)
+        Size: =15
+        Text: ="Create New"
+        Visible: |
+            =//If(loginUser.Email=recommendedby1.Text,false,true);
+            //If(role.Role.Value="Recommender",false,true)
+            If(loginUser.Email="sumit.manandhar@thakralone.com",false,true)
+        Width: =246
+        X: =1080
+        Y: =54
+        ZIndex: =4
+
+    Label21_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =
+        Size: =15
+        Text: ="Ref No"
+        Width: =120
+        X: =44
+        Y: =249
+        ZIndex: =5
+
+    Label27_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: |
+            =
+        Size: =15
+        Text: ="Date"
+        X: =337
+        Y: =249
+        ZIndex: =6
+
+    Label30_6 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: |
+            =
+        Size: =15
+        Text: ="Prepared By"
+        Width: =234
+        X: =480
+        Y: =250
+        ZIndex: =7
+
+    Label32_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: |
+            =
+        Size: =15
+        Text: ="Status"
+        Width: =220
+        X: =739
+        Y: =250
+        ZIndex: =8
+
+    Label4_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: |
+            =
+        Size: =15
+        Text: ="Organization"
+        X: =187
+        Y: =249
+        ZIndex: =9
+
+    cmtlbl_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Semibold
+        OnSelect: |
+            =
+        Size: =15
+        Text: ="Comment"
+        Width: =178
+        X: =1002
+        Y: =255
+        ZIndex: =11
+
+    Rectangle3_8 As rectangle:
+        BorderColor: =RGBA(0, 80, 160, 1)
+        Fill: =RGBA(194, 225, 255, 1)
+        Height: =2
+        OnSelect: =
+        Width: =userDashboardGallery.TemplateWidth
+        X: =40
+        Y: =293
+        ZIndex: =12
+
+    userDashboardGallery As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Height: =403
+        Items: |+
+            =Sort(
+                If(
+                    _requestTypeFilter = "My Memo",
+                    Sort(
+                        Filter(
+                            UnsubmittedRequisitionApprovalList,
+                            'Created By'.Email = User().Email
+                        ),
+                        Date,
+                        SortOrder.Ascending
+                    ),
+                    If(
+                        _requestTypeFilter = "All",
+                        Sort(
+                            RequisitionDemoApprovalList,
+                            Date,
+                            SortOrder.Ascending
+                        ),
+                        If(
+                            _requestTypeFilter = "Pending",
+                            Sort(
+                                Filter(
+                                    RequisitionDemoApprovalList,
+                                    Status.Value = "Pending First Approval" ||
+                                    Status.Value = "Pending Second Approval" ||
+                                    Status.Value = "Pending Verification" ||
+                                    Status.Value = "Pending Recommendation"
+                                ),
+                                Date,
+                                SortOrder.Ascending
+                            ),
+                            If(
+                                _requestTypeFilter = "Approved",
+                                Sort(
+                                    Filter(
+                                        RequisitionDemoApprovalList,
+                                        Status.Value = "Approved"
+                                    ),
+                                    Date,
+                                    SortOrder.Ascending
+                                ),
+                                If(
+                                    _requestTypeFilter = "Declined",
+                                    Sort(
+                                        Filter(
+                                            RequisitionDemoApprovalList,
+                                            Status.Value = "Declined"
+                                        ),
+                                        Date,
+                                        SortOrder.Ascending
+                                    ),
+                                    // Default filter if none of the above conditions match
+                                    RequisitionDemoApprovalList
+                                )
+                            )
+                        )
+                    )
+                ),
+                Date,
+                SortOrder.Ascending
+            )
+            
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =//Navigate(RespondingScreen)
+            //Navigate(UserView);
+            //If(varLoggedInUser=ThisItem.'Prepared By',false,Navigate(UserView));
+            false
+        ShowScrollbar: =false
+        TemplateSize: =95
+        Visible: |
+            =//If(Label33_8.Text="Pending Verification",false,true)
+            If(galData,false,true)
+        Width: =1282
+        X: =42
+        Y: =290
+        ZIndex: =13
+
+        rfDate_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =Text(DateValue(ThisItem.Date),DateTimeFormat.ShortDate)
+            X: =283
+            ZIndex: =1
+
+        rfNo_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =12
+            Text: =ThisItem.Title
+            Width: =133
+            ZIndex: =2
+
+        rfFrom_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =ThisItem.PreparedBy
+            Width: =234
+            X: =436
+            ZIndex: =3
+
+        Label33_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =ThisItem.Status.Value
+            Width: =220
+            X: =685
+            ZIndex: =4
+
+        Label2_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =12
+            Text: =ThisItem.Organization
+            X: =133
+            ZIndex: =5
+
+        subjectlbl_6 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: ="Subject"
+            Width: =90
+            Y: =50
+            ZIndex: =6
+
+        Label9_7 As label:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =10
+            Text: =ThisItem.Subject
+            Width: =830
+            X: =90
+            Y: =50
+            ZIndex: =7
+
+        commentlbl_7 As label:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =92
+            Size: =10
+            Text: =ThisItem.ApprovalComments
+            VerticalAlign: =VerticalAlign.Top
+            Width: =320
+            X: =924
+            ZIndex: =8
+
+        Rectangle3_7 As rectangle:
+            BorderColor: =RGBA(0, 80, 160, 1)
+            Fill: =RGBA(204, 231, 246, 1)
+            Height: =2
+            Width: =userDashboardGallery.TemplateWidth
+            Y: =93
+            ZIndex: =9
+
+        Icon1_15 As icon.View:
+            BorderColor: =RGBA(250, 250, 250, 1)
+            BorderThickness: =1
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =28
+            Icon: =Icon.View
+            OnSelect: |+
+                =
+                If(LookUp(RequisitionDemoApprovalList,'Verified By'=User().Email,true) && (ThisItem.Status.Value="Pending Recommendation"||ThisItem.Status.Value="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined"),Navigate(VerifierViewAfterSubmit));
+                
+                
+                If(ThisItem.Status.Value="New" && User().Email = ThisItem.PreparedBy ,Navigate(UserSubmitMemo));
+                
+                If(ThisItem.Status.Value="Pending Verification" && ThisItem.PreparedBy<>User().Email,Navigate(VerifierView));
+                
+                If((ThisItem.Status.Value="Pending Verification"||ThisItem.Status.Value="Pending Recommendation"||Label33_7.Text="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined")&& ThisItem.PreparedBy=User().Email,Navigate(UserViewAfterSubmit));
+                
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =28
+            X: =1244
+            Y: =20
+            ZIndex: =10
+
+        Icon1_16 As icon.View:
+            BorderColor: =RGBA(232, 232, 232, 1)
+            BorderThickness: =1
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =28
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =//Remove(UnsubmittedRequisitionApprovalList,LookUp(UnsubmittedRequisitionApprovalList,Title=rfNo_7.Text));
+                Set(container,true);
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Visible: =If(Label33_7.Text="New",true,false)
+            Width: =28
+            X: =1244
+            Y: =50
+            ZIndex: =11
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 0, 0, 0.78)
+        Height: =552
+        Visible: =If(container=true,true,false)
+        Width: =1322
+        X: =24
+        Y: =156
+        ZIndex: =14
+
+        Label2 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =84
+            Size: =25
+            Text: ="Delete an Item. Are you sure?"
+            Width: =1240
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        Yesbtn As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(29, 204, 72, 0.91)
+            FontWeight: =FontWeight.Semibold
+            Height: =112
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(29, 204, 72, 0.91)
+            OnSelect: |-
+                =Remove(UnsubmittedRequisitionApprovalList,LookUp(UnsubmittedRequisitionApprovalList,Title=rfNo_7.Text));
+                Set(container,false);
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Size: =25
+            Text: ="Yes"
+            Width: =316
+            X: =192
+            Y: =405
+            ZIndex: =2
+
+        Nobtn As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 121, 187, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =112
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 121, 187, 1)
+            OnSelect: =Set(container,false)
+            Size: =25
+            Text: ="No"
+            Width: =316
+            X: =800
+            Y: =405
+            ZIndex: =3
+
+        Icon2 As icon.Cancel:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 36, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(container,false)
+            X: =1251
+            Y: =6
+            ZIndex: =4
+
+    recommenderGallery As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Height: =403
+        Items: |
+            =Sort(
+                If(
+                    _requestTypeFilter = "My Memo",
+                    Sort(
+                        Filter(
+                            UnsubmittedRequisitionApprovalList,
+                            'Created By'.Email = User().Email
+                        ),
+                        Date,
+                        SortOrder.Ascending
+                    ),
+                    If(
+                        _requestTypeFilter = "All",
+                        Sort(
+                            RequisitionDemoApprovalList,
+                            Date,
+                            SortOrder.Ascending
+                        ),
+                        If(
+                            _requestTypeFilter = "Pending",
+                            Sort(
+                                Filter(
+                                    RequisitionDemoApprovalList,
+                                    Status.Value = "Pending First Approval" ||
+                                    Status.Value = "Pending Second Approval" ||
+                                    Status.Value = "Pending Verification" ||
+                                    Status.Value = "Pending Recommendation"
+                                ),
+                                Date,
+                                SortOrder.Ascending
+                            ),
+                            If(
+                                _requestTypeFilter = "Approved",
+                                Sort(
+                                    Filter(
+                                        RequisitionDemoApprovalList,
+                                        Status.Value = "Approved"
+                                    ),
+                                    Date,
+                                    SortOrder.Ascending
+                                ),
+                                If(
+                                    _requestTypeFilter = "Declined",
+                                    Sort(
+                                        Filter(
+                                            RequisitionDemoApprovalList,
+                                            Status.Value = "Declined"
+                                        ),
+                                        Date,
+                                        SortOrder.Ascending
+                                    ),
+                                    // Default filter if none of the above conditions match
+                                    RequisitionDemoApprovalList
+                                )
+                            )
+                        )
+                    )
+                ),
+                Date,
+                SortOrder.Ascending
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =//Navigate(RespondingScreen)
+            //Navigate(UserView);
+            //If(varLoggedInUser=ThisItem.'Prepared By',false,Navigate(UserView));
+            false
+        ShowScrollbar: =false
+        TemplateSize: =95
+        Visible: |
+            =//If(Label33_8.Text="New",true,false)
+            If(galData,true,false)
+        Width: =1282
+        X: =42
+        Y: =290
+        ZIndex: =15
+
+        rfDate_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =Text(DateValue(ThisItem.Date),DateTimeFormat.ShortDate)
+            X: =273
+            ZIndex: =1
+
+        rfNo_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =12
+            Text: =ThisItem.Title
+            Width: =120
+            ZIndex: =2
+
+        rfFrom_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =ThisItem.PreparedBy
+            Width: =234
+            X: =426
+            ZIndex: =3
+
+        Label33_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =10
+            Text: =ThisItem.Status.Value
+            Width: =220
+            X: =685
+            ZIndex: =10
+
+        Label2_13 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =12
+            Text: =ThisItem.Organization
+            X: =123
+            ZIndex: =12
+
+        subjectlbl_9 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: ="Subject"
+            Width: =90
+            Y: =50
+            ZIndex: =14
+
+        Label9_10 As label:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =10
+            Text: =ThisItem.Subject
+            Width: =830
+            X: =90
+            Y: =50
+            ZIndex: =15
+
+        commentlbl_10 As label:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =92
+            Size: =10
+            Text: =ThisItem.ApprovalComments
+            VerticalAlign: =VerticalAlign.Top
+            Width: =320
+            X: =924
+            ZIndex: =17
+
+        Rectangle3_11 As rectangle:
+            BorderColor: =RGBA(232, 232, 232, 1)
+            BorderThickness: =1
+            Fill: =RGBA(232, 232, 232, 1)
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =recommenderGallery.TemplateWidth
+            Y: =93
+            ZIndex: =20
+
+        Icon1_26 As icon.View:
+            BorderColor: =RGBA(232, 232, 232, 1)
+            BorderThickness: =1
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =28
+            Icon: =Icon.View
+            OnSelect: |+
+                =If(ThisItem.Status.Value="Pending Recommendation",Navigate(RecommenderView));
+                If(ThisItem.Status.Value="Pending First Approval" || ThisItem.Status.Value="Pending Second Approval" || ThisItem.Status.Value="Approved" || ThisItem.Status.Value="Declined",Navigate(RecommenderViewAfterSubmit));
+                
+                
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =28
+            X: =1244
+            Y: =20
+            ZIndex: =21
+
+        Icon1_27 As icon.View:
+            BorderColor: =RGBA(232, 232, 232, 1)
+            BorderThickness: =1
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =28
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =//Remove(UnsubmittedRequisitionApprovalList,LookUp(UnsubmittedRequisitionApprovalList,Title=rfNo_7.Text));
+                Set(container,true);
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Visible: =If(Label33_7.Text="New",true,false)
+            Width: =28
+            X: =1244
+            Y: =50
+            ZIndex: =22
+
+    Gallery2_8 As gallery.galleryVertical:
+        BorderColor: =RGBA(235, 245, 255, 1)
+        BorderThickness: =1
+        Height: =79
+        Items: |-
+            =Table({fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"})
+            //If(role="Creater",Table({fil: "My Memo"},{fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}),Table({fil: "All"}, {fil: "Pending"}, {fil: "Approved"}, {fil: "Declined"}))
+        Layout: =Layout.Vertical
+        TemplateSize: =67
+        Visible: =If(galData,true,false)
+        Width: =1280
+        WrapCount: =4
+        X: =38
+        Y: =166
+        ZIndex: =16
+
+        Filter_8 As button:
+            BorderColor: =RGBA(153, 189, 224, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: |-
+                =//RGBA(65, 145, 224, 0.86)
+                If(ThisItem.fil = pressedButton, Color.LimeGreen, Switch(ThisItem.fil, "All", Color.IndianRed, "Pending", Color.OrangeRed, "Approved", Color.Green, "Declined", Color.Red))
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(246, 88, 16, 1)
+            OnSelect: |-
+                =Set(_requestTypeFilter, ThisItem.fil);
+                UpdateContext({pressedButton:ThisItem.fil});
+            PressedBorderColor: =
+            PressedColor: =Self.Color
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Size: =15
+            Text: =ThisItem.fil
+            X: =50
+            Y: =13
+            ZIndex: =1
+
