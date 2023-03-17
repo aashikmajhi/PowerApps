@@ -7,7 +7,7 @@ CreateNewMemo As screen:
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
         Color: =RGBA(0, 0, 0, 1)
-        Default: =LookUp(RequisitionDemoApprovalList,Title=refNo_5.Text,'First Approver' & 'Second Approver')
+        Default: =LookUp(MemoList,Title=refNo_5.Text,'First Approver' & 'Second Approver')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -29,7 +29,7 @@ CreateNewMemo As screen:
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
         Color: =RGBA(0, 0, 0, 1)
-        Default: =LookUp(RequisitionDemoApprovalList,Title=refNo_5.Text,'Verified By' & 'Prepared By' & 'Recommended By')
+        Default: =LookUp(MemoList,Title=refNo_5.Text,'Verified By' & 'Prepared By' & 'Recommended By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -51,7 +51,7 @@ CreateNewMemo As screen:
         BorderThickness: =2
         Height: =263
         Items: |
-            =Filter(UnsubmittedMemoTableData, 'Meme No'=refNo_5.Text)
+            =Filter(UnsubmittedMemoTableData, Title=refNo_5.Text)
         Layout: =Layout.Vertical
         ShowScrollbar: =false
         TemplatePadding: =0
@@ -530,8 +530,8 @@ CreateNewMemo As screen:
         BorderThickness: =2
         Color: =RGBA(0, 0, 0, 1)
         Default: |
-            =//If(companyName_2.SelectedText.Value="F1 Soft","FS-"&CountRows(RequisitionDemoApprovalList)+1,If(companyName_2.SelectedText.Value="e-Sewa","ES-"&CountRows(RequisitionDemoApprovalList)+1))
-            (Office365Users.MyProfile().DisplayName & "-" & CountRows(UnsubmittedRequisitionApprovalList)+1)
+            =
+            (Office365Users.MyProfile().DisplayName & "-" & CountRows(UnsubmittedMemoList)+1)
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -830,10 +830,10 @@ CreateNewMemo As screen:
                             IsBlank(TextInput7_2.Text),
                             Notify("Please input the subject for the memo."),
                             Patch(
-                                RequisitionDemoApprovalList,
+                                MemoList,
                                 First(
                                     Filter(
-                                        RequisitionDemoApprovalList,
+                                        MemoList,
                                         Title = refNo_5.Text
                                     )
                                 ),

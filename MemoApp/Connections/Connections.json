@@ -1,13 +1,29 @@
 {
-  "138f5c90-9c33-4ab8-8e34-c21b5da334c2": {
-    "connectionParameters": {},
+  "4ba4b5b7-1c5b-4332-a621-4a7484b0e4e8": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
     "connectionRef": {
-      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1624/1.0.1624.3221/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4ba4b5b7-1c5b-4332-a621-4a7484b0e4e8"
+  },
+  "6a74bc73-42dd-4057-a31b-a2a028ac1297": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
       "displayName": "Office 365 Users",
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3200/office365users/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
-      "parameterHints": {},
-      "parameterHintsV2": {}
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
     },
     "datasets": {},
     "dataSources": [
@@ -15,7 +31,48 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "138f5c90-9c33-4ab8-8e34-c21b5da334c2"
+    "id": "6a74bc73-42dd-4057-a31b-a2a028ac1297"
+  },
+  "7670286d-174c-47d2-bd2e-85680cbcf6af": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1623/1.0.1623.3210/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://astralnepal.sharepoint.com/sites/astralmemoapp": {
+        "dataSources": {
+          "MemoList": {
+            "tableName": "07603d1a-06d4-4981-8477-8eacdff0cada"
+          },
+          "MemoTableData": {
+            "tableName": "f5ed73f6-1f96-47e8-8603-f0210ffed508"
+          },
+          "RoleController": {
+            "tableName": "d4422db6-2771-430c-8ea8-7de8a60936b0"
+          },
+          "UnsubmittedMemoList": {
+            "tableName": "353aea33-cfc7-4474-b43e-7dc7670eeaaa"
+          },
+          "UnsubmittedMemoTableData": {
+            "tableName": "d2016c4f-914e-471d-a8b8-5906d638e3a8"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "UnsubmittedMemoTableData",
+      "UnsubmittedMemoList",
+      "RoleController",
+      "MemoTableData",
+      "MemoList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7670286d-174c-47d2-bd2e-85680cbcf6af"
   },
   "a640784d-726c-42c9-b997-9fe1f75d802e": {
     "connectionParameters": {},
@@ -27,38 +84,8 @@
       "parameterHints": {},
       "parameterHintsV2": {}
     },
-    "datasets": {
-      "https://astralnepal.sharepoint.com/sites/NatRuleNITC": {
-        "dataSources": {
-          "MemoTableData": {
-            "tableName": "04205eb7-7186-4a6a-9f7a-f333b44bb429"
-          },
-          "RequisitionDemoApprovalList": {
-            "tableName": "8a4558d2-e323-4ada-a3bb-4b1889c95b88"
-          },
-          "RequisitionPDF": {
-            "tableName": "c9ef34cf-91bc-4972-8788-591bbf73fa76"
-          },
-          "RoleController": {
-            "tableName": "ef416c9e-34df-432b-bb2e-b5ebe91940b2"
-          },
-          "UnsubmittedMemoTableData": {
-            "tableName": "5d562267-e194-4f68-a229-e0e89c7ebf2d"
-          },
-          "UnsubmittedRequisitionApprovalList": {
-            "tableName": "5ac05004-45cf-4dbc-a84b-23c00226fac9"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "RequisitionPDF",
-      "RequisitionDemoApprovalList",
-      "MemoTableData",
-      "UnsubmittedMemoTableData",
-      "UnsubmittedRequisitionApprovalList",
-      "RoleController"
-    ],
+    "datasets": {},
+    "dataSources": [],
     "dependencies": {},
     "dependents": [
       "d42f4488-9927-4cce-9528-fb8e3bbdb683",
@@ -181,24 +208,6 @@
     },
     "dependents": [],
     "id": "eac73ffd-3673-44de-95ba-47c98c997c4d"
-  },
-  "f77165ed-60b3-4e5e-bea7-26941e61fdf7": {
-    "connectionParameters": {},
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1624/1.0.1624.3221/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365",
-      "parameterHints": {},
-      "parameterHintsV2": {}
-    },
-    "datasets": {},
-    "dataSources": [
-      "Office365Outlook"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "f77165ed-60b3-4e5e-bea7-26941e61fdf7"
   },
   "fd6451e6-b814-4e76-9635-5d984a4d7286": {
     "connectionParameters": {},

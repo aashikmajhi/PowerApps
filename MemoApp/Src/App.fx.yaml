@@ -6,7 +6,7 @@ App As appinfo:
         Set(loginUser,User());
         Set(varLoggedInUser,Office365Users.MyProfileV2({'$select':""}).displayName & User().Image & User().Email);
         With(
-            {wUserRecord: LookUp(RoleController, Email=loginUser.Email)},
+            {wUserRecord: LookUp(RoleController, Title=loginUser.Email)},
             Set(role, wUserRecord.Role.Value)
         );
         

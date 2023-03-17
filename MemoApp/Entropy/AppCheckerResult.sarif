@@ -23,10 +23,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 45,
-                  "charOffset": 238,
+                  "charLength": 30,
+                  "charOffset": 50,
                   "snippet": {
-                    "text": "CountRows(UnsubmittedRequisitionApprovalList)"
+                    "text": "CountRows(UnsubmittedMemoList)"
                   }
                 }
               },
@@ -63,10 +63,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 38,
+                  "charLength": 19,
                   "charOffset": 68,
                   "snippet": {
-                    "text": "CountRows(RequisitionDemoApprovalList)"
+                    "text": "CountRows(MemoList)"
                   }
                 }
               },
@@ -103,10 +103,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 38,
-                  "charOffset": 192,
+                  "charLength": 19,
+                  "charOffset": 173,
                   "snippet": {
-                    "text": "CountRows(RequisitionDemoApprovalList)"
+                    "text": "CountRows(MemoList)"
                   }
                 }
               },
@@ -143,10 +143,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 38,
+                  "charLength": 19,
                   "charOffset": 68,
                   "snippet": {
-                    "text": "CountRows(RequisitionDemoApprovalList)"
+                    "text": "CountRows(MemoList)"
                   }
                 }
               },
@@ -183,10 +183,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 38,
-                  "charOffset": 192,
+                  "charLength": 19,
+                  "charOffset": 173,
                   "snippet": {
-                    "text": "CountRows(RequisitionDemoApprovalList)"
+                    "text": "CountRows(MemoList)"
                   }
                 }
               },
@@ -239,7 +239,7 @@
           ],
           "message": {
             "arguments": [
-              "Meme No"
+              "Title"
             ],
             "id": "issue"
           },
@@ -279,7 +279,7 @@
           ],
           "message": {
             "arguments": [
-              "Meme No"
+              "Title"
             ],
             "id": "issue"
           },
@@ -28927,36 +28927,6 @@
                 "member": "Text",
                 "module": "UploadQuotation",
                 "type": "UploadQuotation.Label11_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RespondingScreen.PdfViewer1.Document"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RespondingScreen.PdfViewer1.Document",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Document",
-                "module": "RespondingScreen",
-                "type": "RespondingScreen.PdfViewer1"
               }
             }
           ],

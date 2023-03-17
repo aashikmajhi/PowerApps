@@ -49,7 +49,7 @@ SavingToUnsubmitted As screen:
         BorderColor: =RGBA(147, 21, 72, 1)
         BorderThickness: =2
         Height: =350
-        Items: =Filter(UnsubmittedMemoTableData, 'Meme No'=refNo_5.Text)
+        Items: =Filter(UnsubmittedMemoTableData, Title=refNo_5.Text)
         Layout: =Layout.Vertical
         OnSelect: |-
             =//Navigate(RecommenderViewItem)
@@ -583,7 +583,7 @@ SavingToUnsubmitted As screen:
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
         OnTimerEnd: |-
-            =Patch(UnsubmittedRequisitionApprovalList,Defaults(UnsubmittedRequisitionApprovalList),{Title:refNo_6.Text,From:from_13.Text,Department:department_6.Text,Date:datetxt.Text,Organization:Label3_1.Text,'Memo Type':Label1_3.Text,To:totxt.Text,Cc:cctxt.Text,Subject:subtxt.Text,'Prepared By':preparer.Text});
+            =Patch(UnsubmittedMemoList,Defaults(UnsubmittedMemoList),{Title:refNo_6.Text,From:from_13.Text,Department:department_6.Text,Date:datetxt.Text,Organization:Label3_1.Text,'Memo Type':Label1_3.Text,To:totxt.Text,Cc:cctxt.Text,Subject:subtxt.Text,'Prepared By':preparer.Text});
             
             
             //Clear(unPurchaseReq);

@@ -101,7 +101,7 @@ RecommenderDashboard As screen:
                 If(
                     _requestTypeFilter = "All",
                     Sort(
-                        RequisitionDemoApprovalList,
+                        MemoList,
                         Date,
                         SortOrder.Ascending
                     ),
@@ -110,7 +110,7 @@ RecommenderDashboard As screen:
                             _requestTypeFilter = "Pending",
                             Sort(
                                 Filter(
-                                    RequisitionDemoApprovalList,
+                                    MemoList,
                                     Status.Value = "Pending First Approval" || Status.Value = "Pending Second Approval" || Status.Value = "Pending Verification" || Status.Value = "Pending Recommendation"
                                 ),
                                 Date,
@@ -118,7 +118,7 @@ RecommenderDashboard As screen:
                             ),
                             Sort(
                                 Filter(
-                                    RequisitionDemoApprovalList,
+                                    MemoList,
                                     Status.Value = _requestTypeFilter
                                 ),
                                 Date,

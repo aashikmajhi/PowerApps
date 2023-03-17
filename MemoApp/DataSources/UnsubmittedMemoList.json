@@ -35,27 +35,27 @@
       "Department": "Department",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
-      "FirstApprover": "Verified By",
-      "FirstApprover0": "First Approver",
+      "FirstApprover": "First Approver",
       "From": "From",
       "ID": "ID",
       "MemoType": "Memo Type",
       "Modified": "Modified",
       "Organization": "Organization",
       "PreparedBy": "Prepared By",
+      "RecommendedBy": "Recommended By",
       "SecondApprover": "Second Approver",
       "Status": "Status",
       "Status#Id": "Status Id",
       "Subject": "Subject",
-      "Title": "Title",
+      "Title": "Memo No",
       "To": "To",
-      "VerifiedBy": "Recommended By"
+      "VerifiedBy": "Verified By"
     },
-    "DatasetName": "https://astralnepal.sharepoint.com/sites/NatRuleNITC",
+    "DatasetName": "https://astralnepal.sharepoint.com/sites/astralmemoapp",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "UnsubmittedRequisitionApprovalList",
+    "Name": "UnsubmittedMemoList",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

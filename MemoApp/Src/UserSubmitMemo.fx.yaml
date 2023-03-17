@@ -12,13 +12,9 @@ UserSubmitMemo As screen:
         BorderColor: =RGBA(147, 21, 72, 1)
         BorderThickness: =2
         Height: =263
-        Items: |-
-            =//LookUp(MemoTableData,'Meme No'=refNo_3.Text)
-            //PurchaseReq
-            //Filter(MemoTableData, 'Meme No'=refNo_10.Text)
-            //userViewGallery.AllItems
-            Filter(UnsubmittedMemoTableData,'Meme No'=userDashboardGallery.Selected.Title)
-            //Filter(UnsubmittedMemoTableData,'Meme No'=refNo_10.Text)
+        Items: |
+            =
+            Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title)
         Layout: =Layout.Vertical
         ShowScrollbar: =false
         TemplatePadding: =0
@@ -473,10 +469,10 @@ UserSubmitMemo As screen:
         Default: |-
             =If(
                 companyName_3.SelectedText.Value = "F1 Soft",
-                "FS-" & CountRows(RequisitionDemoApprovalList) + 1,
+                "FS-" & CountRows(MemoList) + 1,
                 If(
                     companyName_3.SelectedText.Value = "e-Sewa",
-                    "ES-" & CountRows(RequisitionDemoApprovalList) + 1
+                    "ES-" & CountRows(MemoList) + 1
                 )
             )
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
@@ -1136,7 +1132,7 @@ UserSubmitMemo As screen:
         Default: |-
             =//LookUp(UnsubmittedRequisitionApprovalList,Title=userDashboardGallery.Selected.Title,{Vlue:'Memo Type'})
         DefaultSelectedItems: |-
-            =LookUp(UnsubmittedRequisitionApprovalList,Title=userDashboardGallery.Selected.Title,{Value:'Memo Type'})
+            =LookUp(UnsubmittedMemoList,Title=userDashboardGallery.Selected.Title,{Value:'Memo Type'})
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)

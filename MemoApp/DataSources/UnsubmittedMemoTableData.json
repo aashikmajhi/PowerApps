@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2023-02-23T21:22:23.0810000Z",
+      "LastChangedTimeString": "2023-03-07T18:41:22.7700000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -35,12 +35,12 @@
       "Modified": "Modified",
       "Narration": "Narration",
       "Source": "Source",
-      "Title": "Meme No",
+      "Title": "Title",
       "TypeNo": "TypeNo",
       "TypeNoName": "TypeNoName",
       "Types": "Types"
     },
-    "DatasetName": "https://astralnepal.sharepoint.com/sites/NatRuleNITC",
+    "DatasetName": "https://astralnepal.sharepoint.com/sites/astralmemoapp",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,

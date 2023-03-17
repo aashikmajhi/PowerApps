@@ -410,7 +410,7 @@ RespondingScreen As screen:
 
     PdfViewer1 As pdfViewer:
         DisplayMode: =DisplayMode.View
-        Document: =Gallery1.Selected.dataUri
+        Document: =//Gallery1.Selected.dataUri
         Fill: =RGBA(0, 0, 0, 0)
         Height: =522
         Width: =613

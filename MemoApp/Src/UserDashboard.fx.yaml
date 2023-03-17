@@ -221,7 +221,7 @@ UserDashboard As screen:
                     _requestTypeFilter = "My Memo",
                     Sort(
                         Filter(
-                            UnsubmittedRequisitionApprovalList,
+                            UnsubmittedMemoList,
                             'Created By'.Email = User().Email
                         ),
                         Date,
@@ -230,7 +230,7 @@ UserDashboard As screen:
                     If(
                         _requestTypeFilter = "All",
                         Sort(
-                            RequisitionDemoApprovalList,
+                            MemoList,
                             Date,
                             SortOrder.Ascending
                         ),
@@ -238,7 +238,7 @@ UserDashboard As screen:
                             _requestTypeFilter = "Pending",
                             Sort(
                                 Filter(
-                                    RequisitionDemoApprovalList,
+                                    MemoList,
                                     Status.Value = "Pending First Approval" ||
                                     Status.Value = "Pending Second Approval" ||
                                     Status.Value = "Pending Verification" ||
@@ -251,7 +251,7 @@ UserDashboard As screen:
                                 _requestTypeFilter = "Approved",
                                 Sort(
                                     Filter(
-                                        RequisitionDemoApprovalList,
+                                        MemoList,
                                         Status.Value = "Approved"
                                     ),
                                     Date,
@@ -261,14 +261,14 @@ UserDashboard As screen:
                                     _requestTypeFilter = "Declined",
                                     Sort(
                                         Filter(
-                                            RequisitionDemoApprovalList,
+                                            MemoList,
                                             Status.Value = "Declined"
                                         ),
                                         Date,
                                         SortOrder.Ascending
                                     ),
                                     // Default filter if none of the above conditions match
-                                    RequisitionDemoApprovalList
+                                    MemoList
                                 )
                             )
                         )
@@ -411,7 +411,7 @@ UserDashboard As screen:
             Icon: =Icon.View
             OnSelect: |+
                 =
-                If(LookUp(RequisitionDemoApprovalList,'Verified By'=User().Email,true) && (ThisItem.Status.Value="Pending Recommendation"||ThisItem.Status.Value="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined"),Navigate(VerifierViewAfterSubmit));
+                If(LookUp(MemoList,'Verified By'=User().Email,true) && (ThisItem.Status.Value="Pending Recommendation"||ThisItem.Status.Value="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined"),Navigate(VerifierViewAfterSubmit));
                 
                 
                 If(ThisItem.Status.Value="New" && User().Email = ThisItem.PreparedBy ,Navigate(UserSubmitMemo));
@@ -483,7 +483,7 @@ UserDashboard As screen:
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(29, 204, 72, 0.91)
             OnSelect: |-
-                =Remove(UnsubmittedRequisitionApprovalList,LookUp(UnsubmittedRequisitionApprovalList,Title=rfNo_7.Text));
+                =Remove(UnsubmittedMemoList,LookUp(UnsubmittedMemoList,Title=rfNo_7.Text));
                 Set(container,false);
             PressedFill: =RGBA(255, 255, 255, 1)
             Size: =25
@@ -530,7 +530,7 @@ UserDashboard As screen:
                     _requestTypeFilter = "My Memo",
                     Sort(
                         Filter(
-                            UnsubmittedRequisitionApprovalList,
+                            UnsubmittedMemoList,
                             'Created By'.Email = User().Email
                         ),
                         Date,
@@ -539,7 +539,7 @@ UserDashboard As screen:
                     If(
                         _requestTypeFilter = "All",
                         Sort(
-                            RequisitionDemoApprovalList,
+                            MemoList,
                             Date,
                             SortOrder.Ascending
                         ),
@@ -547,7 +547,7 @@ UserDashboard As screen:
                             _requestTypeFilter = "Pending",
                             Sort(
                                 Filter(
-                                    RequisitionDemoApprovalList,
+                                    MemoList,
                                     Status.Value = "Pending First Approval" ||
                                     Status.Value = "Pending Second Approval" ||
                                     Status.Value = "Pending Verification" ||
@@ -560,7 +560,7 @@ UserDashboard As screen:
                                 _requestTypeFilter = "Approved",
                                 Sort(
                                     Filter(
-                                        RequisitionDemoApprovalList,
+                                        MemoList,
                                         Status.Value = "Approved"
                                     ),
                                     Date,
@@ -570,14 +570,14 @@ UserDashboard As screen:
                                     _requestTypeFilter = "Declined",
                                     Sort(
                                         Filter(
-                                            RequisitionDemoApprovalList,
+                                            MemoList,
                                             Status.Value = "Declined"
                                         ),
                                         Date,
                                         SortOrder.Ascending
                                     ),
                                     // Default filter if none of the above conditions match
-                                    RequisitionDemoApprovalList
+                                    MemoList
                                 )
                             )
                         )
