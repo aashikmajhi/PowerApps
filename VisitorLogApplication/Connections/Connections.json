@@ -1,0 +1,78 @@
+{
+  "3a20e50c-19b0-44e9-8bd7-e52d9dc13809": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1623/1.0.1623.3210/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://astralnepal.sharepoint.com/sites/AstralVisitorRegistrationApp": {
+        "dataSources": {
+          "Security Control": {
+            "tableName": "851e35f8-e673-495d-a8c9-648ed53f8366"
+          },
+          "Visitor Request": {
+            "tableName": "8d1cd152-3728-4489-953f-45516687e876"
+          },
+          "VisitorInformation": {
+            "tableName": "9e945860-63d0-4336-b8c9-bf567dad45bf"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "VisitorInformation",
+      "Visitor Request",
+      "Security Control"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3a20e50c-19b0-44e9-8bd7-e52d9dc13809"
+  },
+  "a0516a7d-e623-4613-bd33-adb24197bf7f": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3200/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a0516a7d-e623-4613-bd33-adb24197bf7f"
+  },
+  "c0049c67-a19d-4dc1-9238-5b3a382b5e04": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1624/1.0.1624.3221/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c0049c67-a19d-4dc1-9238-5b3a382b5e04"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Home Design",
+    "TemplateGuid": "ec276cb185984e4f805806fa6ae8fa6b"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638148809189025237",
+  "Name": "ec276cb185984e4f805806fa6ae8fa6b",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "9c3bab715be14b0e8f6e1546d785303a",
+  "Version": "638047824090253934"
+}
