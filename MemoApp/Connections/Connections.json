@@ -75,7 +75,9 @@
     "id": "7670286d-174c-47d2-bd2e-85680cbcf6af"
   },
   "a640784d-726c-42c9-b997-9fe1f75d802e": {
-    "connectionParameters": {},
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "SharePoint",
@@ -210,7 +212,9 @@
     "id": "eac73ffd-3673-44de-95ba-47c98c997c4d"
   },
   "fd6451e6-b814-4e76-9635-5d984a4d7286": {
-    "connectionParameters": {},
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "OneDrive for Business",

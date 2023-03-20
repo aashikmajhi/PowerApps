@@ -711,6 +711,7 @@ AddingNewItemCreatingMemo As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue27.Attachments
+            Visible: =false
             Width: =683
             X: =2
             Y: =3
