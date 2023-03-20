@@ -737,6 +737,7 @@ EditMemoItemsToSave As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue18.Attachments
+            Visible: =false
             Width: =683
             X: =1
             Y: =3
