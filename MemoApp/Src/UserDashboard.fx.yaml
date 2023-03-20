@@ -730,7 +730,8 @@ UserDashboard As screen:
             PaddingTop: =5
             Visible: |-
                 =//If(Label33_10.Text="Pending Recommendation", true,false)
-                If(ThisItem.Status.Value="Pending Recommendation", true,false)
+                //If(ThisItem.Status.Value="Pending Recommendation", true,false)
+                true
             Width: =28
             X: =1244
             Y: =20
