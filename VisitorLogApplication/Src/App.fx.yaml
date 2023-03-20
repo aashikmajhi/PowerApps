@@ -1,0 +1,19 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |
+        =Set(
+            varUser,
+            User()
+        );
+        //Set(_sendEmailsEnabled,false);
+        Set(
+            isUserAdminSPList,
+            !IsBlank(
+                LookUp(
+                    'Security Control',
+                    Admin = varUser.Email
+                )
+            )
+        ) || Set( isUserAdminSPList, Match.Email="sumit.manandhar@astral.com.np")
+    StartScreen: =MainScreen
+

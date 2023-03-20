@@ -1,0 +1,20 @@
+logo As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =98
+    Width: =370
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    companyLogo As label:
+        Align: =Align.Center
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =45
+        Text: ="Astral"
+        Width: =370
+        ZIndex: =2
+

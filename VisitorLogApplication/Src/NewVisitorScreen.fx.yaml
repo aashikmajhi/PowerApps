@@ -1,0 +1,706 @@
+NewVisitorScreen As screen:
+    BackgroundImage: ='Background Image'
+    Fill: =RGBA(0, 0, 0, 0)
+    ImagePosition: =ImagePosition.Fill
+    OnVisible: =Collect(VisitorPhoneNumber,VisitorInformation)
+
+    infoLbl_5 As label:
+        Font: =Font.Verdana
+        FontWeight: =FontWeight.Semibold
+        Height: =80
+        Size: =28
+        Text: ="New Visitor Information"
+        Width: =536
+        X: =416
+        Y: =99
+        ZIndex: =3
+
+    btnSubmit_2 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(210, 215, 218, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        Height: =58
+        OnSelect: |
+            =If(
+                IsEmpty(
+                    CountRows(
+                        Filter(
+                            VisitorPhoneNumber,
+                            'Phone Number' = visitorPhoneNumber_1.Text
+                        )
+                    ) > 0
+                ),
+                Notify("Phone Number already exists"),
+                NotificationType.Error
+            );
+            If(
+                !IsEmpty(Errors(VisitorInformation)),
+                Notify(
+                    First(Errors(VisitorInformation)).Message,
+                    NotificationType.Error
+                ),
+                    //If(IsEmpty(LookUp(VisitorInformation, 'Phone Number' = visitorPhoneNumber_1.Text)),
+                If(
+                    IsEmpty(
+                        CountRows(
+                            Filter(
+                                VisitorPhoneNumber,
+                                'Phone Number' = visitorPhoneNumber_1.Text
+                            )
+                        ) > 0
+                    ),
+                    Notify("Phone Number already exists. Enter your correct phone number."),
+                    Patch(
+                        VisitorInformation,
+                        {ID: Blank()},
+                        visitorsDetail_1.Updates,
+                        visitorsDetail_2.Updates
+                    );
+                    Office365Outlook.SendEmailV2(
+                        visitorEmail_1,
+                        "Visitor Registration to Astral Computers Nepal Pvt. Ltd.",
+                        "You                          have been successfully registered as a visitor in the organization. Please checkin as a regular visitor with your                  phone number while visiting the organization. Thank You!" & Icon.Link
+                    ),
+                    ResetForm(visitorsDetail_1);
+                    ResetForm(visitorsDetail_2);
+                    Navigate(VisitorInfoScreen)
+                ) && Notify(
+                    "Success",
+                    NotificationType.Success
+                )
+            );
+        Size: =20
+        Text: ="Submit"
+        Width: =207
+        X: =580
+        Y: =670
+        ZIndex: =4
+
+    homeicon_5 As icon.Home:
+        Color: =RGBA(9, 33, 98, 1)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen)
+        X: =1236
+        Y: =96
+        ZIndex: =5
+
+    visitorsDetail_1 As form:
+        AcceptsFocus: =false
+        BorderThickness: =3
+        DataSource: =VisitorInformation
+        DefaultMode: =FormMode.New
+        Height: =477
+        NumberOfColumns: =1
+        Width: =1276
+        X: =46
+        Y: =177
+        ZIndex: =6
+
+        Gender_DataCard1_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Gender"
+            Default: =
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Gender")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Update: =visitorGender_1.Selected
+            Visible: =false
+            Width: =1273
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+            DataCardKey4_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage4_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =40
+                ZIndex: =3
+
+            StarVisible4_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4_1.Y
+                ZIndex: =4
+
+            visitorGender_1 As radio:
+                BorderStyle: =BorderStyle.None
+                Default: =If(salutation_1.Selected.Value="Mr.","Male","Female")
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =60
+                Items: =Choices([@VisitorInformation].Gender)
+                Layout: =Layout.Horizontal
+                Tooltip: =If(!IsBlank(visitorGender_1.Selected), false, "Please choose your gender.")
+                Width: =388
+                X: =144
+                ZIndex: =5
+
+        Salutation_DataCard1_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Salutation"
+            Default: =ThisItem.Salutation
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Salutation")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =29
+            Required: =false
+            Update: =salutation_1.Selected
+            Width: =666
+            X: =0
+            Y: =1
+            ZIndex: =6
+
+            DataCardKey5_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =33
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage5_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =44
+                ZIndex: =3
+
+            StarVisible5_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(39, 67, 125, 1)
+                DisabledColor: =RGBA(0, 0, 0, 0)
+                DisplayMode: =DisplayMode.View
+                Height: =DataCardKey5_1.Height
+                Text: ="*"
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_1.Y
+                ZIndex: =4
+
+            salutation_1 As radio:
+                BorderStyle: =BorderStyle.None
+                Default: =If(reset,"",ThisItem.Salutation.Value)
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =54
+                Items: =Choices([@VisitorInformation].Salutation)
+                Layout: =Layout.Horizontal
+                OnSelect: |-
+                    =If(ThisItem.Salutation.Value="Mr.",ThisItem.Gender.Value="Male",ThisItem.Gender.Value="Female");
+                    Set(reset,true);
+                RadioSize: =30
+                Reset: =true
+                Tooltip: =If(!IsBlank(salutation_1.Selected), false, "The Field can not be blank")
+                Width: =392
+                X: =234
+                ZIndex: =5
+
+            right_7 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: =If(!IsBlank(salutation_1.Selected.Value), Icon.Check, Icon.Cancel)
+                Width: =46
+                X: =620
+                Y: =6
+                ZIndex: =6
+
+        "'Full Name_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.'Visitor Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@VisitorInformation], DataSourceInfo.MaxLength, "Title")
+            Required: =true
+            Update: =visitorFullName_1.Text
+            Width: =666
+            WidthFit: =false
+            X: =0
+            Y: =2
+            ZIndex: =6
+
+            StarVisible1_1 As label:
+                Align: =Align.Center
+                Height: =9
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =22
+                ZIndex: =1
+
+            ErrorMessage1_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =visitorFullName_1.Y + visitorFullName_1.Height
+                ZIndex: =2
+
+            visitorFullName_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =If(!IsBlank(visitorFullName_1.Text), "", "Name can not be blank")
+                Width: =580
+                X: =30
+                Y: =DataCardKey1_1.Y + DataCardKey1_1.Height + 5
+                ZIndex: =3
+
+            DataCardKey1_1 As label:
+                AutoHeight: =true
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =4
+
+            right_8 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: =If(!IsBlank(visitorFullName_1.Text), Icon.Check, Icon.Cancel)
+                Width: =46
+                X: =620
+                Y: =52
+                ZIndex: =5
+
+        Company_DataCard1_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CompanyInfo"
+            Default: =ThisItem.Company
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Company")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@VisitorInformation], DataSourceInfo.MaxLength, "Company")
+            Required: =true
+            Update: =visitorCompany_1.Text
+            Width: =666
+            X: =0
+            Y: =3
+            ZIndex: =6
+
+            DataCardKey3_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            visitorCompany_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =If(!IsBlank(visitorCompany_1.Text), "", "Company can not be blank")
+                Width: =580
+                X: =30
+                Y: =DataCardKey3_1.Y + DataCardKey3_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =visitorCompany_1.Y + visitorCompany_1.Height
+                ZIndex: =3
+
+            StarVisible3_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3_1.Y
+                ZIndex: =4
+
+            right_9 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: = If(!IsBlank(visitorCompany_1.Text), Icon.Check, Icon.Cancel)
+                Width: =46
+                X: =620
+                Y: =48
+                ZIndex: =5
+
+        "'Email Address_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EmailAddress"
+            Default: =ThisItem.'Email Address'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"EmailAddress")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@VisitorInformation], DataSourceInfo.MaxLength, "EmailAddress")
+            Required: =true
+            Update: =visitorEmail_1.Text
+            Width: =666
+            X: =0
+            Y: =4
+            ZIndex: =6
+
+            DataCardKey2_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            visitorEmail_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                HintText: ="example@smt.com"
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: |-
+                    =If(
+                        !IsBlank(visitorEmail_1.Text),
+                        "",
+                        "Email can not be blank" && IsMatch(
+                            visitorEmail_1.Text,
+                            Match.Email
+                        ),
+                        "",
+                        "the Email should be in the format example@example.com"
+                    )
+                Width: =580
+                X: =30
+                Y: =DataCardKey2_1.Y + DataCardKey2_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =visitorEmail_1.Y + visitorEmail_1.Height
+                ZIndex: =3
+
+            StarVisible2_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2_1.Y
+                ZIndex: =4
+
+            right_10 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: |-
+                    = If(!IsBlank(visitorEmail_1.Text)&&IsMatch(
+                            visitorEmail_1.Text,
+                            Match.Email),Icon.Check, Icon.Cancel)
+                Width: =46
+                X: =620
+                Y: =52
+                ZIndex: =5
+
+        "'Phone Number_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Phone_x0020_Number"
+            Default: =ThisItem.'Phone Number'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"PhoneNumber")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@VisitorInformation],DataSourceInfo.MaxLength,"PhoneNumber")
+            Required: =true
+            Update: =visitorPhoneNumber_1.Text
+            Width: =666
+            X: =0
+            Y: =5
+            ZIndex: =6
+
+            DataCardKey6_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            visitorPhoneNumber_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                HintText: ="9XXX"
+                MaxLength: =Parent.MaxLength
+                OnChange: |-
+                    =Set(_lastEnteredPhoneNumber, visitorPhoneNumber_1.Text);
+                    //If(IsEmpty(LookUp(VisitorInformation, 'Phone Number' = visitorPhoneNumber.Text)),Icon.Cancel,Icon.Check);
+                    //If(CountRows(Filter(VisitorInformation,'Phone Number' = visitorPhoneNumber.Text))>0,Notify("Phone Number already exists. Enter your correct phone number.",NotificationType.Error));
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                VirtualKeyboardMode: =VirtualKeyboardMode.Numeric
+                Width: =580
+                X: =30
+                Y: =DataCardKey6_1.Y + DataCardKey6_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =visitorPhoneNumber_1.Y + visitorPhoneNumber_1.Height
+                ZIndex: =3
+
+            StarVisible6_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey6_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey6_1.Y
+                ZIndex: =4
+
+            right_11 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: |
+                    =If(!IsBlank(visitorPhoneNumber_1.Text) && IsMatch(visitorPhoneNumber_1.Text,Match.Digit & Match.Digit & Match.Digit & Match.Digit & Match.Digit & Match.Digit & Match.Digit &Match.Digit & Match.Digit & Match.Digit) && CountRows(Filter(VisitorPhoneNumber,'Phone Number'=visitorPhoneNumber_1.Text))=0,Icon.Check,Icon.Cancel)
+                Width: =46
+                X: =620
+                Y: =52
+                ZIndex: =5
+
+    visitorsDetail_2 As form:
+        AcceptsFocus: =false
+        DataSource: =VisitorInformation
+        DefaultMode: =FormMode.New
+        Height: =visitorsDetail_1.Height
+        NumberOfColumns: =1
+        Width: =593
+        X: =728
+        Y: =177
+        ZIndex: =8
+
+        VisitorPhoto_DataCard5 As typedDataCard.addLargePictureCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="VisitorPhoto"
+            Default: =ThisItem.VisitorPhoto
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"VisitorPhoto")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =472
+            Required: =false
+            Update: =Image4.Image
+            Visible: =true
+            Width: =593
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey16 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =188
+                Y: =6
+                ZIndex: =1
+
+            Image4 As image:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =393
+                Image: =Camera2.Photo
+                Tooltip: =Parent.DisplayName
+                Width: =533
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage13 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Image4.Y + Image4.Height
+                ZIndex: =4
+
+            StarVisible13 As label:
+                Align: =Align.Center
+                Height: =DataCardKey16.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16.Y
+                ZIndex: =5
+
+            Camera2 As camera:
+                Camera: =1
+                Height: =148
+                Width: =131
+                X: =424
+                Y: =284
+                ZIndex: =6
+
+            Label3 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Text: ="Press to take picture"
+                Tooltip: =
+                Visible: =If(!IsEmpty(Image4),true,false)
+                Width: =195
+                X: =206
+                Y: =432
+                ZIndex: =7
+
+            right_12 As icon.Check:
+                Color: =If(Self.Icon=Icon.Check, Color.Green, Color.Red)
+                DisplayMode: =DisplayMode.View
+                Height: =38
+                Icon: =If(!IsBlank(Image4),Icon.Check, Icon.Cancel)
+                Width: =46
+                X: =378
+                Y: =1
+                ZIndex: =8
+
+    Image6_5 As image:
+        Image: =ThakralOne
+        Width: =788
+        X: =290
+        Y: =18
+        ZIndex: =9
+

@@ -1,0 +1,20 @@
+"'Home Design' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =220
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    companyLogo_1 As label:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(39, 113, 194, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =220
+        Size: =55
+        Text: ="Astral Computers Nepal Pvt. Ltd."
+        Width: =640
+        ZIndex: =2
+
