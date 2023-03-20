@@ -728,7 +728,9 @@ UserDashboard As screen:
             PaddingLeft: =5
             PaddingRight: =5
             PaddingTop: =5
-            Visible: =If(ThisItem.Status.Value="Pending First Approval", true,false)
+            Visible: |-
+                =//If(Label33_10.Text="Pending Recommendation", true,false)
+                If(ThisItem.Status.Value="Pending Recommendation", true,false)
             Width: =28
             X: =1244
             Y: =20
