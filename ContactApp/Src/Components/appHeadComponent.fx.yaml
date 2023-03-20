@@ -1,0 +1,29 @@
+appHeadComponent As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =90
+    Width: =500
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    labelAppName As label:
+        Color: =RGBA(50, 86, 160, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        Size: =30
+        Text: ="Astral Contact App"
+        Width: =437
+        X: =84
+        Y: =20
+        ZIndex: =1
+
+    icoPhoneBook As icon.Phonebook:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(50, 86, 160, 1)
+        Icon: =Icon.Phonebook
+        X: =20
+        Y: =20
+        ZIndex: =2
+

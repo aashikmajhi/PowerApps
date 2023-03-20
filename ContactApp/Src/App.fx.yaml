@@ -1,0 +1,8 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =ClearCollect(usersData,{});
+        Collect(usersData,Office365Users.SearchUser({searchTerm:""}));
+        Collect(usersData,'Thakral Users');
+    StartScreen: ='Splash Screen'
+

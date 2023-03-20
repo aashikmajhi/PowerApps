@@ -1,0 +1,50 @@
+{
+  "424726b8-6ad4-417c-8e57-d0fb401fa8bd": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1623/1.0.1623.3210/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://astralnepal.sharepoint.com/sites/NatRuleNITC": {
+        "dataSources": {
+          "Thakral Users": {
+            "tableName": "e74344a7-c7e1-46e4-b858-d88e9c967e0f"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Thakral Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "424726b8-6ad4-417c-8e57-d0fb401fa8bd"
+  },
+  "6a998128-18f4-43d6-8229-1e6364e2223e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3200/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6a998128-18f4-43d6-8229-1e6364e2223e"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "DataFetch_2",
+    "TemplateGuid": "c8d669f7e049452a90d4a579b8c84921"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638148812659484704",
+  "Name": "c8d669f7e049452a90d4a579b8c84921",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "a779e6aa192f4b0fa07f53122bb3ad03",
+  "Version": "638042567681828619"
+}
