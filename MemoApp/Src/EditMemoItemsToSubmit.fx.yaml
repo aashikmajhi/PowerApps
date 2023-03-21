@@ -390,7 +390,7 @@ EditMemoItemsToSubmit As screen:
             Height: =74
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
             Required: =false
-            Update: =DataCardValue13_1.Selected.Value1
+            Update: =DataCardValue13_1.Selected.Value
             Width: =678
             X: =3
             Y: =1
