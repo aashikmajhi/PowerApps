@@ -413,7 +413,8 @@ SavingToUnsubmitted As screen:
         Height: =28
         Size: =15
         Text: =Label1_2.SelectedText.Value
-        X: =599
+        Width: =400
+        X: =465
         Y: =58
         ZIndex: =36
 
