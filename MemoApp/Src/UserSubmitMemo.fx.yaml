@@ -14,7 +14,7 @@ UserSubmitMemo As screen:
         Height: =263
         Items: |
             =
-            Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title)
+            Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title || Title=refNo_10.Text)
         Layout: =Layout.Vertical
         ShowScrollbar: =false
         TemplatePadding: =0
@@ -1096,7 +1096,7 @@ UserSubmitMemo As screen:
         Default: |-
             =//LookUp(UnsubmittedRequisitionApprovalList,Title=userDashboardGallery.Selected.Title,{Vlue:'Memo Type'})
         DefaultSelectedItems: |-
-            =LookUp(UnsubmittedMemoList,Title=userDashboardGallery.Selected.Title,{Value:'Memo Type'})
+            =LookUp(UnsubmittedMemoList,'Memo No'=userDashboardGallery.Selected.Title,{Value:'Memo Type'})
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)

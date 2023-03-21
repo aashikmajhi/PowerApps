@@ -483,7 +483,7 @@ UserDashboard As screen:
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(29, 204, 72, 0.91)
             OnSelect: |-
-                =Remove(UnsubmittedMemoList,LookUp(UnsubmittedMemoList,Title=rfNo_7.Text));
+                =Remove(UnsubmittedMemoList,LookUp(UnsubmittedMemoList,'Memo No'=rfNo_7.Text));
                 Set(container,false);
             PressedFill: =RGBA(255, 255, 255, 1)
             Size: =25

@@ -948,7 +948,7 @@ VerifierView As screen:
                 First(
                     Filter(
                         UnsubmittedMemoList,
-                        Title = refNo_8.Text
+                        'Memo No' = refNo_8.Text
                     )
                 ),
                 {

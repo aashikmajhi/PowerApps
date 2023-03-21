@@ -472,7 +472,7 @@ RecommenderView As screen:
                         First(
                             Filter(
                                 UnsubmittedMemoList,
-                                Title = refNo_7.Text
+                                'Memo No' = refNo_7.Text
                             )
                         ),
                         {
