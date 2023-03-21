@@ -625,8 +625,9 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: ="Dear Sir/Madame"
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -644,8 +645,9 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: ="This is to request for approval for payment of below parties for below references from below sources."
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
