@@ -476,6 +476,7 @@ RecommenderView As screen:
                             )
                         ),
                         {
+                            To:ComboBox1_6.Text,
                             Status: {Value: "Pending First Approval"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value
@@ -490,6 +491,7 @@ RecommenderView As screen:
                             )
                         ),
                         {
+                            To:ComboBox1_6.Text,
                             Status: {Value: "Pending First Approval"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value

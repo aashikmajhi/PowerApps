@@ -75,7 +75,7 @@ VerifierView As screen:
             OnSelect: =Select(Parent)
             Width: =verifierViewGallery.TemplateWidth
             Y: =32
-            ZIndex: =4
+            ZIndex: =1
 
         Label24_29 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -89,7 +89,7 @@ VerifierView As screen:
             PaddingTop: =2
             Size: =10
             Text: =ThisItem.Source
-            ZIndex: =5
+            ZIndex: =2
 
         Label25_6 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -105,7 +105,7 @@ VerifierView As screen:
             Text: =ThisItem.TypeNo
             Width: =50
             X: =261
-            ZIndex: =6
+            ZIndex: =3
 
         Label26_6 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -121,7 +121,7 @@ VerifierView As screen:
             Text: =ThisItem.Types
             Width: =111
             X: =150
-            ZIndex: =7
+            ZIndex: =4
 
         Label24_30 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -137,7 +137,7 @@ VerifierView As screen:
             Text: =ThisItem.TypeNoName
             Width: =234
             X: =311
-            ZIndex: =10
+            ZIndex: =5
 
         Label24_31 As label:
             Align: =Align.Right
@@ -154,7 +154,7 @@ VerifierView As screen:
             Text: =ThisItem.Amount
             Width: =100
             X: =545
-            ZIndex: =11
+            ZIndex: =6
 
         Label24_33 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -172,7 +172,7 @@ VerifierView As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =481
             X: =765
-            ZIndex: =13
+            ZIndex: =7
 
         Label24_32 As label:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -188,7 +188,24 @@ VerifierView As screen:
             Text: =ThisItem.BillNo
             Width: =120
             X: =645
-            ZIndex: =14
+            ZIndex: =8
+
+        Icon1_13 As icon.View:
+            BorderColor: =RGBA(147, 21, 72, 1)
+            BorderThickness: =1
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =33
+            Icon: =Icon.View
+            OnSelect: =Navigate(VerifierEditItem)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =32
+            X: =1246
+            ZIndex: =9
 
         Icon2_8 As icon.CancelBadge:
             BorderColor: =RGBA(147, 21, 72, 1)
@@ -208,24 +225,7 @@ VerifierView As screen:
             Visible: =If(loginUser.Email=approver2_5.Text,true,false)
             Width: =30
             X: =1278
-            ZIndex: =15
-
-        Icon1_13 As icon.View:
-            BorderColor: =RGBA(147, 21, 72, 1)
-            BorderThickness: =1
-            Color: =RGBA(232, 232, 232, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            DisabledColor: =RGBA(244, 244, 244, 1)
-            Height: =33
-            Icon: =Icon.View
-            OnSelect: =Navigate(VerifierEditItem)
-            PaddingBottom: =5
-            PaddingLeft: =5
-            PaddingRight: =5
-            PaddingTop: =5
-            Width: =32
-            X: =1246
-            ZIndex: =16
+            ZIndex: =10
 
     Label8_11 As label:
         Align: =Align.Center

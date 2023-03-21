@@ -28494,6 +28494,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "RecommenderEditItem.Form1_1.Narration_DataCard1_1.TextInput11_1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "RecommenderEditItem.Form1_1.Narration_DataCard1_1.TextInput11_1.Default",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "RecommenderEditItem",
+                "type": "RecommenderEditItem.Form1_1.Narration_DataCard1_1.TextInput11_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "RecommenderEditItem.Form1_1.Attachments_DataCard1_1.DataCardValue9_1.Items"
                 }
               ],
