@@ -457,8 +457,7 @@ RecommenderView As screen:
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
         OnSelect: |-
-            =
-            If(
+            =If(
                 IsEmpty(recomViewGallery.AllItems),
                 Notify("Blank data cannot be submitted."),
                 If(
@@ -476,7 +475,7 @@ RecommenderView As screen:
                             )
                         ),
                         {
-                            To:ComboBox1_6.Text,
+                            To: approver_1.Selected.Value & "; " & approver_2.Selected.Value & ";",
                             Status: {Value: "Pending First Approval"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value
@@ -487,11 +486,11 @@ RecommenderView As screen:
                         First(
                             Filter(
                                 MemoList,
-                                Title = refNo_7.Text
+                                'Memo No' = refNo_7.Text
                             )
                         ),
                         {
-                            To:ComboBox1_6.Text,
+                            To: approver_1.Selected.Value & "; " & approver_2.Selected.Value & ";",
                             Status: {Value: "Pending First Approval"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value
@@ -613,7 +612,7 @@ RecommenderView As screen:
         Text: |-
             =//recommenderGallery.Selected.MemoType
             
-            LookUp(MemoList,Title=refNo_7.Text,'Memo Type')
+            LookUp(MemoList,'Memo No'=refNo_7.Text,'Memo Type')
         X: =599
         Y: =58
         ZIndex: =36
@@ -723,7 +722,7 @@ RecommenderView As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Prepared By'
-            LookUp(MemoList,Title=refNo_7.Text,'Prepared By')
+            LookUp(MemoList,'Memo No'=refNo_7.Text,'Prepared By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -858,7 +857,7 @@ RecommenderView As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         BorderThickness: =0
         Color: =RGBA(0, 0, 0, 1)
-        Default: =LookUp(MemoList,Title=refNo_7.Text,'First Approver' & "; " & 'Second Approver')
+        Default: =LookUp(MemoList,'Memo No'=refNo_7.Text,'First Approver' & "; " & 'Second Approver')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -878,7 +877,7 @@ RecommenderView As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         BorderThickness: =0
         Color: =RGBA(0, 0, 0, 1)
-        Default: =LookUp(MemoList,Title=refNo_7.Text,'Prepared By' & "; " & 'Verified By' & "; " &'Recommended By')
+        Default: =LookUp(MemoList,'Memo No'=refNo_7.Text,'Prepared By' & "; " & 'Verified By' & "; " &'Recommended By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -902,7 +901,7 @@ RecommenderView As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |
             =//verifierDashboardGallery.Selected.'Verified By'
-            LookUp(MemoList,Title=refNo_7.Text,'Verified By')
+            LookUp(MemoList,'Memo No'=refNo_7.Text,'Verified By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -938,7 +937,7 @@ RecommenderView As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Recommended By'
-            LookUp(MemoList,Title=refNo_7.Text,'Recommended By')
+            LookUp(MemoList,'Memo No'=refNo_7.Text,'Recommended By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)

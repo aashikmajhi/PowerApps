@@ -167,7 +167,7 @@ VerifierDashboard As screen:
             Height: =35
             OnSelect: =Select(Parent)
             Size: =13
-            Text: =ThisItem.Title
+            Text: =ThisItem.'Memo No'
             Width: =120
             ZIndex: =2
 
@@ -419,7 +419,7 @@ VerifierDashboard As screen:
             Height: =35
             OnSelect: =Select(Parent)
             Size: =13
-            Text: =ThisItem.Title
+            Text: =ThisItem.'Memo No'
             Width: =120
             ZIndex: =2
 

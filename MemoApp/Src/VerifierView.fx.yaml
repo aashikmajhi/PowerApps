@@ -592,7 +592,7 @@ VerifierView As screen:
         Height: =28
         OnSelect: =approver3_5.Selected.Value
         Size: =15
-        Text: =LookUp(MemoList,Title=refNo_8.Text,'Memo Type')
+        Text: =LookUp(MemoList,'Memo No'=refNo_8.Text,'Memo Type')
         X: =599
         Y: =58
         ZIndex: =36
@@ -849,7 +849,7 @@ VerifierView As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |
             =//userDashboardGallery.Selected.To
-            LookUp(MemoList,Title=refNo_8.Text,'First Approver' &"; " & 'Second Approver')
+            LookUp(MemoList,'Memo No'=refNo_8.Text,'First Approver' &"; " & 'Second Approver')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -872,7 +872,7 @@ VerifierView As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//userDashboardGallery.Selected.Cc
-            LookUp(MemoList,Title=refNo_8.Text,'Prepared By' &"; " & 'Verified By' &"; " & 'Recommended By')
+            LookUp(MemoList,'Memo No'=refNo_8.Text,'Prepared By' &"; " & 'Verified By' &"; " & 'Recommended By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -898,7 +898,7 @@ VerifierView As screen:
         Default: |-
             =//verifierDashboardGallery.Selected.'Verified By'
             //userDashboardGallery.Selected.VerifiedBy
-            LookUp(MemoList,Title=refNo_8.Text, 'Verified By')
+            LookUp(MemoList,'Memo No'=refNo_8.Text, 'Verified By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -963,7 +963,7 @@ VerifierView As screen:
                 First(
                     Filter(
                         MemoList,
-                        Title = refNo_8.Text
+                        'Memo No' = refNo_8.Text
                     )
                 ),
                 {

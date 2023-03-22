@@ -547,7 +547,7 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Prepared By'
-            LookUp(MemoList,Title=refNo_15.Text,'Prepared By')
+            LookUp(MemoList,'Memo No'=refNo_15.Text,'Prepared By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(255, 255, 255, 1)
@@ -731,7 +731,7 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |
             =//verifierDashboardGallery.Selected.'Verified By'
-            LookUp(MemoList,Title=refNo_15.Text,'Verified By')
+            LookUp(MemoList,'Memo No'=refNo_15.Text,'Verified By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(255, 255, 255, 1)
@@ -768,7 +768,7 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Recommended By'
-            LookUp(MemoList,Title=refNo_15.Text,'Recommended By')
+            LookUp(MemoList,'Memo No'=refNo_15.Text,'Recommended By')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(255, 255, 255, 1)
@@ -792,7 +792,7 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Recommended By'
-            LookUp(MemoList,Title=refNo_15.Text,'First Approver')
+            LookUp(MemoList,'Memo No'=refNo_15.Text,'First Approver')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(255, 255, 255, 1)
@@ -816,7 +816,7 @@ RecommenderViewAfterSubmit As screen:
         Color: =RGBA(0, 0, 0, 1)
         Default: |-
             =//verifierDashboardGallery.Selected.'Recommended By'
-            LookUp(MemoList,Title=refNo_15.Text,'Second Approver')
+            LookUp(MemoList,'Memo No'=refNo_15.Text,'Second Approver')
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(255, 255, 255, 1)
