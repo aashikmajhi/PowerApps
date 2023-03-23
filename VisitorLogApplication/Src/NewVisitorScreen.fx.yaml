@@ -442,7 +442,7 @@ NewVisitorScreen As screen:
         "'Phone Number_DataCard1_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="PhoneNumber"
-            Default: =ThisItem.'PhoneNumber'
+            Default: =ThisItem.'Phone Number'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"PhoneNumber")
             Fill: =RGBA(0, 0, 0, 0)
