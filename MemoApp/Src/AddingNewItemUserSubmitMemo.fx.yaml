@@ -3,7 +3,7 @@ AddingNewItemUserSubmitMemo As screen:
 
     Form4_2 As form:
         BorderColor: =RGBA(0, 89, 178, 1)
-        DataSource: =MemoTableData
+        DataSource: =UnsubmittedMemoTableData
         DefaultMode: =FormMode.New
         Height: =591
         Item: =userSubmitGallery.Selected
@@ -44,7 +44,9 @@ AddingNewItemUserSubmitMemo As screen:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderThickness: =2
                 Color: =RGBA(0, 0, 0, 1)
-                Default: =userDashboardGallery.Selected.Title
+                Default: |-
+                    =userDashboardGallery.Selected.Title
+                    //refNo_10.Text
                 DelayOutput: =true
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(0, 0, 0, 1)

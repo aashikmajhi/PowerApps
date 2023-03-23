@@ -13,8 +13,8 @@ UserSubmitMemo As screen:
         BorderThickness: =2
         Height: =263
         Items: |
-            =
-            Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title || Title=refNo_10.Text)
+            =Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title || Title=refNo_10.Text)
+            //Filter(UnsubmittedMemoTableData,Title=userDashboardGallery.Selected.Title)
         Layout: =Layout.Vertical
         ShowScrollbar: =false
         TemplatePadding: =0
