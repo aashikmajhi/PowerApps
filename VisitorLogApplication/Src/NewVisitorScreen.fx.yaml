@@ -331,7 +331,7 @@ NewVisitorScreen As screen:
 
         Company_DataCard1_1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="CompanyInfo"
+            DataField: ="Company"
             Default: =ThisItem.Company
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Company")
@@ -507,8 +507,8 @@ NewVisitorScreen As screen:
 
         "'Phone Number_DataCard1_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Phone_x0020_Number"
-            Default: =ThisItem.'Phone Number'
+            DataField: ="PhoneNumber"
+            Default: =ThisItem.'PhoneNumber'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"PhoneNumber")
             Fill: =RGBA(0, 0, 0, 0)
