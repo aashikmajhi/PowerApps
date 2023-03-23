@@ -166,7 +166,7 @@ NewVisitorScreen As screen:
 
         Salutation_DataCard1_1 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Salutation"
+            DataField: ="Gender"
             Default: =ThisItem.Salutation
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@VisitorInformation],DataSourceInfo.DisplayName,"Salutation")

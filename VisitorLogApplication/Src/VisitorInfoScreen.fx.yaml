@@ -17,7 +17,7 @@ VisitorInfoScreen As screen:
 
         "'Employee Name_DataCard5' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Employee_x0020_Name"
+            DataField: ="PersonToVisit"
             Default: =ThisItem.'Person To Visit'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"PersonToVisit")
@@ -87,7 +87,7 @@ VisitorInfoScreen As screen:
 
         "'Visitor Name_DataCard1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Visitor_x0020_Name"
+            DataField: ="Visitor Name"
             Default: =ThisItem.'Visitor Name'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorName")
@@ -186,7 +186,7 @@ VisitorInfoScreen As screen:
 
         "'Visitor Company_DataCard1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Visitor_x0020_Company"
+            DataField: ="Visitor Company"
             Default: =ThisItem.'Visitor Company'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorCompany")
