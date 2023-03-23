@@ -87,7 +87,7 @@ VisitorInfoScreen As screen:
 
         "'Visitor Name_DataCard1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Visitor Name"
+            DataField: ="VisitorName"
             Default: =ThisItem.'Visitor Name'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorName")
@@ -186,7 +186,7 @@ VisitorInfoScreen As screen:
 
         "'Visitor Company_DataCard1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Visitor Company"
+            DataField: ="VisitorCompany"
             Default: =ThisItem.'Visitor Company'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorCompany")
@@ -371,7 +371,7 @@ VisitorInfoScreen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =194
             Required: =false
-            Update: =symptoms.Selected.Value = "No"
+            Update: =symptoms.Selected.Value = "Yes"
             Width: =641
             X: =0
             Y: =2

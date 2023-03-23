@@ -486,7 +486,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Company_DataCard1_1",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2724,7 +2724,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Email Address_DataCard1_1",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4887,7 +4887,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Full Name_DataCard1_1",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6584,7 +6584,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Phone Number_DataCard1_1",
-      "ParentIndex": 1,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

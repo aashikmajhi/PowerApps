@@ -1,8 +1,8 @@
-VisitorCheckScreen As screen:
+VisitorCheckScreen_1 As screen:
     BackgroundImage: ='Background Image'
     ImagePosition: =ImagePosition.Fill
 
-    infoLbl_3 As label:
+    infoLbl_6 As label:
         Font: =Font.Verdana
         FontWeight: =FontWeight.Semibold
         Height: =80
@@ -13,7 +13,7 @@ VisitorCheckScreen As screen:
         Y: =97
         ZIndex: =3
 
-    homeicon_3 As icon.Home:
+    homeicon_6 As icon.Home:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(9, 33, 98, 1)
         FocusedBorderThickness: =0
@@ -23,7 +23,7 @@ VisitorCheckScreen As screen:
         Y: =94
         ZIndex: =5
 
-    visitorCheckForm As form:
+    visitorCheckForm_1 As form:
         BorderThickness: =3
         DataSource: ='Visitor Request'
         DefaultMode: =varFormMode
@@ -35,9 +35,9 @@ VisitorCheckScreen As screen:
         Y: =176
         ZIndex: =6
 
-        VisitorID_DataCard2 As typedDataCard.textualEditCard:
+        VisitorID_DataCard2_1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="VisitID"
+            DataField: ="VisitorID"
             Default: =ThisItem.VisitorID
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitID")
@@ -45,14 +45,14 @@ VisitorCheckScreen As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitID")
             Required: =false
-            Update: =DataCardValue2.Text
+            Update: =DataCardValue2_1.Text
             Visible: =true
             Width: =648
             X: =0
             Y: =3
             ZIndex: =1
 
-            DataCardKey14 As label:
+            DataCardKey14_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -62,7 +62,7 @@ VisitorCheckScreen As screen:
                 X: =30
                 ZIndex: =1
 
-            DataCardValue2 As text:
+            DataCardValue2_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -76,10 +76,10 @@ VisitorCheckScreen As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey14.Y + DataCardKey14.Height + 5
+                Y: =DataCardKey14_1.Y + DataCardKey14_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage14 As label:
+            ErrorMessage14_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -91,21 +91,21 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue2.Y + DataCardValue2.Height
+                Y: =DataCardValue2_1.Y + DataCardValue2_1.Height
                 ZIndex: =3
 
-            StarVisible14 As label:
+            StarVisible14_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(DataCardValue2.Text),Color.Red,Color.Green)
-                Height: =DataCardKey14.Height
+                Color: =If(!IsBlank(DataCardValue2_1.Text),Color.Red,Color.Green)
+                Height: =DataCardKey14_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey14.Y
+                Y: =DataCardKey14_1.Y
                 ZIndex: =4
 
-        VisitorPhoto_DataCard3 As typedDataCard.addLargePictureCard:
+        VisitorPhoto_DataCard3_1 As typedDataCard.addLargePictureCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="VisitorPhoto"
             Default: =ThisItem.VisitorPhoto
@@ -114,13 +114,13 @@ VisitorCheckScreen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =190
             Required: =false
-            Update: =Image5.Image
+            Update: =Image5_1.Image
             Width: =634
             X: =1
             Y: =3
             ZIndex: =1
 
-            DataCardKey15 As label:
+            DataCardKey15_1 As label:
                 FontWeight: =FontWeight.Bold
                 Height: =33
                 Text: =Parent.DisplayName
@@ -130,18 +130,18 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            Image5 As image:
+            Image5_1 As image:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode
                 Height: =180
-                Image: =LookUp(VisitorInformation,'Visitor Name'=visitor_name.Text,VisitorPhoto)
+                Image: =LookUp(VisitorInformation,'Visitor Name'=visitor_name_1.Text,VisitorPhoto)
                 Tooltip: =Parent.DisplayName
                 Width: =438
                 X: =166
                 Y: =10
                 ZIndex: =2
 
-            ErrorMessage15 As label:
+            ErrorMessage15_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -153,21 +153,172 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =Image5.Y + Image5.Height
+                Y: =Image5_1.Y + Image5_1.Height
                 ZIndex: =4
 
-            StarVisible15 As label:
+            StarVisible15_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(Image5.Image),Color.Red,Color.Green)
-                Height: =DataCardKey15.Height
+                Color: =If(!IsBlank(Image5_1.Image),Color.Red,Color.Green)
+                Height: =DataCardKey15_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey15.Y
+                Y: =DataCardKey15_1.Y
                 ZIndex: =5
 
-        "'Visitor Name_DataCard2' As typedDataCard.textualEditCard":
+        Symptoms_DataCard2_1 As typedDataCard.toggleEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Symptoms"
+            Default: =ThisItem.Symptoms
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"Symptoms")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =Symptoms_DataCard1.Default
+            Visible: =false
+            Width: =648
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey7_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            ErrorMessage12_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Label2_2.Y + Label2_2.Height
+                ZIndex: =3
+
+            StarVisible12_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_1.Y
+                ZIndex: =4
+
+            Label1_2 As label:
+                Font: =Font.Lato
+                Height: =43
+                Text: ="Are you experiencing any of the following?"
+                Width: =378
+                X: =40
+                Y: =13
+                ZIndex: =5
+
+            Label2_2 As label:
+                Font: =Font.Lato
+                Height: =103
+                Text: |-
+                    ="- Sore Throat
+                    - Dry Cough 
+                    - Fever
+                    - Tireness"
+                X: =40
+                Y: =31
+                ZIndex: =6
+
+            symptoms_2 As radio:
+                BorderStyle: =BorderStyle.None
+                Default: =LookUp('Visitor Request','Visitor Name'=visitor_name_1.Text,_lastSelectedSymptoms)
+                DisabledBorderColor: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Items: =["Yes","No"]
+                OnChange: =Set(_lastSelectedSymptoms,symptoms_2.SelectedText.Value)
+                OnSelect: =Set(_lastSelectedSymptoms,symptoms_2.SelectedText.Value)
+                Reset: =true
+                Tooltip: =If(!IsBlank(symptoms_2.Selected), false, "Are you having the listed symptoms?")
+                X: =463
+                Y: =11
+                ZIndex: =7
+
+        Symptoms_DataCard5 As typedDataCard.yesNoRadioEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Symptoms"
+            Default: =ThisItem.Symptoms
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"Symptoms")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue6.Selected.Value = "Yes"
+            Width: =648
+            X: =1
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6 As radio:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(Parent.Default, "Yes", "No")
+                DisplayMode: =Parent.DisplayMode
+                Height: =86
+                Items: =["Yes", "No"]
+                PaddingBottom: =0
+                PaddingTop: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 70
+                X: =If(Self.RadioSize = 20, 18, Self.Height = 70, 12, 14)
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6.Y + DataCardValue6.Height
+                ZIndex: =3
+
+            StarVisible5 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5.Y
+                ZIndex: =4
+
+        "'Visitor Name_DataCard2_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="VisitorName"
             Default: =ThisItem.'Visitor Name'
@@ -177,13 +328,13 @@ VisitorCheckScreen As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitorName")
             Required: =true
-            Update: =visitor_name.Text
+            Update: =visitor_name_1.Text
             Width: =646
             X: =0
             Y: =0
             ZIndex: =7
 
-            DataCardKey17 As label:
+            DataCardKey17_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -195,7 +346,7 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            visitor_name As text:
+            visitor_name_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -209,10 +360,10 @@ VisitorCheckScreen As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                Y: =DataCardKey17_1.Y + DataCardKey17_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage17 As label:
+            ErrorMessage17_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -224,21 +375,21 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =visitor_name.Y + visitor_name.Height
+                Y: =visitor_name_1.Y + visitor_name_1.Height
                 ZIndex: =3
 
-            StarVisible17 As label:
+            StarVisible17_1 As label:
                 Align: =Align.Center
                 Color: =If(!IsBlank(visitorName.Text),Color.Red,Color.Green)
-                Height: =DataCardKey17.Height
+                Height: =DataCardKey17_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey17.Y
+                Y: =DataCardKey17_1.Y
                 ZIndex: =4
 
-        "'Visitor Company_DataCard2' As typedDataCard.textualEditCard":
+        "'Visitor Company_DataCard2_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="VisitorCompany"
             Default: =ThisItem.'Visitor Company'
@@ -248,13 +399,13 @@ VisitorCheckScreen As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitorCompany")
             Required: =true
-            Update: =visitor_company.Text
+            Update: =visitor_company_1.Text
             Width: =646
             X: =1
             Y: =0
             ZIndex: =7
 
-            DataCardKey18 As label:
+            DataCardKey18_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -266,7 +417,7 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            visitor_company As text:
+            visitor_company_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -280,10 +431,10 @@ VisitorCheckScreen As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                Y: =DataCardKey18_1.Y + DataCardKey18_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage18 As label:
+            ErrorMessage18_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -295,21 +446,21 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =visitor_company.Y + visitor_company.Height
+                Y: =visitor_company_1.Y + visitor_company_1.Height
                 ZIndex: =3
 
-            StarVisible18 As label:
+            StarVisible18_1 As label:
                 Align: =Align.Center
                 Color: =If(!IsBlank(vistorCompanyName.Text),Color.Red,Color.Green)
-                Height: =DataCardKey18.Height
+                Height: =DataCardKey18_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey18.Y
+                Y: =DataCardKey18_1.Y
                 ZIndex: =4
 
-        "'Employee Name_DataCard2' As typedDataCard.textualEditCard":
+        "'Employee Name_DataCard2_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="PersonToVisit"
             Default: =ThisItem.'Person To Visit'
@@ -319,13 +470,13 @@ VisitorCheckScreen As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "PersonToVisit")
             Required: =true
-            Update: =whomVisited.Text
+            Update: =whomVisited_1.Text
             Width: =646
             X: =0
             Y: =1
             ZIndex: =7
 
-            DataCardKey21 As label:
+            DataCardKey21_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -337,7 +488,7 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            whomVisited As text:
+            whomVisited_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -351,10 +502,10 @@ VisitorCheckScreen As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                Y: =DataCardKey21_1.Y + DataCardKey21_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage21 As label:
+            ErrorMessage21_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -366,21 +517,21 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =whomVisited.Y + whomVisited.Height
+                Y: =whomVisited_1.Y + whomVisited_1.Height
                 ZIndex: =3
 
-            StarVisible21 As label:
+            StarVisible21_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(whomVisited.Text),Color.Red,Color.Green)
-                Height: =DataCardKey21.Height
+                Color: =If(!IsBlank(whomVisited_1.Text),Color.Red,Color.Green)
+                Height: =DataCardKey21_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey21.Y
+                Y: =DataCardKey21_1.Y
                 ZIndex: =4
 
-        "'Reason For Visit_DataCard2' As typedDataCard.comboBoxEditCard":
+        "'Reason For Visit_DataCard2_1' As typedDataCard.comboBoxEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="Reason_x0020_For_x0020_Visit"
             Default: =ThisItem.'Reason For Visit'
@@ -389,13 +540,13 @@ VisitorCheckScreen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
-            Update: =purposeofvisit.Selected
+            Update: =purposeofvisit_1.Selected
             Width: =646
             X: =1
             Y: =1
             ZIndex: =7
 
-            DataCardKey19 As label:
+            DataCardKey19_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -407,7 +558,7 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            purposeofvisit As combobox:
+            purposeofvisit_1 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =RGBA(39, 67, 125, 1)
                 DefaultSelectedItems: =Parent.Default
@@ -418,15 +569,15 @@ VisitorCheckScreen As screen:
                 Items: =Choices([@'Visitor Request'].'Reason For Visit')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices('Visitor Request'.'Reason For Visit',purposeofvisit.SearchText)
+                SearchItems: =Choices('Visitor Request'.'Reason For Visit',purposeofvisit_1.SearchText)
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                Y: =DataCardKey19_1.Y + DataCardKey19_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage19 As label:
+            ErrorMessage19_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -438,21 +589,21 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =purposeofvisit.Y + purposeofvisit.Height
+                Y: =purposeofvisit_1.Y + purposeofvisit_1.Height
                 ZIndex: =3
 
-            StarVisible19 As label:
+            StarVisible19_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(purposeofvisit.Selected.Value),Color.Red,Color.Green)
-                Height: =DataCardKey19.Height
+                Color: =If(!IsBlank(purposeofvisit_1.Selected.Value),Color.Red,Color.Green)
+                Height: =DataCardKey19_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey19.Y
+                Y: =DataCardKey19_1.Y
                 ZIndex: =4
 
-        Gender_DataCard3 As typedDataCard.comboBoxEditCard:
+        Gender_DataCard3_1 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.None
             DataField: ="Gender"
             Default: |
@@ -462,7 +613,7 @@ VisitorCheckScreen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =96
             Required: =false
-            Update: =visitorGender1.Selected
+            Update: =visitorGender1_1.Selected
             Visible: =true
             Width: =646
             WidthFit: =false
@@ -470,7 +621,7 @@ VisitorCheckScreen As screen:
             Y: =2
             ZIndex: =7
 
-            DataCardKey22 As label:
+            DataCardKey22_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -482,7 +633,7 @@ VisitorCheckScreen As screen:
                 Y: =38
                 ZIndex: =1
 
-            ErrorMessage22 As label:
+            ErrorMessage22_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -497,19 +648,19 @@ VisitorCheckScreen As screen:
                 Y: =80
                 ZIndex: =3
 
-            StarVisible22 As label:
+            StarVisible22_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(visitorGender1.Selected),Color.Red,Color.Green)
-                Height: =DataCardKey22.Height
+                Color: =If(!IsBlank(visitorGender1_1.Selected),Color.Red,Color.Green)
+                Height: =DataCardKey22_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey22.Y
+                Y: =DataCardKey22_1.Y
                 ZIndex: =4
 
-            visitorGender1 As radio:
-                Default: =LookUp(VisitorInformation,'Visitor Name'=visitor_name.Text,Gender.Value)
+            visitorGender1_1 As radio:
+                Default: =LookUp(VisitorInformation,'Visitor Name'=visitor_name_1.Text,Gender.Value)
                 DisabledColor: =RGBA(22, 38, 50, 1)
                 DisplayMode: =DisplayMode.Disabled
                 Font: =Font.Lato
@@ -522,7 +673,7 @@ VisitorCheckScreen As screen:
                 Y: =19
                 ZIndex: =5
 
-        "'Visit Status_DataCard2' As typedDataCard.comboBoxEditCard":
+        "'Visit Status_DataCard2_1' As typedDataCard.comboBoxEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="VisitStatus"
             Default: =ThisItem.'Visit Status'
@@ -531,14 +682,14 @@ VisitorCheckScreen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue23.Selected
+            Update: =DataCardValue23_1.Selected
             Width: =646
             WidthFit: =false
             X: =1
             Y: =2
             ZIndex: =7
 
-            DataCardKey23 As label:
+            DataCardKey23_1 As label:
                 AutoHeight: =true
                 Font: =Font.'Lato Black'
                 FontWeight: =FontWeight.Semibold
@@ -550,7 +701,7 @@ VisitorCheckScreen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue23 As combobox:
+            DataCardValue23_1 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =RGBA(39, 67, 125, 1)
                 DefaultSelectedItems: =Parent.Default
@@ -567,10 +718,10 @@ VisitorCheckScreen As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                Y: =DataCardKey23_1.Y + DataCardKey23_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage23 As label:
+            ErrorMessage23_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -582,30 +733,30 @@ VisitorCheckScreen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue23.Y + DataCardValue23.Height
+                Y: =DataCardValue23_1.Y + DataCardValue23_1.Height
                 ZIndex: =3
 
-            StarVisible23 As label:
+            StarVisible23_1 As label:
                 Align: =Align.Center
-                Color: =If(!IsBlank(DataCardValue23.Selected.Value),Color.Red,Color.Green)
-                Height: =DataCardKey23.Height
+                Color: =If(!IsBlank(DataCardValue23_1.Selected.Value),Color.Red,Color.Green)
+                Height: =DataCardKey23_1.Height
                 Text: ="*"
                 Visible: =false
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey23.Y
+                Y: =DataCardKey23_1.Y
                 ZIndex: =4
 
-    btnSubmit_3 As button:
+    btnSubmit_4 As button:
         DisabledColor: =RGBA(22, 38, 50, 1)
         DisabledFill: =RGBA(193, 200, 206, 1)
-        DisplayMode: =If(visitorCheckForm.Valid,DisplayMode.Edit,DisplayMode.Disabled)
+        DisplayMode: =If(visitorCheckForm_1.Valid,DisplayMode.Edit,DisplayMode.Disabled)
         Fill: =RGBA(54, 176, 75, 1)
         FocusedBorderColor: =ColorFade(Self.Fill, 75%)
         Font: =Font.'Lato Black'
         HoverBorderColor: =ColorFade(Self.HoverFill, 20%)
         OnSelect: |-
-            =SubmitForm(visitorCheckForm);
+            =SubmitForm(visitorCheckForm_1);
             If(
                 IsEmpty(Errors('Visitor Request')),
                 Notify(
@@ -626,14 +777,14 @@ VisitorCheckScreen As screen:
         Y: =696
         ZIndex: =9
 
-    Icon1 As icon.ChevronLeft:
+    Icon1_1 As icon.ChevronLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Navigate(ViewVisitorStatus)
         X: =34
         Y: =94
         ZIndex: =11
 
-    Image6_3 As image:
+    Image6_6 As image:
         Image: =ThakralOne
         Width: =788
         X: =290
