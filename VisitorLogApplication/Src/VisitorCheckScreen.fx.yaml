@@ -39,7 +39,9 @@ VisitorCheckScreen As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="VisitID"
             Default: =ThisItem.VisitorID
-            DisplayMode: =Parent.DisplayMode
+            DisplayMode: |-
+                =//Parent.DisplayMode
+                If(DataCardValue23.Selected.Value="Visit Completed" || DataCardValue23.Selected.Value="Security Check Completed",DisplayMode.Disabled,Parent.DisplayMode)
             DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitID")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
