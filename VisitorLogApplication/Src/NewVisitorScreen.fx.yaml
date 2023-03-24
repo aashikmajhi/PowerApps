@@ -61,8 +61,12 @@ NewVisitorScreen As screen:
                     Office365Outlook.SendEmailV2(
                         visitorEmail_1,
                         "Visitor Registration to ThakralOne",
-                        "Dear" & visitorFullName_1.Text & Char(13) & "We are pleased to inform you that your registration as a visitor in our organization has been successful. Your registered email address and phone number with us is: " & Char(13) & "Email : " & visitorEmail_1.Text & "Phone Number: " & visitorPhoneNumber_1.Text & Char(13) & "Please use this phone number for any future visits with us. We hope you have a pleasant experience during your visit.
-            Thank you for choosing our organization." & Char(13) & "Best Regards" & Char(13) & "ThakralOne" & Icon.Link
+                        Concatenate(
+                            "Dear " & "<b>" & visitorFullName_1.Text & "</b>" & "," & "<br>" & "We are pleased to inform you that your registration as a visitor in our organization has been successful. Your registered email address and phone number with us is: " & "<br>" & "Email : " & "<b>" & visitorEmail_1.Text & "</b>" & "<br>" & "Phone Number: " & "<b>" & visitorPhoneNumber_1.Text & "</b>" & "<br>" & "Please use this phone number for any future visits with us. We hope you have a pleasant experience during your visit." & "<br>" & "Thank you for choosing our organization." & "<br>",
+                            "<br>",
+                            "<br>",
+                            "<br>" & "Best Regards" & "<br>" & "<b><h2>ThakralOne</b></h2>"
+                        )
                     ),
                     ResetForm(visitorsDetail_1);
                     ResetForm(visitorsDetail_2);
