@@ -70,7 +70,9 @@ MainScreen As screen:
         RadiusTopRight: =9
         Size: =22
         Text: ="Security Check"
-        Visible: =isUserAdminSPList
+        Visible: |-
+            =//isUserAdminSPList
+            true
         Width: =372
         X: =145
         Y: =569
@@ -99,7 +101,9 @@ MainScreen As screen:
         RadiusTopRight: =9
         Size: =22
         Text: ="Admin"
-        Visible: =isUserAdminSPList
+        Visible: |-
+            =//isUserAdminSPList
+            false
         Width: =372
         X: =782
         Y: =98
