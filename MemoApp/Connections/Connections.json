@@ -54,6 +54,9 @@
           "RoleController": {
             "tableName": "d4422db6-2771-430c-8ea8-7de8a60936b0"
           },
+          "Type": {
+            "tableName": "06049695-84b9-40e7-94d9-0d1b07d39fdf"
+          },
           "UnsubmittedMemoList": {
             "tableName": "353aea33-cfc7-4474-b43e-7dc7670eeaaa"
           },
@@ -68,7 +71,8 @@
       "UnsubmittedMemoList",
       "RoleController",
       "MemoTableData",
-      "MemoList"
+      "MemoList",
+      "Type"
     ],
     "dependencies": {},
     "dependents": [],

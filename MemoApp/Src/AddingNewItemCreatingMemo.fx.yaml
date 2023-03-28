@@ -98,6 +98,89 @@ AddingNewItemCreatingMemo As screen:
                 Y: =DataCardKey19.Y
                 ZIndex: =4
 
+        TypeNo_DataCard3 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TypeNo"
+            Default: =ThisItem.TypeNo
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"TypeNo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNo")
+            Required: =true
+            Update: =DataCardValue21.Selected.Value1
+            Width: =683
+            X: =3
+            Y: =1
+            ZIndex: =2
+
+            DataCardKey21 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage21 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible21 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey21.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey21.Y
+                ZIndex: =4
+
+            DataCardValue21 As dropdown:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                ChevronBackground: =RGBA(255, 87, 51, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(153, 205, 255, 1)
+                Items: =ComboBoxSample
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 89, 178, 1)
+                SelectionFill: =RGBA(255, 87, 51, 1)
+                Size: =13
+                Width: =623
+                X: =30
+                Y: =48
+                ZIndex: =5
+
         Source_DataCard3 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
             BorderStyle: =BorderStyle.Solid
@@ -264,89 +347,6 @@ AddingNewItemCreatingMemo As screen:
                 Y: =48
                 ZIndex: =5
 
-        TypeNo_DataCard3 As typedDataCard.textualEditCard:
-            BorderColor: =RGBA(0, 89, 178, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TypeNo"
-            Default: =ThisItem.TypeNo
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"TypeNo")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNo")
-            Required: =true
-            Update: =DataCardValue21.Selected.Value1
-            Width: =683
-            X: =1
-            Y: =1
-            ZIndex: =2
-
-            DataCardKey21 As label:
-                AutoHeight: =true
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =34
-                Size: =13
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            ErrorMessage21 As label:
-                AutoHeight: =true
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue21.Y + DataCardValue21.Height
-                ZIndex: =3
-
-            StarVisible21 As label:
-                Align: =Align.Center
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =DataCardKey21.Height
-                Size: =13
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey21.Y
-                ZIndex: =4
-
-            DataCardValue21 As dropdown:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                ChevronBackground: =RGBA(255, 87, 51, 1)
-                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
-                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
-                ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                HoverColor: =RGBA(0, 0, 0, 1)
-                HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
-                Size: =13
-                Width: =623
-                X: =30
-                Y: =48
-                ZIndex: =5
-
         TypeNoName_DataCard3 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
             BorderStyle: =BorderStyle.Solid
@@ -358,7 +358,7 @@ AddingNewItemCreatingMemo As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
             Required: =true
-            Update: =DataCardValue22.Selected.Value
+            Update: =DataCardValue22.Selected.Value1
             Width: =683
             X: =2
             Y: =1
@@ -418,15 +418,14 @@ AddingNewItemCreatingMemo As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
                 InputTextPlaceholder: ="Select Type Name"
-                Items: =["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."]
+                IsSearchable: =false
+                Items: =ComboBoxSample
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
-                SearchFields: =["Value"]
-                SearchItems: =Search(["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."],DataCardValue22.SearchText,"Value")
+                SearchItems: =[]
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 Size: =13
                 Width: =623
@@ -809,7 +808,7 @@ AddingNewItemCreatingMemo As screen:
                         DataCardValue21.Selected.Value1 = Blank(),
                         Notify("Please select a type no."),
                         If(
-                            DataCardValue22.Selected.Value = Blank(),
+                            DataCardValue22.Selected.Value1 = Blank(),
                             Notify("Please select a type no name."),
                             If(
                                 DataCardValue23.Text = Blank(),

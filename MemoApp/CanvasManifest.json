@@ -148,6 +148,7 @@
     "UploadQuotation",
     "RespondingScreen",
     "Actions",
-    "LoginScreen"
+    "LoginScreen",
+    "AddingNewItemCreatingMemo_1"
   ]
 }
