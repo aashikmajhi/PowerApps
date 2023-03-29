@@ -344,12 +344,11 @@ AddingNewItemCreatingMemo_1 As screen:
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
                 InputTextPlaceholder: ="Select Type Name"
-                IsSearchable: =false
                 Items: =Choices(Type.'Vendor Name')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Choices(Type.'Vendor Name',DataCardValue22_3.SearchText)
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 SelectMultiple: =false
                 Size: =13
