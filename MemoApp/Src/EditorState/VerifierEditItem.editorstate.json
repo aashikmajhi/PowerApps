@@ -3576,8 +3576,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Parent.DisplayMode",
+          "AutoRuleBindingEnabled": true,
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "DisplayMode",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -7078,7 +7078,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage5",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7654,7 +7654,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage7",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10357,7 +10357,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible5",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10919,7 +10919,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible7",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

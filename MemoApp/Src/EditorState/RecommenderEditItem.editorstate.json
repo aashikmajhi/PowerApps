@@ -3576,8 +3576,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Parent.DisplayMode",
+          "AutoRuleBindingEnabled": true,
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "DisplayMode",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
