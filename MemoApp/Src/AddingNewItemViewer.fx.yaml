@@ -160,91 +160,6 @@ AddingNewItemViewer As screen:
                 Y: =DataCardKey37.Y
                 ZIndex: =4
 
-        TypeNoName_DataCard5 As typedDataCard.textualEditCard:
-            BorderColor: =RGBA(0, 89, 178, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TypeNoName"
-            Default: =ThisItem.TypeNoName
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@MemoTableData],DataSourceInfo.DisplayName,"TypeNoName")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
-            Required: =false
-            Update: =DataCardValue22_2.Selected.Value
-            Width: =672
-            X: =-1
-            Y: =1
-            ZIndex: =6
-
-            DataCardKey40 As label:
-                AutoHeight: =true
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =34
-                Size: =13
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                ZIndex: =1
-
-            ErrorMessage40 As label:
-                AutoHeight: =true
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue22_2.Y + DataCardValue22_2.Height
-                ZIndex: =3
-
-            StarVisible40 As label:
-                Align: =Align.Center
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =DataCardKey40.Height
-                Size: =13
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey40.Y
-                ZIndex: =4
-
-            DataCardValue22_2 As combobox:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                ChevronBackground: =RGBA(255, 87, 51, 1)
-                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
-                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
-                ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayFields: =["Value"]
-                HoverColor: =RGBA(0, 0, 0, 1)
-                HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."]
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 89, 178, 1)
-                SearchFields: =["Value"]
-                SearchItems: =Search(["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."],DataCardValue22_2.SearchText,"Value")
-                SelectionFill: =RGBA(255, 87, 51, 1)
-                Size: =13
-                Width: =623
-                X: =30
-                Y: =40
-                ZIndex: =5
-
         Source_DataCard5 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
             BorderStyle: =BorderStyle.Solid
@@ -407,6 +322,91 @@ AddingNewItemViewer As screen:
                 Width: =623
                 X: =30
                 Y: =30
+                ZIndex: =5
+
+        TypeNoName_DataCard5 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TypeNoName"
+            Default: =ThisItem.TypeNoName
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MemoTableData],DataSourceInfo.DisplayName,"TypeNoName")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
+            Required: =false
+            Update: =DataCardValue22_2.Selected.Value
+            Width: =672
+            X: =-1
+            Y: =1
+            ZIndex: =6
+
+            DataCardKey40 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            ErrorMessage40 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue22_2.Y + DataCardValue22_2.Height
+                ZIndex: =3
+
+            StarVisible40 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey40.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey40.Y
+                ZIndex: =4
+
+            DataCardValue22_2 As combobox:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                ChevronBackground: =RGBA(255, 87, 51, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(153, 205, 255, 1)
+                Items: =["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."]
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 89, 178, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Search(["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."],DataCardValue22_2.SearchText,"Value")
+                SelectionFill: =RGBA(255, 87, 51, 1)
+                Size: =13
+                Width: =623
+                X: =30
+                Y: =40
                 ZIndex: =5
 
         TypeNo_DataCard5 As typedDataCard.textualEditCard:
