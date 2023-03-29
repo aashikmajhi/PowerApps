@@ -353,7 +353,6 @@ AddingNewItemCreatingMemo_1 As screen:
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 SelectMultiple: =false
                 Size: =13
-                Template: =ListItemTemplate.Double
                 Width: =623
                 X: =30
                 Y: =48
