@@ -26,19 +26,19 @@ EditMemoItemsToSave As screen:
         DisabledColor: =RGBA(244, 244, 244, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Navigate(CreateNewMemo)
-        X: =23
-        Y: =24
+        X: =12
+        Y: =15
         ZIndex: =2
 
     Form1_3 As form:
         BorderColor: =RGBA(0, 89, 178, 1)
         DataSource: =UnsubmittedMemoTableData
-        Height: =561
+        Height: =591
         Item: =newMemoGallery.Selected
         NumberOfColumns: =2
         SnapToColumns: =false
         Width: =1366
-        Y: =100
+        Y: =86
         ZIndex: =4
 
         "'Meme No_DataCard2' As typedDataCard.textualEditCard":
@@ -49,26 +49,23 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"Title")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =13
+            Height: =50
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "Title")
             Required: =false
             Update: =DataCardValue10.Text
-            Width: =1356
+            Width: =1366
             X: =0
             Y: =0
             ZIndex: =36
 
             DataCardKey10 As label:
-                Align: =Align.Right
-                AutoHeight: =true
                 Color: =RGBA(0, 89, 178, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =34
                 Size: =13
                 Text: ="Memo No"
-                Width: =200
+                Width: =140
                 Wrap: =false
-                X: =497
+                X: =582
                 ZIndex: =1
 
             DataCardValue10 As text:
@@ -95,8 +92,8 @@ EditMemoItemsToSave As screen:
                 RadiusTopRight: =0
                 Size: =13
                 Tooltip: =Parent.DisplayName
-                Width: =618
-                X: =708
+                Width: =623
+                X: =713
                 ZIndex: =2
 
             ErrorMessage10 As label:
@@ -138,11 +135,11 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"Source")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "Source")
             Required: =false
             Update: =DataCardValue11.Selected.Value1
-            Width: =678
+            Width: =683
             X: =1
             Y: =0
             ZIndex: =36
@@ -157,6 +154,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage11 As label:
@@ -208,9 +206,9 @@ EditMemoItemsToSave As screen:
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 Size: =13
-                Width: =618
+                Width: =623
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =5
 
         Types_DataCard2 As typedDataCard.textualEditCard:
@@ -221,11 +219,11 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"Types")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "Types")
             Required: =false
             Update: =DataCardValue17.Selected.Value
-            Width: =678
+            Width: =683
             X: =2
             Y: =0
             ZIndex: =36
@@ -240,6 +238,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage17 As label:
@@ -295,9 +294,9 @@ EditMemoItemsToSave As screen:
                 SearchItems: =Choices(Type.'Vendor Type',DataCardValue17.SearchText)
                 SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
-                Width: =618
+                Width: =623
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =6
 
         TypeNoName_DataCard2 As typedDataCard.textualEditCard:
@@ -308,11 +307,11 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"TypeNoName")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =74
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
             Required: =false
             Update: =DataCardValue13.Selected.Value
-            Width: =678
+            Width: =683
             X: =1
             Y: =1
             ZIndex: =36
@@ -327,6 +326,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage13 As label:
@@ -382,9 +382,9 @@ EditMemoItemsToSave As screen:
                 SearchItems: =Choices(Type.'Vendor Name',DataCardValue13.SearchText)
                 SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
-                Width: =618
+                Width: =623
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =6
 
         TypeNo_DataCard2 As typedDataCard.textualEditCard:
@@ -395,11 +395,11 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"TypeNo")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNo")
             Required: =false
             Update: =DataCardValue12.Selected.Value
-            Width: =678
+            Width: =683
             X: =2
             Y: =1
             ZIndex: =36
@@ -414,6 +414,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage12 As label:
@@ -467,9 +468,9 @@ EditMemoItemsToSave As screen:
                 SearchItems: =[]
                 SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
-                Width: =618
+                Width: =623
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =6
 
         Amount_DataCard2 As typedDataCard.textualEditCard:
@@ -480,11 +481,11 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"Amount")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =69
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "Amount")
             Required: =false
             Update: =DataCardValue14.Text
-            Width: =678
+            Width: =683
             X: =0
             Y: =2
             ZIndex: =36
@@ -499,6 +500,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue14 As text:
@@ -525,7 +527,7 @@ EditMemoItemsToSave As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =2
 
             ErrorMessage14 As label:
@@ -567,7 +569,7 @@ EditMemoItemsToSave As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@UnsubmittedMemoTableData],DataSourceInfo.DisplayName,"BillNo")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =98
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "BillNo")
             Required: =false
             Update: =DataCardValue15.Text
@@ -586,6 +588,7 @@ EditMemoItemsToSave As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue15 As text:
@@ -612,7 +615,7 @@ EditMemoItemsToSave As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =33
+                Y: =48
                 ZIndex: =2
 
             ErrorMessage15 As label:
@@ -687,7 +690,7 @@ EditMemoItemsToSave As screen:
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 DisplayMode: =Parent.DisplayMode
                 FocusedBorderThickness: =4
-                Height: =192
+                Height: =170
                 HoverBorderColor: =RGBA(0, 89, 178, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
@@ -702,7 +705,7 @@ EditMemoItemsToSave As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                Y: =43
                 ZIndex: =2
 
             ErrorMessage16 As label:

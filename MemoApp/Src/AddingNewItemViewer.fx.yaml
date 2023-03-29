@@ -144,6 +144,7 @@ AddingNewItemViewer As screen:
                 Align: =Align.Center
                 Color: =RGBA(0, 89, 178, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 89, 178, 1)
                 Height: =DataCardKey37.Height
                 Size: =13
                 Text: ="*"
