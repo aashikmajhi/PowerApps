@@ -67,7 +67,7 @@ VerifierEditItem As screen:
                 Color: =RGBA(0, 89, 178, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Size: =13
-                Text: =Parent.DisplayName
+                Text: ="Memo No"
                 Width: =200
                 Wrap: =false
                 X: =497
@@ -282,6 +282,8 @@ VerifierEditItem As screen:
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: |-
+                    ={Value:verifierViewGallery.Selected.Types}
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -374,13 +376,13 @@ VerifierEditItem As screen:
                 DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
-                IsSearchable: =false
                 Items: =Choices(Type.'Vendor Name')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Choices(Type.'Vendor Name',Dropdown1.SearchText)
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =40
@@ -398,7 +400,7 @@ VerifierEditItem As screen:
             Height: =84
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNo")
             Required: =false
-            Update: =Dropdown3.Selected.Value1
+            Update: =Dropdown3.Selected.Value
             Width: =678
             X: =3
             Y: =1
@@ -448,38 +450,14 @@ VerifierEditItem As screen:
                 Y: =DataCardKey3.Y
                 ZIndex: =4
 
-            Dropdown3 As dropdown:
+            Dropdown3 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                Default: =verifierViewGallery.Selected.TypeNo
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                HoverColor: =RGBA(0, 0, 0, 1)
-                HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(0, 51, 102, 1)
-                Size: =13
-                Width: =623
-                X: =40
-                Y: =34
-                ZIndex: =5
-
-            ComboBox13 As combobox:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                ChevronBackground: =RGBA(255, 87, 51, 1)
-                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
-                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
-                ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                DefaultSelectedItems: |-
-                    ={Value:verifierViewGallery.Selected.TypeNo}
+                DefaultSelectedItems: =Distinct(Type,LookUp(Type,Dropdown1.Selected.Value='Vendor Name'.Value,'Vendor No'))
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -491,6 +469,7 @@ VerifierEditItem As screen:
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SearchItems: =[]
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =40
