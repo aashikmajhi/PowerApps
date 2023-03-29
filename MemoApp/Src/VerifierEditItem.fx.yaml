@@ -36,7 +36,7 @@ VerifierEditItem As screen:
     EditForm As form:
         BorderColor: =RGBA(0, 89, 178, 1)
         DataSource: =MemoTableData
-        Height: =584
+        Height: =591
         Item: =verifierViewGallery.Selected
         NumberOfColumns: =2
         SnapToColumns: =false
@@ -97,7 +97,7 @@ VerifierEditItem As screen:
                 Size: =13
                 Tooltip: =Parent.DisplayName
                 Width: =623
-                X: =725
+                X: =717
                 Y: =7
                 ZIndex: =2
 
@@ -145,7 +145,7 @@ VerifierEditItem As screen:
             Required: =false
             Update: =Dropdown4.Selected.Value1
             Width: =678
-            X: =-1
+            X: =0
             Y: =1
             ZIndex: =36
 
@@ -228,9 +228,9 @@ VerifierEditItem As screen:
             Height: =43
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Types")
             Required: =false
-            Update: =Dropdown2.Selected.Value1
+            Update: =Dropdown1.Selected.Value
             Width: =678
-            X: =0
+            X: =1
             Y: =1
             ZIndex: =36
 
@@ -275,111 +275,25 @@ VerifierEditItem As screen:
                 Y: =DataCardKey8.Y
                 ZIndex: =4
 
-            Dropdown2 As dropdown:
+            Dropdown2 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                Default: |-
-                    =//newMemoGallery.Selected.Source
-                    verifierViewGallery.Selected.Types
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
+                Items: =Choices(Type.'Vendor Type')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
-                Size: =13
-                Width: =623
-                X: =40
-                Y: =34
-                ZIndex: =5
-
-        TypeNo_DataCard1 As typedDataCard.textualEditCard:
-            BorderColor: =RGBA(0, 89, 178, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TypeNo"
-            Default: =ThisItem.TypeNo
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@MemoTableData],DataSourceInfo.DisplayName,"TypeNo")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =84
-            MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNo")
-            Required: =false
-            Update: =Dropdown3.Selected.Value1
-            Width: =678
-            X: =1
-            Y: =1
-            ZIndex: =36
-
-            DataCardKey3 As label:
-                Align: =Align.Right
-                AutoHeight: =true
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =34
-                Size: =13
-                Text: =Parent.DisplayName
-                Width: =95
-                Wrap: =false
-                X: =16
-                ZIndex: =1
-
-            ErrorMessage3 As label:
-                AutoHeight: =true
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =
-                ZIndex: =3
-
-            StarVisible3 As label:
-                Align: =Align.Center
-                Color: =RGBA(0, 89, 178, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =DataCardKey3.Height
-                Size: =13
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey3.Y
-                ZIndex: =4
-
-            Dropdown3 As dropdown:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                ChevronBackground: =RGBA(255, 87, 51, 1)
-                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
-                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
-                ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                Default: |-
-                    =//newMemoGallery.Selected.Source
-                    verifierViewGallery.Selected.TypeNo
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                HoverColor: =RGBA(0, 0, 0, 1)
-                HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Type.'Vendor Type',Dropdown2.SearchText)
+                SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
                 Width: =623
                 X: =40
@@ -445,30 +359,143 @@ VerifierEditItem As screen:
                 Y: =DataCardKey4.Y
                 ZIndex: =4
 
-            Dropdown1 As dropdown:
+            Dropdown1 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                Default: |-
-                    =//newMemoGallery.Selected.Source
-                    verifierViewGallery.Selected.TypeNoName
+                DefaultSelectedItems: |-
+                    ={Value:verifierViewGallery.Selected.TypeNoName}
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."]
+                IsSearchable: =false
+                Items: =Choices(Type.'Vendor Name')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
                 Width: =623
                 X: =40
                 Y: =34
                 ZIndex: =5
+
+        TypeNo_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TypeNo"
+            Default: =ThisItem.TypeNo
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MemoTableData],DataSourceInfo.DisplayName,"TypeNo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =84
+            MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNo")
+            Required: =false
+            Update: =Dropdown3.Selected.Value1
+            Width: =678
+            X: =3
+            Y: =1
+            ZIndex: =36
+
+            DataCardKey3 As label:
+                Align: =Align.Right
+                AutoHeight: =true
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =95
+                Wrap: =false
+                X: =16
+                ZIndex: =1
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 89, 178, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey3.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+            Dropdown3 As dropdown:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                ChevronBackground: =RGBA(255, 87, 51, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                Default: =verifierViewGallery.Selected.TypeNo
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(153, 205, 255, 1)
+                Items: =ComboBoxSample
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 89, 178, 1)
+                SelectionFill: =RGBA(0, 51, 102, 1)
+                Size: =13
+                Width: =623
+                X: =40
+                Y: =34
+                ZIndex: =5
+
+            ComboBox13 As combobox:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                ChevronBackground: =RGBA(255, 87, 51, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: |-
+                    ={Value:verifierViewGallery.Selected.TypeNo}
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(153, 205, 255, 1)
+                IsSearchable: =false
+                Items: =Distinct(Type,'Vendor No')
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 89, 178, 1)
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 51, 102, 1)
+                Size: =13
+                Width: =623
+                X: =40
+                Y: =34
+                ZIndex: =6
 
         Amount_DataCard1 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
@@ -707,7 +734,7 @@ VerifierEditItem As screen:
                 Mode: =TextMode.MultiLine
                 Size: =13
                 Width: =623
-                X: =40
+                X: =45
                 Y: =34
                 ZIndex: =5
 

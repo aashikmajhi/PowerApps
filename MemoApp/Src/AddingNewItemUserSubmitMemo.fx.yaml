@@ -193,7 +193,7 @@ AddingNewItemUserSubmitMemo As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "Types")
             Required: =true
-            Update: =DataCardValue26_1.Selected.Value1
+            Update: =DataCardValue26_1.Selected.Value
             Width: =683
             X: =2
             Y: =0
@@ -243,7 +243,7 @@ AddingNewItemUserSubmitMemo As screen:
                 Y: =DataCardKey26_1.Y
                 ZIndex: =4
 
-            DataCardValue26_1 As dropdown:
+            DataCardValue26_1 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
@@ -253,17 +253,20 @@ AddingNewItemUserSubmitMemo As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
+                Items: =Choices(Type.'Vendor Type')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Type.'Vendor Type',DataCardValue26_1.SearchText)
+                SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
                 Width: =623
                 X: =30
                 Y: =48
-                ZIndex: =5
+                ZIndex: =6
 
         TypeNoName_DataCard3_1 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
@@ -340,12 +343,12 @@ AddingNewItemUserSubmitMemo As screen:
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
                 InputTextPlaceholder: ="Select Type Name"
-                Items: =["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."]
+                Items: =Choices(Type.'Vendor Name')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
                 Reset: =true
                 SearchFields: =["Value"]
-                SearchItems: =Search(["Thakral One Pvt. Ltd.","Astral Pvt. Ltd.","Fonepay Payment Services","Feat International Pvt. Ltd.","AMC Expenses","Campaign & Marketing Cost.","NIC Asia Bank Ltd.","Siddhartha Bank Ltd.","Steve Vai","Saul Hudson."],DataCardValue22_1.SearchText,"Value")
+                SearchItems: =Choices(Type.'Vendor Name',DataCardValue22_1.SearchText)
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -365,7 +368,7 @@ AddingNewItemUserSubmitMemo As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@UnsubmittedMemoTableData], DataSourceInfo.MaxLength, "TypeNo")
             Required: =true
-            Update: =DataCardValue21_1.Selected.Value1
+            Update: =DataCardValue21_1.Selected.Value
             Width: =683
             X: =1
             Y: =1
@@ -415,27 +418,32 @@ AddingNewItemUserSubmitMemo As screen:
                 Y: =DataCardKey21_1.Y
                 ZIndex: =4
 
-            DataCardValue21_1 As dropdown:
+            DataCardValue21_1 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Distinct(Type,LookUp(Type,DataCardValue22.Selected.Value='Vendor Name'.Value,'Vendor No'))
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
-                Items: =ComboBoxSample
+                IsSearchable: =false
+                Items: =Distinct(Type,'Vendor No')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
-                SelectionFill: =RGBA(255, 87, 51, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 51, 102, 1)
                 Size: =13
                 Width: =623
                 X: =30
                 Y: =48
-                ZIndex: =5
+                ZIndex: =6
 
         Amount_DataCard3_1 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)
@@ -805,10 +813,10 @@ AddingNewItemUserSubmitMemo As screen:
                 IsBlank(DataCardValue20_1.Selected.Value1),
                 Notify("Please select a source."),
                 If(
-                    IsBlank(DataCardValue26_1.Selected.Value1),
+                    IsBlank(DataCardValue26_1.Selected.Value),
                     Notify("Please select a type."),
                     If(
-                        IsBlank(DataCardValue21_1.Selected.Value1),
+                        IsBlank(DataCardValue21_1.Selected.Value),
                         Notify("Please select a type no."),
                         If(
                             IsBlank(DataCardValue22_1.Selected.Value),

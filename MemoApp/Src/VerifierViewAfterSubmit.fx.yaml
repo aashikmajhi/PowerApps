@@ -757,7 +757,7 @@ VerifierViewAfterSubmit As screen:
         FontWeight: =FontWeight.Bold
         OnSelect: =
         Size: =25
-        Text: =verifierDashboardGallery.Selected.Organization
+        Text: =userDashboardGallery.Selected.Organization
         Width: =320
         X: =521
         Y: =12
