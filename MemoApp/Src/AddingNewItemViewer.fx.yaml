@@ -81,7 +81,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Title")
             Required: =false
             Update: =DataCardValue30.Text
-            Width: =1344
+            Width: =1366
             X: =0
             Y: =-40
             ZIndex: =6
@@ -91,9 +91,9 @@ AddingNewItemViewer As screen:
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Size: =13
                 Text: ="Memo No"
-                Width: =100
+                Width: =140
                 Wrap: =false
-                X: =600
+                X: =582
                 ZIndex: =1
 
             DataCardValue30 As text:
@@ -119,7 +119,7 @@ AddingNewItemViewer As screen:
                 Size: =13
                 Tooltip: =Parent.DisplayName
                 Width: =623
-                X: =702
+                X: =713
                 ZIndex: =2
 
             ErrorMessage37 As label:
@@ -144,6 +144,7 @@ AddingNewItemViewer As screen:
                 Align: =Align.Center
                 Color: =RGBA(0, 89, 178, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 89, 178, 1)
                 Height: =DataCardKey37.Height
                 Size: =13
                 Text: ="*"
@@ -165,7 +166,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Source")
             Required: =false
             Update: =DataCardValue20_2.Selected.Value1
-            Width: =672
+            Width: =683
             X: =1
             Y: =58
             ZIndex: =6
@@ -180,6 +181,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage38 As label:
@@ -226,13 +228,17 @@ AddingNewItemViewer As screen:
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
                 Items: =ComboBoxSample
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 Size: =13
                 Width: =623
                 X: =30
-                Y: =35
+                Y: =48
                 ZIndex: =5
 
         Types_DataCard5 As typedDataCard.textualEditCard:
@@ -247,7 +253,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Types")
             Required: =false
             Update: =DataCardValue26_2.Selected.Value
-            Width: =672
+            Width: =683
             X: =2
             Y: =58
             ZIndex: =6
@@ -318,7 +324,7 @@ AddingNewItemViewer As screen:
                 Size: =13
                 Width: =623
                 X: =30
-                Y: =35
+                Y: =48
                 ZIndex: =5
 
         TypeNoName_DataCard5 As typedDataCard.textualEditCard:
@@ -333,7 +339,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNoName")
             Required: =false
             Update: =DataCardValue22_2.Selected.Value
-            Width: =672
+            Width: =683
             X: =-1
             Y: =156
             ZIndex: =6
@@ -348,6 +354,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage40 As label:
@@ -403,7 +410,7 @@ AddingNewItemViewer As screen:
                 Size: =13
                 Width: =623
                 X: =30
-                Y: =35
+                Y: =48
                 ZIndex: =6
 
         TypeNo_DataCard5 As typedDataCard.textualEditCard:
@@ -418,7 +425,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "TypeNo")
             Required: =false
             Update: =DataCardValue21_2.Selected.Value
-            Width: =672
+            Width: =683
             X: =0
             Y: =156
             ZIndex: =6
@@ -433,6 +440,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             ErrorMessage39 As label:
@@ -489,7 +497,7 @@ AddingNewItemViewer As screen:
                 Size: =13
                 Width: =623
                 X: =30
-                Y: =35
+                Y: =48
                 ZIndex: =6
 
         Amount_DataCard5 As typedDataCard.textualEditCard:
@@ -504,7 +512,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Amount")
             Required: =false
             Update: =DataCardValue23_2.Text
-            Width: =672
+            Width: =683
             X: =0
             Y: =254
             ZIndex: =6
@@ -519,6 +527,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue23_2 As text:
@@ -545,7 +554,7 @@ AddingNewItemViewer As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey41.Y + DataCardKey41.Height + 2
+                Y: =48
                 ZIndex: =2
 
             ErrorMessage41 As label:
@@ -591,7 +600,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "BillNo")
             Required: =false
             Update: =DataCardValue24_2.Text
-            Width: =672
+            Width: =683
             X: =1
             Y: =254
             ZIndex: =6
@@ -606,6 +615,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue24_2 As text:
@@ -632,7 +642,7 @@ AddingNewItemViewer As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey42.Y + DataCardKey42.Height +2
+                Y: =48
                 ZIndex: =2
 
             ErrorMessage42 As label:
@@ -678,7 +688,7 @@ AddingNewItemViewer As screen:
             MaxLength: =DataSourceInfo([@MemoTableData], DataSourceInfo.MaxLength, "Narration")
             Required: =false
             Update: =DataCardValue25_2.Text
-            Width: =672
+            Width: =683
             X: =0
             Y: =352
             ZIndex: =6
@@ -693,6 +703,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue25_2 As text:
@@ -706,7 +717,7 @@ AddingNewItemViewer As screen:
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 DisplayMode: =Parent.DisplayMode
                 FocusedBorderThickness: =4
-                Height: =177
+                Height: =170
                 HoverBorderColor: =RGBA(0, 89, 178, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
@@ -722,7 +733,7 @@ AddingNewItemViewer As screen:
                 Width: |
                     =623
                 X: =30
-                Y: =DataCardKey43.Y + DataCardKey43.Height + 5
+                Y: =48
                 ZIndex: =2
 
             ErrorMessage43 As label:
@@ -767,7 +778,7 @@ AddingNewItemViewer As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue38.Attachments
-            Width: =672
+            Width: =683
             X: =1
             Y: =352
             ZIndex: =6
@@ -782,6 +793,7 @@ AddingNewItemViewer As screen:
                 Width: =Parent.Width - 60
                 Wrap: =false
                 X: =30
+                Y: =10
                 ZIndex: =1
 
             DataCardValue38 As attachments:
@@ -811,7 +823,7 @@ AddingNewItemViewer As screen:
                 Width: |
                     =623
                 X: =30
-                Y: =DataCardKey45.Y + DataCardKey45.Height + 5
+                Y: =43
                 ZIndex: =2
 
             ErrorMessage45 As label:
