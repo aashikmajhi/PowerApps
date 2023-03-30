@@ -196,6 +196,8 @@ VerifierEditItem As screen:
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: |-
+                    ={Value:verifierViewGallery.Selected.Source}
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -210,8 +212,8 @@ VerifierEditItem As screen:
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 Size: =13
                 Width: =623
-                X: =40
-                Y: =40
+                X: =30
+                Y: =48
                 ZIndex: =6
 
         Types_DataCard1 As typedDataCard.textualEditCard:

@@ -22204,6 +22204,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4.DefaultSelectedItems",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "VerifierEditItem",
+                "type": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "AddingNewItemUserSubmitMemo.Form4_2.TypeNo_DataCard3_1.DataCardValue21_1.DefaultSelectedItems"
                 }
               ],
