@@ -189,35 +189,30 @@ VerifierEditItem As screen:
                 Y: =DataCardKey2.Y
                 ZIndex: =4
 
-            Dropdown4 As dropdown:
+            Dropdown4 As combobox:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChevronBackground: =RGBA(255, 87, 51, 1)
                 ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
                 ChevronDisabledFill: =RGBA(244, 244, 244, 1)
                 ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
                 ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                Default: |-
-                    =//ProdGallery_7.Selected.Source
-                    //newMemoGallery.Selected.Source
-                    verifierViewGallery.Selected.Source
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
+                InputTextPlaceholder: ="Select Source"
+                IsSearchable: =false
                 Items: =ComboBoxSample
-                PaddingBottom: =5
-                PaddingLeft: =5
-                PaddingRight: =5
-                PaddingTop: =5
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
+                SearchItems: =[]
                 SelectionFill: =RGBA(255, 87, 51, 1)
                 Size: =13
                 Width: =623
-                X: =30
-                Y: =48
-                ZIndex: =5
+                X: =40
+                Y: =40
+                ZIndex: =6
 
         Types_DataCard1 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 89, 178, 1)

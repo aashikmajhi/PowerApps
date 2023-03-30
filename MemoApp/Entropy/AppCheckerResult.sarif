@@ -18634,19 +18634,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1.Default"
+                  "fullyQualifiedName": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11.DefaultSelectedItems"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1.Default",
+                  "fullyQualifiedName": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11.DefaultSelectedItems",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Default",
-                "module": "EditMemoItemsToSubmit",
-                "type": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1"
+                "member": "DefaultSelectedItems",
+                "module": "EditMemoItemsToSave",
+                "type": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11"
               }
             }
           ],
@@ -18887,6 +18887,36 @@
                 "member": "Default",
                 "module": "RecommenderEditItem",
                 "type": "RecommenderEditItem.Form1_1.'Meme No_DataCard1_1'.DataCardValue1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1.DefaultSelectedItems",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "EditMemoItemsToSubmit",
+                "type": "EditMemoItemsToSubmit.Form1_5.Source_DataCard2_1.DataCardValue11_1"
               }
             }
           ],
@@ -21394,36 +21424,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4.Default",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "VerifierEditItem",
-                "type": "VerifierEditItem.EditForm.Source_DataCard1.Dropdown4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "VerifierEditItem.EditForm.Types_DataCard1.Dropdown2.DefaultSelectedItems"
                 }
               ],
@@ -22397,36 +22397,6 @@
                 "member": "Default",
                 "module": "EditMemoItemsToSave",
                 "type": "EditMemoItemsToSave.Form1_3.'Meme No_DataCard2'.DataCardValue10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11.Default",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "EditMemoItemsToSave",
-                "type": "EditMemoItemsToSave.Form1_3.Source_DataCard2.DataCardValue11"
               }
             }
           ],
