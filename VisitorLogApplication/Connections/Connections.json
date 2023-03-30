@@ -35,6 +35,23 @@
     "dependents": [],
     "id": "3a20e50c-19b0-44e9-8bd7-e52d9dc13809"
   },
+  "81203951-a630-439a-abc7-46988a2148f4": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "Office 365 Groups",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365groups/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365groups"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Groups"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "81203951-a630-439a-abc7-46988a2148f4"
+  },
   "a0516a7d-e623-4613-bd33-adb24197bf7f": {
     "connectionParameters": {
       "sku": "Enterprise"
