@@ -72,7 +72,7 @@ MainScreen As screen:
         Text: ="Security Check"
         Visible: |-
             =//isUserAdminSPList
-            true
+            false
         Width: =372
         X: =145
         Y: =569
