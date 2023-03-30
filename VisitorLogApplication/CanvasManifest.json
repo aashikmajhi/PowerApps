@@ -123,6 +123,7 @@
     "VisitorCheckScreen",
     "ViewVisitorStatus",
     "LogRecord",
-    "MainScreen_1"
+    "SecGroup",
+    "AzureAD"
   ]
 }

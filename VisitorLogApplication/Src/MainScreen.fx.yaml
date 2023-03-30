@@ -2,78 +2,118 @@ MainScreen As screen:
     BackgroundImage: ='Background Image'
     ImagePosition: =ImagePosition.Fill
 
-    Button1 As button:
-        OnSelect: =Set(varNewGroup,"2bb0924b-f894-45b1-a99a-5fd25f482bc5");
-        Text: ="Button"
-        X: =96
-        Y: =60
-        ZIndex: =1
+    appName_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =74
+        Size: =45
+        Text: ="Visitor Application"
+        Width: =666
+        Y: =163
+        ZIndex: =3
 
-    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Items: =Office365Groups.ListGroupMembers("2bb0924b-f894-45b1-a99a-5fd25f482bc5").value
-        Layout: =Layout.Vertical
-        TemplatePadding: =0
-        TemplateSize: =Min(160, Self.Height - 60)
-        X: =33
-        Y: =138
-        ZIndex: =2
+    newVisitor_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        Height: =106
+        OnSelect: |-
+            =Set(_lastEnteredPhoneNumber,"");
+            ResetForm(visitorsDetail_1);
+            Navigate(NewVisitorScreen);
+        RadiusBottomLeft: =9
+        RadiusBottomRight: =9
+        RadiusTopLeft: =9
+        RadiusTopRight: =9
+        Size: =22
+        Text: ="New Visitor"
+        Width: =372
+        X: =145
+        Y: =276
+        ZIndex: =4
 
-        Image1 As image:
-            Height: =128
-            OnSelect: =Select(Parent)
-            Width: =128
-            X: =16
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =1
+    regularVisitor_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        Height: =98
+        OnSelect: |-
+            =Set(_lastEnteredPhoneNumber,"");
+            Reset(visitorSearchByPhone);
+            Reset([@employeeList]);
+            ResetForm(regularVisitorsDetail);
+            Navigate(VisitorInfoScreen);
+        RadiusBottomLeft: =9
+        RadiusBottomRight: =9
+        RadiusTopLeft: =9
+        RadiusTopRight: =9
+        Size: =22
+        Text: ="Regular Visitor"
+        Width: =372
+        X: =145
+        Y: =426
+        ZIndex: =5
 
-        Title1 As label:
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.displayName
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - Image1.Width - 104
-            X: =Image1.X + Image1.Width + 24
-            Y: =44
-            ZIndex: =2
+    securitycheck_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        Height: =98
+        OnSelect: |-
+            =Reset(searchVisitedEmployee);
+            Navigate(ViewVisitorStatus);
+        RadiusBottomLeft: =9
+        RadiusBottomRight: =9
+        RadiusTopLeft: =9
+        RadiusTopRight: =9
+        Size: =22
+        Text: ="Security Check"
+        Visible: |-
+            =//isUserAdminSPList
+            false
+        Width: =372
+        X: =145
+        Y: =569
+        ZIndex: =6
 
-        Subtitle1 As label:
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.givenName
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Title1.Width
-            X: =Title1.X
-            Y: =Title1.Y + Title1.Height + 4
-            ZIndex: =3
+    Image1_1 As image:
+        Height: =572
+        Image: ='ez-visit'
+        ImagePosition: =ImagePosition.Fill
+        Width: =751
+        X: =615
+        Y: =196
+        ZIndex: =9
 
-        NextArrow1 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Height: =60
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =10
-            PaddingLeft: =10
-            PaddingRight: =10
-            PaddingTop: =10
-            TabIndex: =0
-            Tooltip: ="View item details"
-            Width: =60
-            X: =Parent.TemplateWidth - Self.Width - 5
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =4
+    admin_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        Height: =98
+        OnSelect: |-
+            =Reset(searchVisitedEmployee);
+            Navigate(LogRecord);
+        RadiusBottomLeft: =9
+        RadiusBottomRight: =9
+        RadiusTopLeft: =9
+        RadiusTopRight: =9
+        Size: =22
+        Text: ="Admin"
+        Visible: |-
+            =//isUserAdminSPList
+            false
+        Width: =372
+        X: =782
+        Y: =98
+        ZIndex: =10
 
-        Separator1 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =5
+    Image3_1 As image:
+        Height: =123
+        Image: =ThakralOne
+        Width: =570
+        X: =48
+        Y: =40
+        ZIndex: =11
 
