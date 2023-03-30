@@ -118,7 +118,6 @@
   },
   "ScreenOrder": [
     "SplashScreen",
-    "RecommenderDashboard",
     "UserDashboard",
     "UserSubmitMemo",
     "CreateNewMemo",

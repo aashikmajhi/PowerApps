@@ -5,7 +5,7 @@ LoginScreen As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        Fill: =RGBA(0, 80, 160, 1)
+        Fill: =RGBA(245, 173, 158, 1)
         FontWeight: =FontWeight.Bold
         Height: =Parent.Height
         HoverColor: =RGBA(255, 255, 255, 1)
@@ -23,7 +23,7 @@ LoginScreen As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        Fill: =RGBA(102, 155, 209, 1)
+        Fill: =RGBA(250, 155, 112, 1)
         FontWeight: =FontWeight.Bold
         Height: =Parent.Height
         HoverColor: =RGBA(255, 255, 255, 1)
@@ -42,7 +42,7 @@ LoginScreen As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        Fill: =RGBA(141, 198, 63, 1)
+        Fill: =RGBA(54, 176, 75, 1)
         FontWeight: =FontWeight.Bold
         Height: =Parent.Height
         HoverColor: =RGBA(255, 255, 255, 1)

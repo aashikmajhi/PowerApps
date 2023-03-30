@@ -343,7 +343,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         FontWeight: =FontWeight.Semibold
         Height: =28
@@ -382,7 +382,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         FontWeight: =FontWeight.Semibold
         Height: =28
@@ -439,7 +439,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         FontWeight: =FontWeight.Semibold
         Height: =28
@@ -587,6 +587,7 @@ VerifierView As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.View
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =28
@@ -608,6 +609,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -709,7 +711,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =32
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -788,7 +790,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -809,7 +811,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -830,7 +832,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -853,7 +855,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -876,7 +878,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =28
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -902,7 +904,7 @@ VerifierView As screen:
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
+        DisplayMode: =DisplayMode.View
         FocusedBorderThickness: =4
         Height: =32
         HoverBorderColor: =RGBA(0, 89, 178, 1)
@@ -920,6 +922,7 @@ VerifierView As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.View
         FontWeight: =FontWeight.Bold
         OnSelect: =approver3_5.Selected.Value
         Size: =25
