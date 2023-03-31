@@ -1,0 +1,576 @@
+VisitorInfoScreen_1 As screen:
+    BackgroundImage: ='Background Image'
+    ImagePosition: =ImagePosition.Fill
+    OnVisible: |-
+        =UpdateContext({varMatch:Blank()})
+
+    regularVisitorsDetail_1 As form:
+        BorderThickness: =3
+        DataSource: ='Visitor Request'
+        DefaultMode: =FormMode.New
+        Height: =430
+        NumberOfColumns: =2
+        Width: =1286
+        X: =37
+        Y: =239
+        ZIndex: =1
+
+        "'Employee Name_DataCard5_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="PersonToVisit"
+            Default: =ThisItem.'Person To Visit'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"PersonToVisit")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "PersonToVisit")
+            Required: =true
+            Update: =employeeName_1.Text
+            Width: =641
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey29_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            employeeName_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =employeeList_1.Selected.DisplayName
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey29_1.Y + DataCardKey29_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage29_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =employeeName_1.Y + employeeName_1.Height
+                ZIndex: =3
+
+            StarVisible29_1 As label:
+                Align: =Align.Center
+                Color: =If(IsBlank(employeeName_1.Text),Color.Red, Color.Green)
+                Height: =DataCardKey29_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey29_1.Y
+                ZIndex: =4
+
+        "'Visitor Name_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="VisitorName"
+            Default: =ThisItem.'Visitor Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorName")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =107
+            MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitorName")
+            Required: =true
+            Update: =visitorName_1.Text
+            Width: =641
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+            DataCardKey8_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =33
+                Y: =27
+                ZIndex: =1
+
+            visitorName_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: |-
+                    =If(
+                       !IsBlank(visitorSearchByPhone_1.Text) && Len(visitorSearchByPhone_1.Text)>8,
+                       With(
+                          {
+                             wResult: 
+                             Concat(
+                                ForAll(Distinct(
+                                   Filter(
+                                      VisitorInformation,
+                                      StartsWith(
+                                         'Phone Number',
+                                         visitorSearchByPhone_1.Text
+                                      )
+                                   ),
+                                   'Visitor Name'
+                                ), {Result: ThisRecord.Value}),
+                                Result & ", "
+                             )
+                          },
+                          Left(
+                             wResult,
+                             Len(wResult)-2
+                          )
+                       )
+                    )
+                DisabledColor: =RGBA(90, 106, 119, 1)
+                DisplayMode: =Parent.DisplayMode.Disabled
+                Height: =50
+                MaxLength: =100
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =60
+                ZIndex: =2
+
+            ErrorMessage8_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =visitorName_1.Y + visitorName_1.Height
+                ZIndex: =3
+
+            StarVisible8_1 As label:
+                Align: =Align.Center
+                Color: =If(IsBlank(visitorName_1.Text),Color.Red,Color.Green)
+                FontWeight: =FontWeight.Bold
+                Height: =DataCardKey8_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8_1.Y
+                ZIndex: =4
+
+        "'Visitor Company_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="VisitorCompany"
+            Default: =ThisItem.'Visitor Company'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"VisitorCompany")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =98
+            MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitorCompany")
+            Required: =true
+            Update: =vistorCompanyName_1.Text
+            Width: =641
+            X: =1
+            Y: =0
+            ZIndex: =6
+
+            DataCardKey9_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            vistorCompanyName_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Clear: =true
+                Default: |-
+                    =If(
+                       !IsBlank(visitorSearchByPhone_1.Text) && Len(visitorSearchByPhone_1.Text)>8,
+                       With(
+                          {
+                             wResult: 
+                             Concat(
+                                ForAll(Distinct(
+                                   Filter(
+                                      VisitorInformation,
+                                      StartsWith(
+                                         'Phone Number',
+                                         visitorSearchByPhone_1.Text
+                                      )
+                                   ),
+                                   Company
+                                ), {Result: ThisRecord.Value}),
+                                Result & ", "
+                             )
+                          },
+                          Left(
+                             wResult,
+                             Len(wResult)-2
+                          )
+                       )
+                    )
+                DelayOutput: =true
+                DisabledColor: =RGBA(90, 106, 119, 1)
+                DisplayMode: =Parent.DisplayMode.Disabled
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                OnChange: =
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =61
+                ZIndex: =2
+
+            ErrorMessage9_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =95
+                ZIndex: =3
+
+            StarVisible9_1 As label:
+                Align: =Align.Center
+                Color: =If(IsBlank(vistorCompanyName_1.Text),Color.Red,Color.Green)
+                Height: =DataCardKey9_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_1.Y
+                ZIndex: =4
+
+        "'Reason For Visit_DataCard1_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Reason_x0020_For_x0020_Visit"
+            Default: =ThisItem.'Reason For Visit'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"ReasonForVisit")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =107
+            Required: =true
+            Update: =reason_1.Selected
+            Width: =641
+            WidthFit: =false
+            X: =1
+            Y: =1
+            ZIndex: =6
+
+            DataCardKey10_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            reason_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =57
+                InputTextPlaceholder: ="Reason For Visit"
+                IsSearchable: =false
+                Items: =Choices([@'Visitor Request'].'Reason For Visit')
+                NoSelectionText: ="Reason For Your Visit"
+                OnSelect: =true
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                Reset: =true
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =If(!IsBlank(reason_1.Selected), false, "Please choose the purpose for your visit.")
+                Width: =581
+                X: =30
+                Y: =46
+                ZIndex: =2
+
+            ErrorMessage10_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =reason_1.Y + reason_1.Height
+                ZIndex: =3
+
+            StarVisible10_1 As label:
+                Align: =Align.Center
+                Color: =If(IsBlank(reason_1.Selected.Value),Color.Red,Color.Green)
+                Height: =DataCardKey10_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_1.Y
+                ZIndex: =4
+
+        Symptoms_DataCard1_1 As typedDataCard.toggleEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Symptoms"
+            Default: =ThisItem.Symptoms
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Visitor Request'],DataSourceInfo.DisplayName,"Symptoms")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =194
+            Required: =false
+            Update: =symptoms_1.Selected.Value = "Yes"
+            Width: =641
+            X: =0
+            Y: =2
+            ZIndex: =6
+
+            DataCardKey11_1 As label:
+                AutoHeight: =true
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage11_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =symptoms_1.Y + symptoms_1.Height
+                ZIndex: =3
+
+            StarVisible11_1 As label:
+                Align: =Align.Center
+                Color: =If(IsBlank(symptoms_1.Selected.Value),Color.Red,Color.Green)
+                Height: =DataCardKey11_1.Height
+                Text: ="*"
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_1.Y
+                ZIndex: =4
+
+            Label1_1 As label:
+                Font: =Font.Lato
+                Height: =43
+                Text: ="Are you experiencing any of the following?"
+                Width: =378
+                X: =30
+                Y: =43
+                ZIndex: =5
+
+            Label2_1 As label:
+                Font: =Font.Lato
+                Height: =103
+                Text: |-
+                    ="- Sore Throat
+                    - Dry Cough 
+                    - Fever
+                    - Tiredness"
+                X: =30
+                Y: =74
+                ZIndex: =6
+
+            symptoms_1 As radio:
+                BorderStyle: =BorderStyle.None
+                Default: =If(_lastSelectedSymptoms,"",ThisItem.Symptoms)
+                DisabledBorderColor: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Items: =["Yes","No"]
+                OnChange: =Set(_lastSelectedSymptoms,symptoms_1.SelectedText.Value)
+                OnSelect: =Set(_lastSelectedSymptoms,symptoms_1.SelectedText.Value)
+                Reset: =true
+                Tooltip: =If(!IsBlank(symptoms_1.Selected), false, "Are you having the listed symptoms?")
+                X: =453
+                Y: =54
+                ZIndex: =7
+
+    visitorSearchByPhone_1 As text:
+        Clear: =true
+        Default: =If(!IsBlank(varMatch), varMatch, _lastEnteredPhoneNumber)
+        Format: =TextFormat.Number
+        HintText: ="Search Visitor By Phone Number"
+        MaxLength: =10
+        OnChange: |-
+            =With(
+               {
+                  wMatch: 
+                  If(
+                     !IsBlank(Self.Text),
+                     LookUp(
+                        VisitorInformation,
+                        StartsWith(
+                           'Phone Number',
+                           Self.Text
+                        )
+                     ).'Phone Number'
+                  )
+               },
+               UpdateContext(
+                  {
+                     varMatch: 
+                     If(
+                        !IsBlank(wMatch),
+                        wMatch,
+                        Self.Text
+                     )
+                  }
+               )
+            )
+        Reset: =true
+        X: =278
+        Y: =186
+        ZIndex: =3
+
+    SearchVisitor_1 As label:
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="Search Visitor"
+        Width: =207
+        X: =71
+        Y: =186
+        ZIndex: =4
+
+    homeicon_6 As icon.Home:
+        Color: =RGBA(9, 33, 98, 1)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen)
+        X: =1249
+        Y: =164
+        ZIndex: =5
+
+    infoLbl_6 As label:
+        Font: =Font.Verdana
+        FontWeight: =FontWeight.Semibold
+        Height: =80
+        Size: =28
+        Text: ="Visit Information"
+        Width: =377
+        X: =494
+        Y: =91
+        ZIndex: =6
+
+    btnSubmit_4 As button:
+        DisabledColor: =RGBA(22, 38, 50, 1)
+        DisabledFill: =RGBA(193, 200, 206, 1)
+        DisplayMode: =If(regularVisitorsDetail_1.Valid,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(54, 176, 75, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Lato Black'
+        OnSelect: |-
+            =Patch(
+                'Visitor Request',
+                regularVisitorsDetail_1.Updates
+                );
+            If(
+                IsEmpty(Errors('Visitor Request')),
+                Notify(
+                    "Your request have been registered.",
+                    NotificationType.Success
+                );
+                Set(_lastEnteredPhoneNumber,Blank());
+                Navigate(MainScreen),
+                Notify(
+                    First(Errors('Visitor Request')).Message,
+                    NotificationType.Error
+                )
+            );
+            ResetForm(regularVisitorsDetail_1);
+            Reset([@employeeList_1]);
+            Reset(visitorSearchByPhone_1);
+        Size: =20
+        Text: ="Submit"
+        Width: =206
+        X: =580
+        Y: =683
+        ZIndex: =8
+
+    employeeList_1 As combobox:
+        DisplayFields: =["DisplayName"]
+        Height: =57
+        InputTextPlaceholder: ="Employee To Visit"
+        Items: |-
+            =Filter(Office365Users.SearchUser({searchTerm:employeeList_1.SearchText}),Not(IsBlank(Department)))
+        Reset: =true
+        SearchFields: =["DisplayName"]
+        SearchItems: |-
+            =Search(Filter(Office365Users.SearchUser({searchTerm:employeeList_1.SearchText}),Not(IsBlank(Department))),employeeList_1.SearchText,"DisplayName")
+        SelectMultiple: =false
+        Width: =587
+        X: =64
+        Y: =406
+        ZIndex: =9
+
+    Image6_6 As image:
+        Image: =ThakralOne
+        Width: =788
+        X: =290
+        Y: =18
+        ZIndex: =10
+

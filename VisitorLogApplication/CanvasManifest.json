@@ -120,6 +120,7 @@
     "MainScreen",
     "NewVisitorScreen",
     "VisitorInfoScreen",
+    "VisitorInfoScreen_1",
     "VisitorCheckScreen",
     "ViewVisitorStatus",
     "LogRecord",
