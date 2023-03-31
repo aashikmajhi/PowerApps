@@ -119,6 +119,7 @@
   "ScreenOrder": [
     "MainScreen",
     "NewVisitorScreen",
+    "NewVisitorScreen_1",
     "VisitorInfoScreen",
     "VisitorInfoScreen_1",
     "VisitorCheckScreen",

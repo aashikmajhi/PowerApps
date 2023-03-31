@@ -48,7 +48,7 @@ VisitorCheckScreen As screen:
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "VisitID")
             Required: =false
             Update: =DataCardValue2.Text
-            Visible: =true
+            Visible: =false
             Width: =648
             X: =0
             Y: =3

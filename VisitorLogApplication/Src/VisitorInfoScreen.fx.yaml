@@ -562,6 +562,7 @@ VisitorInfoScreen As screen:
         SearchItems: |-
             =Search(Filter(Office365Users.SearchUser({searchTerm:employeeList.SearchText}),Not(IsBlank(Department))),employeeList.SearchText,"DisplayName")
         SelectMultiple: =false
+        Visible: =false
         Width: =587
         X: =64
         Y: =406

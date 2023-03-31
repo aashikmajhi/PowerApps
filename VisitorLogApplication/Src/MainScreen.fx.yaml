@@ -69,10 +69,10 @@ MainScreen As screen:
         RadiusTopLeft: =9
         RadiusTopRight: =9
         Size: =22
-        Text: ="Security Check"
+        Text: ="Checkout Confirmation"
         Visible: |-
             =//isUserAdminSPList
-            false
+            true
         Width: =372
         X: =145
         Y: =569
