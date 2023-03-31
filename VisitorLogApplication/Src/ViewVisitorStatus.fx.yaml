@@ -28,6 +28,7 @@ ViewVisitorStatus As screen:
         FontWeight: =FontWeight.Bold
         Size: =20
         Text: ="Search Employee"
+        Visible: =false
         Width: =249
         X: =21
         Y: =186
@@ -47,6 +48,7 @@ ViewVisitorStatus As screen:
         SearchItems: |-
             =Search(Filter(Office365Users.SearchUser({searchTerm:searchVisitedEmployee.SearchText}),Not(IsBlank(Department))),searchVisitedEmployee.SearchText,"DisplayName")
         SelectMultiple: =false
+        Visible: =false
         Width: =348
         X: =283
         Y: =186
@@ -268,7 +270,7 @@ ViewVisitorStatus As screen:
             ZIndex: =8
 
         nextBtn As arrow:
-            Fill: =Switch(ThisItem.'Visit Status'.Value,"Visit Completed",Color.Green,"Pending Security Check",Color.Red,"Security Check Completed",Color.Blue)
+            Fill: =Switch(ThisItem.'Visit Status'.Value,"Visit Completed",Color.Green,"In Progress",Color.Red)
             OnSelect: |-
                 =Set(varFormMode, FormMode.Edit);Set(varItem,ThisItem);
                 If(visitStatus.Text = "Visit Completed",Navigate(VisitorCheckScreen), Navigate(VisitorCheckScreen))

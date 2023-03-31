@@ -23,10 +23,11 @@ NewVisitorScreen As screen:
         Font: =Font.'Lato Black'
         Height: =58
         OnSelect: |-
-            =If(IsEmpty(CountRows(Filter(VisitorPhoneNumber,'Phone Number'=visitorPhoneNumber_1.Text))>0),Notify("Phone Number already exists"),NotificationType.Error);If(!IsEmpty(Errors(VisitorInformation)),Notify(First(Errors(VisitorInformation)).Message,NotificationType.Error),
+            =If(IsEmpty(CountRows(Filter(VisitorPhoneNumber,'Phone Number'=visitorPhoneNumber_1.Text))>0),Notify("Phone Number already exists"),NotificationType.Error);
+            If(!IsEmpty(Errors(VisitorInformation)),Notify(First(Errors(VisitorInformation)).Message,NotificationType.Error),
                     //If(IsEmpty(LookUp(VisitorInformation, 'Phone Number' = visitorPhoneNumber_1.Text)),
             If(IsEmpty(CountRows(Filter(VisitorPhoneNumber,'Phone Number'=visitorPhoneNumber_1.Text))>0),Notify("Phone Number already exists. Enter your correct phone number."),Patch(VisitorInformation,{ID:Blank()},visitorsDetail_1.Updates,visitorsDetail_2.Updates);//Office365Outlook.SendEmailV2(visitorEmail_1,"Visitor Registration to ThakralOne",Concatenate("Dear "&"<b>"&visitorFullName_1.Text&"</b>"&","&"<br>"&"We are pleased to inform you that your registration as a visitor in our organization has been successful. Your registered email address and phone number with us is: "&"<br>"&"Email : "&"<b>"&visitorEmail_1.Text&"</b>"&"<br>"&"Phone Number: "&"<b>"&visitorPhoneNumber_1.Text&"</b>"&"<br>"&"Please use this phone number for any future visits with us. We hope you have a pleasant experience during your visit."&"<br>"&"Thank you for choosing our organization."&"<br>","<br>","<br>","<br>"&"Best Regards"&"<br>"&"<b><h2>ThakralOne</b></h2>")),
-            ResetForm(visitorsDetail_1);ResetForm(visitorsDetail_2);
+            ResetForm(visitorsDetail_1),ResetForm(visitorsDetail_2);
             Navigate(VisitorInfoScreen))&&Notify("Success",NotificationType.Success));
         Size: =20
         Text: ="Submit"
