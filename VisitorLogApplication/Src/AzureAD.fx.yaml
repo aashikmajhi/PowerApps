@@ -3,14 +3,14 @@ AzureAD As screen:
     ImagePosition: =ImagePosition.Fill
 
     Button1_4 As button:
-        OnSelect: =Set(varNewGroup,"8f8baac8-3d1a-421b-a016-e29b1a858505");
+        OnSelect: =Set(NetworkChannel,"083d9857-ddc7-44ce-ae09-efb1f0a41cfa");
         Text: ="Button"
         X: =96
         Y: =60
         ZIndex: =1
 
     "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Items: =If(!IsBlank(varNewGroup),Office365Groups.ListGroupMembers(varNewGroup).value)
+        Items: =If(!IsBlank(NetworkChannel),Office365Groups.ListGroupMembers(NetworkChannel).value)
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =Min(160, Self.Height - 60)
@@ -50,7 +50,7 @@ AzureAD As screen:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.Trash
-            OnSelect: =Office365Groups.RemoveMemberFromGroup("8f8baac8-3d1a-421b-a016-e29b1a858505",ThisItem.userPrincipalName);Set(varNewGroup,"");Set(varNewGroup,"8f8baac8-3d1a-421b-a016-e29b1a858505");
+            OnSelect: =Office365Groups.RemoveMemberFromGroup("083d9857-ddc7-44ce-ae09-efb1f0a41cfa",ThisItem.userPrincipalName);Set(varNewGroup,"");Set(varNewGroup,"083d9857-ddc7-44ce-ae09-efb1f0a41cfa");Set(NetworkChannel,"");Set(NetworkChannel,"083d9857-ddc7-44ce-ae09-efb1f0a41cfa")
             PaddingBottom: =10
             PaddingLeft: =10
             PaddingRight: =10
@@ -70,7 +70,7 @@ AzureAD As screen:
             ZIndex: =5
 
     Button1_5 As button:
-        OnSelect: =Office365Groups.AddMemberToGroup(varNewGroup,ComboBox1_1.Selected.UserPrincipalName);Set(varNewGroup,"");Set(varNewGroup,"8f8baac8-3d1a-421b-a016-e29b1a858505");Reset(ComboBox1_1);
+        OnSelect: =Office365Groups.AddMemberToGroup(NetworkChannel,ComboBox1_1.Selected.UserPrincipalName);Set(NetworkChannel,"");Set(NetworkChannel,"083d9857-ddc7-44ce-ae09-efb1f0a41cfa");Reset(ComboBox1_1);
         Text: ="Add New User"
         X: =798
         Y: =60
