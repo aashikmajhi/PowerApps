@@ -125,6 +125,7 @@
     "VisitorCheckScreen",
     "ViewVisitorStatus",
     "LogRecord",
+    "LogRecord_1",
     "SecGroup",
     "AzureAD"
   ]
