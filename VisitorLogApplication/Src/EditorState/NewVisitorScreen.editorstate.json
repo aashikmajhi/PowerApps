@@ -8593,8 +8593,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)",
           "InvariantPropertyName": "Visible",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -8612,7 +8612,14 @@
         "HoverBorderColor",
         "BorderStyle",
         "FocusedBorderColor",
-        "Fill",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Fill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisabledFill",
         "PressedFill",
         "HoverFill",
@@ -8874,8 +8881,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)",
           "InvariantPropertyName": "Visible",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
