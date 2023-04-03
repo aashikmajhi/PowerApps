@@ -524,7 +524,9 @@ VisitorInfoScreen As screen:
         FocusedBorderColor: =ColorFade(Self.Fill, 75%)
         Font: =Font.'Lato Black'
         OnSelect: |-
-            =Patch(
+            =//Patch('Visitor Request',regularVisitorsDetail.Updates);If(IsEmpty(Errors('Visitor Request')),Notify("Your request have been registered.",NotificationType.Success);Set(_lastEnteredPhoneNumber,Blank());Navigate(MainScreen),Notify(First(Errors('Visitor Request')).Message,NotificationType.Error));ResetForm(regularVisitorsDetail);Reset([@employeeList]);Reset(visitorSearchByPhone);
+            
+            Patch(
                 'Visitor Request',
                 regularVisitorsDetail.Updates
                 );
