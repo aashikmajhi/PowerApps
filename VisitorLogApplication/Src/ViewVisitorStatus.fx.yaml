@@ -198,7 +198,9 @@ ViewVisitorStatus As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Reason For Visit'.Value
+            Text: |-
+                =//ThisItem.'Reason For Visit'.Value
+                LookUp('Visitor Request','Visitor Name'=VisitorfullName.Text,'Reason For Visit'.Value)
             Width: =123
             Wrap: =false
             X: =418
