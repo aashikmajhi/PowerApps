@@ -314,7 +314,7 @@ VisitorInfoScreen As screen:
 
             reason As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
+                DefaultSelectedItems: = Parent .Default
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 Font: =Font.Lato
@@ -523,20 +523,25 @@ VisitorInfoScreen As screen:
         Fill: =RGBA(54, 176, 75, 1)
         FocusedBorderColor: =ColorFade(Self.Fill, 75%)
         Font: =Font.'Lato Black'
-        OnSelect: |-
+        OnSelect: |
             =//Patch('Visitor Request',regularVisitorsDetail.Updates);If(IsEmpty(Errors('Visitor Request')),Notify("Your request have been registered.",NotificationType.Success);Set(_lastEnteredPhoneNumber,Blank());Navigate(MainScreen),Notify(First(Errors('Visitor Request')).Message,NotificationType.Error));ResetForm(regularVisitorsDetail);Reset([@employeeList]);Reset(visitorSearchByPhone);
-            
+            //Patch('Visitor Request',regularVisitorsDetail.Updates);If(IsEmpty(Errors('Visitor Request')),Notify("Your request have been registered.",NotificationType.Success);Set(_lastEnteredPhoneNumber,Blank());Navigate(MainScreen),Notify(First(Errors('Visitor Request')).Message,NotificationType.Error));ResetForm(regularVisitorsDetail);Reset([@employeeList]);Reset(visitorSearchByPhone);
             Patch(
                 'Visitor Request',
+                Defaults('Visitor Request'),
+                {'Reason For Visit': reason.Selected},
                 regularVisitorsDetail.Updates
-                );
+            );
             If(
                 IsEmpty(Errors('Visitor Request')),
                 Notify(
                     "Your request have been registered.",
                     NotificationType.Success
                 );
-                Set(_lastEnteredPhoneNumber,Blank());
+                Set(
+                    _lastEnteredPhoneNumber,
+                    Blank()
+                );
                 Navigate(MainScreen),
                 Notify(
                     First(Errors('Visitor Request')).Message,
