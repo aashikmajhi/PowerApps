@@ -1,8 +1,5 @@
 {
   "4ba4b5b7-1c5b-4332-a621-4a7484b0e4e8": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "displayName": "Office 365 Outlook",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1624/1.0.1624.3221/office365/icon.png",
@@ -17,9 +14,6 @@
     "id": "4ba4b5b7-1c5b-4332-a621-4a7484b0e4e8"
   },
   "6a74bc73-42dd-4057-a31b-a2a028ac1297": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "displayName": "Office 365 Users",
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3200/office365users/icon.png",
@@ -34,9 +28,6 @@
     "id": "6a74bc73-42dd-4057-a31b-a2a028ac1297"
   },
   "7670286d-174c-47d2-bd2e-85680cbcf6af": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "displayName": "SharePoint",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1623/1.0.1623.3210/sharepointonline/icon.png",
@@ -79,9 +70,6 @@
     "id": "7670286d-174c-47d2-bd2e-85680cbcf6af"
   },
   "a640784d-726c-42c9-b997-9fe1f75d802e": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "SharePoint",
@@ -101,7 +89,6 @@
     "id": "a640784d-726c-42c9-b997-9fe1f75d802e"
   },
   "d42f4488-9927-4cce-9528-fb8e3bbdb683": {
-    "connectionParameters": {},
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
@@ -137,7 +124,6 @@
     "id": "d42f4488-9927-4cce-9528-fb8e3bbdb683"
   },
   "d9db44f0-bddd-4881-99e7-ba73b9d57171": {
-    "connectionParameters": {},
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
@@ -180,7 +166,6 @@
     "id": "d9db44f0-bddd-4881-99e7-ba73b9d57171"
   },
   "eac73ffd-3673-44de-95ba-47c98c997c4d": {
-    "connectionParameters": {},
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
@@ -216,9 +201,6 @@
     "id": "eac73ffd-3673-44de-95ba-47c98c997c4d"
   },
   "fd6451e6-b814-4e76-9635-5d984a4d7286": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "OneDrive for Business",

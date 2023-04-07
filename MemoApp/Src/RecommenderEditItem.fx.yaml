@@ -466,6 +466,7 @@ RecommenderEditItem As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
                 DisplayMode: =DisplayMode.View
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
@@ -473,6 +474,7 @@ RecommenderEditItem As screen:
                 Items: =Distinct(Type,'Vendor No')
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 89, 178, 1)
+                SearchFields: =["Value"]
                 SearchItems: =[]
                 SelectionFill: =RGBA(0, 51, 102, 1)
                 SelectMultiple: =false
