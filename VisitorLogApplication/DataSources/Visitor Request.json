@@ -37,6 +37,7 @@
       "Gender#Id": "Gender Id",
       "ID": "ID",
       "Modified": "Modified",
+      "OData__ColorTag": "Color Tag",
       "PersonToVisit": "Person To Visit",
       "ReasonForVisit": "Reason For Visit",
       "ReasonForVisit#Id": "Reason For Visit Id",
