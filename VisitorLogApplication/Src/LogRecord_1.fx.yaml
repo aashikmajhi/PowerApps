@@ -153,7 +153,7 @@ LogRecord_1 As screen:
                         Filter(
                             createdToday,
                             Created >= fromDate_2.SelectedDate && Created <= toDate_2.SelectedDate,
-                            1,
+                            10,
                             TimeUnit.Days
                         ),
                         "Created",
