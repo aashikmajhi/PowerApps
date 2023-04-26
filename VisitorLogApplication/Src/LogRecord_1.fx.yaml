@@ -53,9 +53,8 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Name"
-        X: =42
+        X: =22
         Y: =237
         ZIndex: =5
 
@@ -63,9 +62,8 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Company Info"
-        X: =260
+        X: =310
         Y: =237
         ZIndex: =6
 
@@ -74,10 +72,9 @@ LogRecord_1 As screen:
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
         Height: =38
-        Size: =15
         Text: ="Reason for Visit"
         Width: =168
-        X: =421
+        X: =451
         Y: =237
         ZIndex: =7
 
@@ -85,10 +82,9 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Gender"
         Width: =98
-        X: =589
+        X: =629
         Y: =237
         ZIndex: =8
 
@@ -96,10 +92,9 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Person To Meet"
         Width: =195
-        X: =691
+        X: =731
         Y: =237
         ZIndex: =9
 
@@ -107,9 +102,8 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Created"
-        X: =886
+        X: =936
         Y: =237
         ZIndex: =10
 
@@ -117,9 +111,8 @@ LogRecord_1 As screen:
         Align: =Align.Center
         Font: =Font.'Lato Black'
         FontWeight: =FontWeight.Semibold
-        Size: =15
         Text: ="Status"
-        X: =1109
+        X: =1119
         Y: =237
         ZIndex: =11
 
@@ -193,10 +186,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.'Visitor Name'
             Width: =186
             Wrap: =false
-            X: =22
+            X: =2
             ZIndex: =2
 
         visitorcompanyName_2 As label:
@@ -208,10 +202,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.'Visitor Company'
             Width: =162
             Wrap: =false
-            X: =226
+            X: =266
             ZIndex: =3
 
         visReason_2 As label:
@@ -221,12 +216,13 @@ LogRecord_1 As screen:
             DisplayMode: =DisplayMode.View
             Font: =Font.'Lato Black'
             FontWeight: =FontWeight.Semibold
-            Height: =42
+            Height: =41
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.'Reason For Visit'.Value
-            Width: =123
+            Width: =164
             Wrap: =false
-            X: =428
+            X: =438
             ZIndex: =4
 
         sex_2 As label:
@@ -238,10 +234,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =41
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.Gender.Value
             Width: =90
             Wrap: =false
-            X: =582
+            X: =612
             ZIndex: =5
 
         visitingWhom_2 As label:
@@ -253,10 +250,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.'Person To Visit'
             Width: =208
             Wrap: =false
-            X: =672
+            X: =702
             ZIndex: =6
 
         createTiming_2 As label:
@@ -268,10 +266,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.Created
-            Width: =208
+            Width: =180
             Wrap: =false
-            X: =861
+            X: =906
             ZIndex: =7
 
         visitStatus_2 As label:
@@ -283,10 +282,11 @@ LogRecord_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =42
             OnSelect: =Select(Parent)
+            Size: =11
             Text: =ThisItem.'Visit Status'.Value
-            Width: =220
+            Width: =180
             Wrap: =false
-            X: =1055
+            X: =1088
             ZIndex: =8
 
         nextBtn_2 As arrow:
@@ -296,6 +296,23 @@ LogRecord_1 As screen:
                 If(visitStatus_2.Text = "Visit Completed",Navigate(VisitorCheckScreen), Navigate(VisitorCheckScreen))
             X: =1284
             ZIndex: =9
+
+        visitorcompanyName_3 As label:
+            Align: =Align.Center
+            BorderStyle: =BorderStyle.None
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: |
+                =LookUp(VisitorInformation,ThisItem.'Visitor Name'=searchVisitedEmployee_2.Selected.Value,'Phone Number')
+            Width: =182
+            Wrap: =false
+            X: =126
+            ZIndex: =10
 
     fromDate_2 As datepicker:
         BorderColor: =RGBA(210, 215, 218, 1)
@@ -372,4 +389,13 @@ LogRecord_1 As screen:
         X: =290
         Y: =18
         ZIndex: =21
+
+    name_3 As label:
+        Align: =Align.Center
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Text: ="Phone Number"
+        X: =170
+        Y: =237
+        ZIndex: =22
 
