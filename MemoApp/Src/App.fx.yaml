@@ -10,7 +10,7 @@ App As appinfo:
             Set(role, wUserRecord.Role.Value)
         );
         
-        //If(role="Recommender",Set(galData,true));
-        If(role="Creater",Set(galData,true));
+        If(role="Recommender",Set(galData,true));
+        //If(role="Creater",Set(galData,true));
     StartScreen: =SplashScreen
 
