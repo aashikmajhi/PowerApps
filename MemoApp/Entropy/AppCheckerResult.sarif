@@ -22168,36 +22168,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AddingNewItemUserSubmitMemo.Form4_2.TypeNo_DataCard3_1.DataCardValue21_1.DefaultSelectedItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AddingNewItemUserSubmitMemo.Form4_2.TypeNo_DataCard3_1.DataCardValue21_1.DefaultSelectedItems",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "DefaultSelectedItems",
-                "module": "AddingNewItemUserSubmitMemo",
-                "type": "AddingNewItemUserSubmitMemo.Form4_2.TypeNo_DataCard3_1.DataCardValue21_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
         }
       ],
       "tool": {
