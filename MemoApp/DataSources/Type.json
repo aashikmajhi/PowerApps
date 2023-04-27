@@ -30,11 +30,12 @@
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "field_0": "Vendor Type",
-      "field_0#Id": "Vendor Type Id",
       "field_0@odata.type": "field_0 (field_0@odata.type)",
+      "field_0#Id": "Vendor Type Id",
       "field_2": "Vendor No",
       "ID": "ID",
       "Modified": "Modified",
+      "OData__ColorTag": "Color Tag",
       "Title": "Title",
       "Vendor_x0020_Name": "Vendor Name",
       "Vendor_x0020_Name#Id": "Vendor Name Id"
