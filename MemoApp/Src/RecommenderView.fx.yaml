@@ -614,7 +614,8 @@ RecommenderView As screen:
             =//recommenderGallery.Selected.MemoType
             
             LookUp(MemoList,'Memo No'=refNo_7.Text,'Memo Type')
-        X: =599
+        Width: =400
+        X: =475
         Y: =58
         ZIndex: =36
 

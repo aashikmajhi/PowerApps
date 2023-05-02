@@ -14,3 +14,10 @@ App As appinfo:
         //If(role="Creater",Set(galData,true));
     StartScreen: =SplashScreen
 
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

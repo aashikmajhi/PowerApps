@@ -458,7 +458,8 @@ UserView As screen:
         Height: =28
         Size: =15
         Text: =userDashboardGallery.Selected.MemoType
-        X: =599
+        Width: =400
+        X: =475
         Y: =58
         ZIndex: =36
 

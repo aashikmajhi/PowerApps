@@ -425,7 +425,8 @@ UserViewAfterSubmit As screen:
         Height: =28
         Size: =15
         Text: =LookUp(MemoList,'Memo No'=refNo_13.Text,'Memo Type')
-        X: =599
+        Width: =400
+        X: =475
         Y: =58
         ZIndex: =36
 

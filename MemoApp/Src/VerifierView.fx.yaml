@@ -594,7 +594,8 @@ VerifierView As screen:
         OnSelect: =approver3_5.Selected.Value
         Size: =15
         Text: =LookUp(MemoList,'Memo No'=refNo_8.Text,'Memo Type')
-        X: =599
+        Width: =400
+        X: =475
         Y: =58
         ZIndex: =36
 
@@ -1128,17 +1129,6 @@ VerifierView As screen:
             X: =1251
             Y: =6
             ZIndex: =4
-
-    Label6 As label:
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Size: =13
-        Text: ="Verifier View"
-        Width: =281
-        X: =83
-        Y: =30
-        ZIndex: =62
 
     Container2_2 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(250, 250, 250, 0.3)
