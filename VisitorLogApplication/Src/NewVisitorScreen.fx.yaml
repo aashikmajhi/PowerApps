@@ -646,7 +646,7 @@ NewVisitorScreen As screen:
                 ZIndex: =3
 
             Camera2 As camera:
-                Camera: =1
+                Camera: =0
                 Height: =148
                 Width: =131
                 X: =424
