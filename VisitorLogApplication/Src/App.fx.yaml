@@ -19,3 +19,10 @@ App As appinfo:
         Set(varNewGroup,"8f8baac8-3d1a-421b-a016-e29b1a858505");
     StartScreen: =MainScreen
 
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

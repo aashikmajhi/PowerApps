@@ -78,6 +78,7 @@
       "projectionmapping": true,
       "reactformulabar": false,
       "reliableconcurrent": true,
+      "reservedkeywords": false,
       "reverttooldpowerautomate": false,
       "rtlinstudiopreview": false,
       "rtlsupport": false,
@@ -94,6 +95,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
+    "BindingErrorCount": 0,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",
@@ -111,7 +113,8 @@
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
     "Name": "Visitor Log App",
-    "OriginatingVersion": "1.326"
+    "OriginatingVersion": "1.326",
+    "ParserErrorCount": 0
   },
   "PublishInfo": {
     "AppName": "Visitor Log App",
@@ -133,8 +136,6 @@
     "VisitorCheckScreen",
     "ViewVisitorStatus",
     "LogRecord",
-    "LogRecord_1",
-    "SecGroup",
-    "AzureAD"
+    "LogRecord_1"
   ]
 }

@@ -134,7 +134,7 @@ LogRecord_1 As screen:
                 SortByColumns(
                     Filter(
                         createdToday,
-                        'Person To Visit' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                        'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                     ),
                     "Created",
                     SortOrder.Descending
@@ -144,7 +144,7 @@ LogRecord_1 As screen:
                     SortByColumns(
                         Filter(
                             createdToday,
-                            'Person To Visit' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                            'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                         ),
                         "Created",
                         SortOrder.Descending
