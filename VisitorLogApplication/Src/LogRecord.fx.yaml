@@ -33,17 +33,18 @@ LogRecord As screen:
 
     searchVisitedEmployee_1 As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
-        DisplayFields: =["DisplayName"]
+        DisplayFields: =["Value"]
         Font: =Font.Lato
         FontWeight: =FontWeight.Semibold
         InputTextPlaceholder: ="Search Employee"
+        IsSearchable: =false
         Items: |-
-            =Filter(Office365Users.SearchUser({searchTerm:searchVisitedEmployee_1.SearchText}),Not(IsBlank(Department)))
+            =//Filter(Office365Users.SearchUser({searchTerm:searchVisitedEmployee_1.SearchText}),Not(IsBlank(Department)))
+            Distinct(VisitorInformation,'Visitor Name')
         NoSelectionText: =
         Reset: =true
-        SearchFields: =["DisplayName"]
-        SearchItems: |-
-            =Search(Filter(Office365Users.SearchUser({searchTerm:searchVisitedEmployee_1.SearchText}),Not(IsBlank(Department))),searchVisitedEmployee_1.SearchText,"DisplayName")
+        SearchFields: =["Value"]
+        SearchItems: =[]
         SelectMultiple: =false
         Width: =348
         X: =283
@@ -137,22 +138,53 @@ LogRecord As screen:
         BorderThickness: =3
         Height: =475
         Items: |-
-            =If(
-                searchVisitedEmployee_1.Selected.DisplayName <> Blank(),
+            =//If(    searchVisitedEmployee_1.Selected.DisplayName <> Blank(),SortByColumns(Filter(
+                    //createdToday,'Person To Visit' = searchVisitedEmployee_1.Selected.DisplayName || (IsToday//(Created)) && 'Visit Status'.Value <> "Visit Completed"
+            //        ),
+              //      "Created",
+                //    SortOrder.Descending
+                //),
+                //If(
+                   // searchVisitedEmployee_1.Selected.DisplayName <> IsBlank("") && //searchVisitedEmployee_1.Selected.DisplayName = IsBlank(""),
+                    //SortByColumns(
+                      //  Filter(
+                            //createdToday,
+                           // 'Person To Visit' = searchVisitedEmployee_1.Selected.DisplayName || (IsToday(Created)) &//& 'Visit Status'.Value <> "Visit Completed"
+                      //  ),
+                        //"Created",
+                        //SortOrder.Descending
+                    //),
+                   // SortByColumns(
+                     //   Filter(
+                       //     createdToday,
+                         //   Created >= fromDate_1.SelectedDate && Created <= toDate_1.SelectedDate,
+                           // 1,
+                           // TimeUnit.Days
+                       // ),
+                       // "Created",
+                       // SortOrder.Ascending
+                   // )
+               // )
+            //)
+            
+            
+            
+            If(
+                searchVisitedEmployee_2.Selected.Value <> Blank(),
                 SortByColumns(
                     Filter(
                         createdToday,
-                        'Person To Visit' = searchVisitedEmployee_1.Selected.DisplayName || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                        'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                     ),
                     "Created",
                     SortOrder.Descending
                 ),
                 If(
-                    searchVisitedEmployee_1.Selected.DisplayName <> IsBlank("") && searchVisitedEmployee_1.Selected.DisplayName = IsBlank(""),
+                    searchVisitedEmployee_2.Selected.Value <> IsBlank("") && searchVisitedEmployee_2.Selected.Value = IsBlank(""),
                     SortByColumns(
                         Filter(
                             createdToday,
-                            'Person To Visit' = searchVisitedEmployee_1.Selected.DisplayName || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                            'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                         ),
                         "Created",
                         SortOrder.Descending
@@ -160,8 +192,8 @@ LogRecord As screen:
                     SortByColumns(
                         Filter(
                             createdToday,
-                            Created >= fromDate_1.SelectedDate && Created <= toDate_1.SelectedDate,
-                            1,
+                            Created >= fromDate_2.SelectedDate && Created <= toDate_2.SelectedDate,
+                            10,
                             TimeUnit.Days
                         ),
                         "Created",
