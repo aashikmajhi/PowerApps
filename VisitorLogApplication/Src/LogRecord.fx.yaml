@@ -170,21 +170,21 @@ LogRecord As screen:
             
             
             If(
-                searchVisitedEmployee_2.Selected.Value <> Blank(),
+                searchVisitedEmployee_1.Selected.Value <> Blank(),
                 SortByColumns(
                     Filter(
                         createdToday,
-                        'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                        'Visitor Name' = searchVisitedEmployee_1.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                     ),
                     "Created",
                     SortOrder.Descending
                 ),
                 If(
-                    searchVisitedEmployee_2.Selected.Value <> IsBlank("") && searchVisitedEmployee_2.Selected.Value = IsBlank(""),
+                    searchVisitedEmployee_1.Selected.Value <> IsBlank("") && searchVisitedEmployee_1.Selected.Value = IsBlank(""),
                     SortByColumns(
                         Filter(
                             createdToday,
-                            'Visitor Name' = searchVisitedEmployee_2.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
+                            'Visitor Name' = searchVisitedEmployee_1.Selected.Value || (IsToday(Created)) && 'Visit Status'.Value <> "Visit Completed"
                         ),
                         "Created",
                         SortOrder.Descending
@@ -192,7 +192,7 @@ LogRecord As screen:
                     SortByColumns(
                         Filter(
                             createdToday,
-                            Created >= fromDate_2.SelectedDate && Created <= toDate_2.SelectedDate,
+                            Created >= fromDate_1.SelectedDate && Created <= toDate_1.SelectedDate,
                             10,
                             TimeUnit.Days
                         ),
