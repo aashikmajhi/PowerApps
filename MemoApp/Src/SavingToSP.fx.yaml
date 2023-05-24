@@ -419,36 +419,6 @@ SavingToSP As screen:
         Y: =688
         ZIndex: =26
 
-    Label8_21 As label:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Height: =32
-        Size: =13
-        Text: |-
-            ="Recommended By:"
-        Visible: =If(varLoggedInUser="sumit.manandhar@astral.com.np",true,false)
-        Width: =175
-        X: =583
-        Y: =688
-        ZIndex: =32
-
-    Label8_22 As label:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Height: =32
-        Size: =13
-        Text: |-
-            ="Approved By:"
-        Visible: =If(IsBlank(approver1_5),false,true)
-        Width: =144
-        X: =876
-        Y: =688
-        ZIndex: =34
-
     Label1_1 As label:
         Align: =Align.Center
         BorderColor: =RGBA(0, 89, 178, 1)
@@ -514,21 +484,6 @@ SavingToSP As screen:
         X: =14
         Y: =174
         ZIndex: =39
-
-    Label8_23 As label:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Height: =32
-        Size: =13
-        Text: |-
-            ="Approved By:"
-        Visible: =If(IsBlank(approver1_4),false,true)
-        Width: =144
-        X: =1142
-        Y: =688
-        ZIndex: =42
 
     approver1_2 As text:
         Align: =Align.Center
@@ -637,75 +592,6 @@ SavingToSP As screen:
         X: =83
         Y: =73
         ZIndex: =50
-
-    approver1_3 As text:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Color: =RGBA(0, 0, 0, 1)
-        Default: =approver2.SelectedText.Value
-        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =4
-        Height: =32
-        HoverBorderColor: =RGBA(0, 89, 178, 1)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        Size: =11
-        Visible: =If(IsBlank(approver1_4),false,true)
-        Width: =250
-        X: =1099
-        Y: =720
-        ZIndex: =51
-
-    approver1_4 As text:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Color: =RGBA(0, 0, 0, 1)
-        Default: =approver1.SelectedText.Value
-        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =4
-        Height: =32
-        HoverBorderColor: =RGBA(0, 89, 178, 1)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        Size: =11
-        Visible: =If(IsBlank(approver1_5),false,true)
-        Width: =250
-        X: =824
-        Y: =720
-        ZIndex: =52
-
-    approver1_5 As text:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Color: =RGBA(0, 0, 0, 1)
-        Default: =recommendedby.SelectedText.Value
-        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        DisabledFill: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =4
-        Height: =32
-        HoverBorderColor: =RGBA(0, 89, 178, 1)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        Size: =11
-        Visible: =If(varLoggedInUser="sumit.manandhar@astral.com.np",true,false)
-        Width: =250
-        X: =550
-        Y: =720
-        ZIndex: =53
 
     approver1_6 As text:
         Align: =Align.Center

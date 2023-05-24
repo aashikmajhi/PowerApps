@@ -147,13 +147,6 @@
     "RecommenderEditItem",
     "EditMemoItemsToSave",
     "EditMemoItemsToSubmit",
-    "VerifierEditItem",
-    "ViewPDF",
-    "PDF",
-    "UploadQuotation",
-    "RespondingScreen",
-    "Actions",
-    "LoginScreen",
-    "AddingNewItemCreatingMemo_1"
+    "VerifierEditItem"
   ]
 }
