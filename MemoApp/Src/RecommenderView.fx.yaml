@@ -586,9 +586,7 @@ RecommenderView As screen:
         Height: =32
         HoverColor: =RGBA(0, 0, 0, 1)
         HoverFill: =RGBA(255, 255, 255, 1)
-        Items: |-
-            =//["naresh.dhami@astral.com.np","sumit.manandhar@astral.com.np","sumit.manandhar@thakralone.com","dikshant.koirala@astral.com.np"," sudip.rijal@astral.com.np","anjit.maharjan@astral.com.np","akshyat.sharma@esewaremit.com","application@astral.com.np","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com"]
-            ["akshyat.sharma@esewaremit.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","subigya.pyakurel@thakralone.com"]
+        Items: =["naresh.dhami@astral.com.np","sumit.manandhar@astral.com.np","sumit.manandhar@thakralone.com","dikshant.koirala@astral.com.np"," sudip.rijal@astral.com.np","anjit.maharjan@astral.com.np","akshyat.sharma@esewaremit.com","application@astral.com.np","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","akshyat.sharma@esewaremit.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","subigya.pyakurel@thakralone.com"]
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(255, 87, 51, 1)
         Reset: =true
@@ -705,9 +703,7 @@ RecommenderView As screen:
         Height: =32
         HoverColor: =RGBA(0, 0, 0, 1)
         HoverFill: =RGBA(255, 255, 255, 1)
-        Items: |-
-            =//["naresh.dhami@astral.com.np","sumit.manandhar@astral.com.np","sumit.manandhar@thakralone.com","dikshant.koirala@astral.com.np"," sudip.rijal@astral.com.np","anjit.maharjan@astral.com.np","akshyat.sharma@esewaremit.com","application@astral.com.np","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com"]
-            ["akshyat.sharma@esewaremit.com","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","subigya.pyakurel@thakralone.com"]
+        Items: =["naresh.dhami@astral.com.np","sumit.manandhar@astral.com.np","sumit.manandhar@thakralone.com","dikshant.koirala@astral.com.np"," sudip.rijal@astral.com.np","anjit.maharjan@astral.com.np","akshyat.sharma@esewaremit.com","application@astral.com.np","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","akshyat.sharma@esewaremit.com","sandeep.shakya@f1soft.com","madan.thapa@f1soft.com","basanta.pandey@fonepay.com","saurav.timalsena@fonepay.com","subigya.pyakurel@thakralone.com"]
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(255, 87, 51, 1)
         Reset: =true
