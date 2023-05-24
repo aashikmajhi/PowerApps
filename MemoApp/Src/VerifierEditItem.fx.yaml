@@ -772,7 +772,7 @@ VerifierEditItem As screen:
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 DisplayMode: =Parent.DisplayMode
                 FocusedBorderThickness: =4
-                Height: =177
+                Height: =170
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(153, 205, 255, 1)
                 IsInDataCard: =true
