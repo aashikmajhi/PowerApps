@@ -96,7 +96,7 @@ VisitorInfoScreen As screen:
             MaxLength: =DataSourceInfo([@'Visitor Request'], DataSourceInfo.MaxLength, "PhoneNumber")
             Required: =false
             Update: =DataCardValue1.Text
-            Visible: =true
+            Visible: =false
             Width: =643
             X: =1
             Y: =2
