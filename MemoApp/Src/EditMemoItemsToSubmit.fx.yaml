@@ -209,6 +209,7 @@ EditMemoItemsToSubmit As screen:
                 PressedFill: =RGBA(0, 89, 178, 1)
                 SearchItems: =Search(ComboBoxSample,DataCardValue11_1.SearchText,"Value1")
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =30

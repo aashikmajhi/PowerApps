@@ -319,6 +319,7 @@ AddingNewItemViewer As screen:
                 SearchFields: =["Value"]
                 SearchItems: =Choices(Type.'Vendor Type',DataCardValue26_2.SearchText)
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =30
@@ -405,6 +406,7 @@ AddingNewItemViewer As screen:
                 SearchFields: =["Value"]
                 SearchItems: =Choices(Type.'Vendor Name',DataCardValue22_2.SearchText)
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =30
@@ -492,6 +494,7 @@ AddingNewItemViewer As screen:
                 SearchFields: =["Value"]
                 SearchItems: =Search(Distinct(Type,'Vendor No'),DataCardValue21_2.SearchText,"Value")
                 SelectionFill: =RGBA(0, 51, 102, 1)
+                SelectMultiple: =false
                 Size: =13
                 Width: =623
                 X: =30
