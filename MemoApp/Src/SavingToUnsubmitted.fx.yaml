@@ -663,7 +663,7 @@ SavingToUnsubmitted As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         BorderThickness: =0
         Color: =RGBA(0, 0, 0, 1)
-        Default: ="This is to request for approval for payment of below parties for below references from below sources."
+        Default: =If(IsBlank(Label3_1.Text && Label1_3.Text),"","This is to request for approval for " &  Label1_3.Text & " of " & Label3_1.Text & " for below references from below sources.")
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
@@ -674,7 +674,7 @@ SavingToUnsubmitted As screen:
         HoverColor: =RGBA(0, 0, 0, 1)
         HoverFill: =RGBA(255, 255, 255, 1)
         Size: =13
-        Width: =846
+        Width: =990
         X: =10
         Y: =254
         ZIndex: =60
