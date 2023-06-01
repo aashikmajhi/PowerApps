@@ -106,7 +106,7 @@ UserDashboard As screen:
             Navigate(CreateNewMemo)
         Size: =15
         Text: ="Create New"
-        Visible: |
+        Visible: |-
             =//If(loginUser.Email=recommendedby1.Text,false,true);
             //If(role.Role.Value="Recommender",false,true)
             If(loginUser.Email="sumit.manandhar@thakralone.com",false,true)
