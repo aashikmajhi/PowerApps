@@ -109,7 +109,8 @@ UserDashboard As screen:
         Visible: |-
             =//If(loginUser.Email=recommendedby1.Text,false,true);
             //If(role.Role.Value="Recommender",false,true)
-            If(loginUser.Email="sumit.manandhar@thakralone.com",false,true)
+            If(role="Recommender",false,true)
+            //If(loginUser.Email="sumit.manandhar@thakralone.com",false,true)
         Width: =246
         X: =1080
         Y: =54
