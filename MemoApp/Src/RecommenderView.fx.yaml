@@ -499,7 +499,7 @@ RecommenderView As screen:
                     Set(
                         saving,
                         true
-                    ) & Navigate(RecommenderViewAfterSubmit)
+                    ) & Navigate(UserDashboard)
                 )
             )
         Size: =15
