@@ -226,14 +226,14 @@ UserDashboard As screen:
                             'Created By'.Email = User().Email
                         ),
                         Date,
-                        SortOrder.Descending
+                        SortOrder.Ascending
                     ),
                     If(
                         _requestTypeFilter = "All",
                         Sort(
                             MemoList,
                             Date,
-                            SortOrder.Descending
+                            SortOrder.Ascending
                         ),
                         If(
                             _requestTypeFilter = "Pending",
@@ -246,7 +246,7 @@ UserDashboard As screen:
                                     Status.Value = "Pending Recommendation"
                                 ),
                                 Date,
-                                SortOrder.Descending
+                                SortOrder.Ascending
                             ),
                             If(
                                 _requestTypeFilter = "Approved",
@@ -256,7 +256,7 @@ UserDashboard As screen:
                                         Status.Value = "Approved"
                                     ),
                                     Date,
-                                    SortOrder.Descending
+                                    SortOrder.Ascending
                                 ),
                                 If(
                                     _requestTypeFilter = "Declined",
@@ -266,7 +266,7 @@ UserDashboard As screen:
                                             Status.Value = "Declined"
                                         ),
                                         Date,
-                                        SortOrder.Descending
+                                        SortOrder.Ascending
                                     ),
                                     // Default filter if none of the above conditions match
                                     MemoList
@@ -276,7 +276,7 @@ UserDashboard As screen:
                     )
                 ),
                 Date,
-                SortOrder.Descending
+                SortOrder.Ascending
             )
             
         Layout: =Layout.Vertical
@@ -387,7 +387,7 @@ UserDashboard As screen:
             DisabledColor: =RGBA(166, 166, 166, 1)
             FontWeight: =FontWeight.Semibold
             Height: =92
-            Size: =10
+            Size: =8
             Text: =ThisItem.ApprovalComments
             VerticalAlign: =VerticalAlign.Top
             Width: =320
@@ -535,14 +535,14 @@ UserDashboard As screen:
                             'Created By'.Email = User().Email
                         ),
                         Date,
-                        SortOrder.Descending
+                        SortOrder.Ascending
                     ),
                     If(
                         _requestTypeFilter = "All",
                         Sort(
                             MemoList,
                             Date,
-                            SortOrder.Descending
+                            SortOrder.Ascending
                         ),
                         If(
                             _requestTypeFilter = "Pending",
@@ -555,7 +555,7 @@ UserDashboard As screen:
                                     Status.Value = "Pending Recommendation"
                                 ),
                                 Date,
-                                SortOrder.Descending
+                                SortOrder.Ascending
                             ),
                             If(
                                 _requestTypeFilter = "Approved",
@@ -565,7 +565,7 @@ UserDashboard As screen:
                                         Status.Value = "Approved"
                                     ),
                                     Date,
-                                    SortOrder.Descending
+                                    SortOrder.Ascending
                                 ),
                                 If(
                                     _requestTypeFilter = "Declined",
@@ -575,7 +575,7 @@ UserDashboard As screen:
                                             Status.Value = "Declined"
                                         ),
                                         Date,
-                                        SortOrder.Descending
+                                        SortOrder.Ascending
                                     ),
                                     // Default filter if none of the above conditions match
                                     MemoList
@@ -585,7 +585,7 @@ UserDashboard As screen:
                     )
                 ),
                 Date,
-                SortOrder.Descending
+                SortOrder.Ascending
             )
         Layout: =Layout.Vertical
         OnSelect: |-
@@ -695,7 +695,7 @@ UserDashboard As screen:
             DisabledColor: =RGBA(166, 166, 166, 1)
             FontWeight: =FontWeight.Semibold
             Height: =92
-            Size: =10
+            Size: =8
             Text: =ThisItem.ApprovalComments
             VerticalAlign: =VerticalAlign.Top
             Width: =320
