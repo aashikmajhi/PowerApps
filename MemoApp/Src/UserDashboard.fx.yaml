@@ -225,15 +225,15 @@ UserDashboard As screen:
                             UnsubmittedMemoList,
                             'Created By'.Email = User().Email
                         ),
-                        Date,
-                        SortOrder.Ascending
+                        Created,
+                        SortOrder.Descending
                     ),
                     If(
                         _requestTypeFilter = "All",
                         Sort(
                             MemoList,
-                            Date,
-                            SortOrder.Ascending
+                            Created,
+                            SortOrder.Descending
                         ),
                         If(
                             _requestTypeFilter = "Pending",
@@ -245,8 +245,8 @@ UserDashboard As screen:
                                     Status.Value = "Pending Verification" ||
                                     Status.Value = "Pending Recommendation"
                                 ),
-                                Date,
-                                SortOrder.Ascending
+                                Created,
+                                SortOrder.Descending
                             ),
                             If(
                                 _requestTypeFilter = "Approved",
@@ -255,8 +255,8 @@ UserDashboard As screen:
                                         MemoList,
                                         Status.Value = "Approved"
                                     ),
-                                    Date,
-                                    SortOrder.Ascending
+                                    Created,
+                                    SortOrder.Descending
                                 ),
                                 If(
                                     _requestTypeFilter = "Declined",
@@ -265,8 +265,8 @@ UserDashboard As screen:
                                             MemoList,
                                             Status.Value = "Declined"
                                         ),
-                                        Date,
-                                        SortOrder.Ascending
+                                        Created,
+                                        SortOrder.Descending
                                     ),
                                     // Default filter if none of the above conditions match
                                     MemoList
@@ -275,8 +275,8 @@ UserDashboard As screen:
                         )
                     )
                 ),
-                Date,
-                SortOrder.Ascending
+                Created,
+                SortOrder.Descending
             )
             
         Layout: =Layout.Vertical
@@ -534,15 +534,15 @@ UserDashboard As screen:
                             UnsubmittedMemoList,
                             'Created By'.Email = User().Email
                         ),
-                        Date,
-                        SortOrder.Ascending
+                        Created,
+                        SortOrder.Descending
                     ),
                     If(
                         _requestTypeFilter = "All",
                         Sort(
                             MemoList,
-                            Date,
-                            SortOrder.Ascending
+                            Created,
+                            SortOrder.Descending
                         ),
                         If(
                             _requestTypeFilter = "Pending",
@@ -554,8 +554,8 @@ UserDashboard As screen:
                                     Status.Value = "Pending Verification" ||
                                     Status.Value = "Pending Recommendation"
                                 ),
-                                Date,
-                                SortOrder.Ascending
+                                Created,
+                                SortOrder.Descending
                             ),
                             If(
                                 _requestTypeFilter = "Approved",
@@ -564,8 +564,8 @@ UserDashboard As screen:
                                         MemoList,
                                         Status.Value = "Approved"
                                     ),
-                                    Date,
-                                    SortOrder.Ascending
+                                    Created,
+                                    SortOrder.Descending
                                 ),
                                 If(
                                     _requestTypeFilter = "Declined",
@@ -574,8 +574,8 @@ UserDashboard As screen:
                                             MemoList,
                                             Status.Value = "Declined"
                                         ),
-                                        Date,
-                                        SortOrder.Ascending
+                                        Created,
+                                        SortOrder.Descending
                                     ),
                                     // Default filter if none of the above conditions match
                                     MemoList
@@ -584,8 +584,8 @@ UserDashboard As screen:
                         )
                     )
                 ),
-                Date,
-                SortOrder.Ascending
+                Created,
+                SortOrder.Descending
             )
         Layout: =Layout.Vertical
         OnSelect: |-
