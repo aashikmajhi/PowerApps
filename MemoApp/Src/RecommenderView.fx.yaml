@@ -457,7 +457,8 @@ RecommenderView As screen:
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
         OnSelect: |-
-            =If(
+            =//If(IsEmpty(recommenderGallery.AllItems),Notify("Blank data cannot be submitted."),If(And(IsBlank(approver_1.Selected.Value),IsBlank(approver_2.Selected.Value)),Notify("Please select approvers."),Patch(UnsubmittedMemoList,First(Filter(UnsubmittedMemoList,'Memo No'=refNo_7.Text)),{To:approver_1.Selected.Value&"; "&approver_2.Selected.Value&";",Status:{Value:"Pending First Approval"},'First Approver':approver_1.Selected.Value,'Second Approver':approver_2.Selected.Value});Patch(MemoList,First(Filter(MemoList,'Memo No'=refNo_7.Text)),{To:approver_1.Selected.Value&"; "&approver_2.Selected.Value&";",Status:{Value:"Pending First Approval"},'First Approver':approver_1.Selected.Value,'Second Approver':approver_2.Selected.Value});Set(saving, true )&Navigate(UserDashboard)))
+            If(
                 IsEmpty(recommenderGallery.AllItems),
                 Notify("Blank data cannot be submitted."),
                 If(
@@ -476,7 +477,7 @@ RecommenderView As screen:
                         ),
                         {
                             To: approver_1.Selected.Value & "; " & approver_2.Selected.Value & ";",
-                            Status: {Value: "Pending First Approval"},
+                            Status: {Value: "OnProcess"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value
                         }
@@ -491,7 +492,7 @@ RecommenderView As screen:
                         ),
                         {
                             To: approver_1.Selected.Value & "; " & approver_2.Selected.Value & ";",
-                            Status: {Value: "Pending First Approval"},
+                            Status: {Value: "OnProcess"},
                             'First Approver': approver_1.Selected.Value,
                             'Second Approver': approver_2.Selected.Value
                         }

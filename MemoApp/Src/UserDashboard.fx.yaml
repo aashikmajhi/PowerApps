@@ -216,8 +216,9 @@ UserDashboard As screen:
     userDashboardGallery As gallery.galleryVertical:
         BorderColor: =RGBA(0, 89, 178, 1)
         Height: =403
-        Items: |+
-            =Sort(
+        Items: |-
+            =//Sort(If(_requestTypeFilter="My Memo",Sort(Filter(UnsubmittedMemoList,'Created By'.Email=User().Email),Created,SortOrder.Descending),If(_requestTypeFilter="All",Sort(MemoList,Created,SortOrder.Descending),If(_requestTypeFilter="Pending",Sort(Filter(MemoList,Status.Value="Pending First Approval"||Status.Value="Pending Second Approval"||Status.Value="Pending Verification"||Status.Value="Pending Recommendation"),Created,SortOrder.Descending),If(_requestTypeFilter="Approved",Sort(Filter(MemoList,Status.Value="Approved"),Created,SortOrder.Descending),If(_requestTypeFilter="Declined",Sort(Filter(MemoList,Status.Value="Declined"),Created,SortOrder.Descending),
+            Sort(
                 If(
                     _requestTypeFilter = "My Memo",
                     Sort(
@@ -240,10 +241,7 @@ UserDashboard As screen:
                             Sort(
                                 Filter(
                                     MemoList,
-                                    Status.Value = "Pending First Approval" ||
-                                    Status.Value = "Pending Second Approval" ||
-                                    Status.Value = "Pending Verification" ||
-                                    Status.Value = "Pending Recommendation"
+                                    Status.Value = "Pending First Approval" || Status.Value = "Pending Second Approval" || Status.Value = "Pending Verification" || Status.Value = "Pending Recommendation" || Status.Value = "OnProcess"
                                 ),
                                 Created,
                                 SortOrder.Descending
@@ -278,7 +276,6 @@ UserDashboard As screen:
                 Created,
                 SortOrder.Descending
             )
-            
         Layout: =Layout.Vertical
         OnSelect: |-
             =//Navigate(RespondingScreen)
@@ -412,14 +409,14 @@ UserDashboard As screen:
             Icon: =Icon.View
             OnSelect: |+
                 =
-                If(LookUp(MemoList,'Verified By'=User().Email,true) && (ThisItem.Status.Value="Pending Recommendation"||ThisItem.Status.Value="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined"),Navigate(VerifierViewAfterSubmit));
+                If(LookUp(MemoList,'Verified By'=User().Email,true) && (ThisItem.Status.Value="Pending Recommendation"||ThisItem.Status.Value="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined" || ThisItem.Status.Value="OnProcess"),Navigate(VerifierViewAfterSubmit));
                 
                 
                 If(ThisItem.Status.Value="New" && User().Email = ThisItem.PreparedBy ,Navigate(UserSubmitMemo));
                 
                 If(ThisItem.Status.Value="Pending Verification" && ThisItem.PreparedBy<>User().Email,Navigate(VerifierView));
                 
-                If((ThisItem.Status.Value="Pending Verification"||ThisItem.Status.Value="Pending Recommendation"||Label33_7.Text="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined")&& ThisItem.PreparedBy=User().Email,Navigate(UserViewAfterSubmit));
+                If((ThisItem.Status.Value="Pending Verification"||ThisItem.Status.Value="Pending Recommendation"||Label33_7.Text="Pending First Approval"||ThisItem.Status.Value="Pending Second Approval"||ThisItem.Status.Value="Approved"||ThisItem.Status.Value="Declined" || ThisItem.Status.Value="OnProcess")&& ThisItem.PreparedBy=User().Email,Navigate(UserViewAfterSubmit));
                 
             PaddingBottom: =5
             PaddingLeft: =5
@@ -525,8 +522,9 @@ UserDashboard As screen:
     recommenderGallery As gallery.galleryVertical:
         BorderColor: =RGBA(0, 89, 178, 1)
         Height: =403
-        Items: |
-            =Sort(
+        Items: |-
+            =//Sort(If(_requestTypeFilter="My Memo",Sort(Filter(UnsubmittedMemoList,'Created By'.Email=User().Email),Created,SortOrder.Descending),If(_requestTypeFilter="All",Sort(MemoList,Created,SortOrder.Descending),If(_requestTypeFilter="Pending",Sort(Filter(MemoList,Status.Value="Pending First Approval"||Status.Value="Pending Second Approval"||Status.Value="Pending Verification"||Status.Value="Pending Recommendation"),Created,SortOrder.Descending),If(_requestTypeFilter="Approved",Sort(Filter(MemoList,Status.Value="Approved"),Created,SortOrder.Descending),If(_requestTypeFilter="Declined",Sort(Filter(MemoList,Status.Value="Declined"),Created,SortOrder.Descending),
+            Sort(
                 If(
                     _requestTypeFilter = "My Memo",
                     Sort(
@@ -549,10 +547,7 @@ UserDashboard As screen:
                             Sort(
                                 Filter(
                                     MemoList,
-                                    Status.Value = "Pending First Approval" ||
-                                    Status.Value = "Pending Second Approval" ||
-                                    Status.Value = "Pending Verification" ||
-                                    Status.Value = "Pending Recommendation"
+                                    Status.Value = "Pending First Approval" || Status.Value = "Pending Second Approval" || Status.Value = "Pending Verification" || Status.Value = "Pending Recommendation" || Status.Value = "OnProcess"
                                 ),
                                 Created,
                                 SortOrder.Descending
@@ -722,7 +717,7 @@ UserDashboard As screen:
             Icon: =Icon.View
             OnSelect: |+
                 =If(ThisItem.Status.Value="Pending Recommendation",Navigate(RecommenderView));
-                If(ThisItem.Status.Value="Pending First Approval" || ThisItem.Status.Value="Pending Second Approval" || ThisItem.Status.Value="Approved" || ThisItem.Status.Value="Declined",Navigate(RecommenderViewAfterSubmit));
+                If(ThisItem.Status.Value="OnProcess" ||ThisItem.Status.Value="Pending First Approval" || ThisItem.Status.Value="Pending Second Approval" || ThisItem.Status.Value="Approved" || ThisItem.Status.Value="Declined",Navigate(RecommenderViewAfterSubmit));
                 
                 
             PaddingBottom: =5
