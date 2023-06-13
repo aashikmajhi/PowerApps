@@ -9,7 +9,7 @@ EditMemoItemsToSubmit As screen:
         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
         FontWeight: =FontWeight.Semibold
         HoverColor: =RGBA(255, 255, 255, 1)
-        HoverFill: =RGBA(54, 176, 75, 1)
+        HoverFill: =//RGBA(54, 176, 75, 1)
         OnSelect: |
             =SubmitForm(Form1_5);
             Navigate(UserSubmitMemo);

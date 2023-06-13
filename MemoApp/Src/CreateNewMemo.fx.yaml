@@ -533,7 +533,7 @@ CreateNewMemo As screen:
         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
         FontWeight: =FontWeight.Semibold
         HoverColor: =RGBA(255, 255, 255, 1)
-        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        HoverFill: =//ColorFade(RGBA(0, 51, 102, 1), -20%)
         OnSelect: |
             =If(
                 IsBlank(companyName_2.Selected.Value),
