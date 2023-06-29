@@ -37,6 +37,8 @@
       "FirstApprover": "First Approver",
       "From": "From",
       "ID": "ID",
+      "IsEmailSent": "IsEmailSent",
+      "IsRespondedByFirstApprover": "IsRespondedByFirstApprover",
       "MemoType": "Memo Type",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
