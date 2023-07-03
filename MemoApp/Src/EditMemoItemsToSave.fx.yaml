@@ -761,7 +761,7 @@ EditMemoItemsToSave As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue18.Attachments
-            Visible: =false
+            Visible: =true
             Width: =683
             X: =1
             Y: =3
@@ -783,6 +783,8 @@ EditMemoItemsToSave As screen:
             DataCardValue18 As attachments:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderThickness: =2
+                Default: |-
+                    ={Value:newMemoGallery.Selected.Attachments}
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
